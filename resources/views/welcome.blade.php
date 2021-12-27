@@ -190,7 +190,6 @@
             <h1>Our Timeline</h1>
             <div class="graphics">
                 <div class="graphic" id="graphic1">
-                    <img src="assets/platform1.png" alt="platform" class="timelineImg">
                     <div class="text">
                         <h1>Open Registration</h1>
                         <p>May, 31 2022</p>
