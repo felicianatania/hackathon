@@ -1,0 +1,677 @@
+/* Animations */
+@keyframes appear {
+    0%{
+        top: -50px;
+        opacity: 0%;
+    }
+    100%{
+        top: 0px;
+        opacity: 100%;
+    }
+}
+
+@keyframes floatUp {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(-20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+
+@keyframes floatDown {
+	0% {
+		transform: translatey(0px);
+	}
+	50% {
+		transform: translatey(20px);
+	}
+	100% {
+		transform: translatey(0px);
+	}
+}
+/* Universal */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    color: white;
+}
+
+/* NavBar */
+.navbar {
+    font-size: 25px;
+    font-weight: 600;
+    background-color: rgba(51, 66, 87, 0.8);
+    animation: fadeInDown 1s;
+}
+
+.navbar .container .collapse ul li{
+    margin: 0 10px;
+}
+
+.navbar .container a span{
+    font-size: 50px;
+}
+
+.navbar .container .login{
+    font-size: 25px;
+    border-radius: 50px;
+    padding: 5px 20px;
+    background: none;
+    border: 2px solid white;
+    color: white;
+    transition: 0.2s;
+}
+
+.navbar .container .login:hover{
+    background: white;
+    border: 2px solid white;
+    color: #334257;
+    transition: 0.2s;
+}
+
+.navbar .container .login:active{
+    transform: translateY(5px);
+    transition: 0.2s ease-in-out;
+}
+
+/* Home */
+.home{
+    min-height: 150vh;
+    background-image: linear-gradient(#334257, #889AB4, #FFFFFF);
+}
+
+.home .sphere{
+    position: absolute;
+    z-index: 3;
+
+}
+
+.home #sphere1{
+    height: 200px;
+    width: 200px;
+    top: 200px;
+    left: 200px;
+    animation: floatUp 6s ease-in-out infinite;
+}
+
+.home #sphere2{
+    height: 150px;
+    width: 150px;
+    top: 500px;
+    left: 500px;
+    animation: floatDown 6s ease-in-out infinite;
+}
+
+.home #sphere3{
+    height: 250px;
+    width: 250px;
+    top: 300px;
+    left: 1500px;
+    animation: floatUp 6s ease-in-out infinite;
+}
+
+.home .container{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.home img{
+    z-index: 0;
+    position: absolute;
+    width: 100%;
+    height: 90%;
+}
+
+.home .container h1{
+    font-weight: bold;
+    font-size: 120px;
+    letter-spacing: 20px;
+    z-index: 1;
+    animation: fadeIn 1s;
+}
+
+.home .container h2{
+    font-size: 100px;
+    font-weight: bold;
+    letter-spacing: 10px;
+    z-index: 1;
+    animation: fadeIn 1s;
+}
+
+.home .container h3{
+    font-size: 30px;
+    font-weight: 600;
+    z-index: 1;
+    animation: fadeIn 1s;
+}
+
+/* Video Recap */
+.home .videoRecap{
+    min-height: 50vh;
+    padding: 0 150px;
+}
+
+.home .videoRecap .recapContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.home .videoRecap .recapContainer .text{
+    width: 35%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 50px;
+}
+
+.home .videoRecap .recapContainer .text h1{
+    font-weight: bolder;
+    font-size: 72px;
+    color: #334257;
+}
+
+.home .videoRecap .recapContainer .text p{
+    font-weight: 600;
+    font-size: 24px;
+    color: #889AB4;
+}
+
+.home .videoRecap .recapContainer .text p span{
+    color: #334257;
+}
+
+
+.home .videoRecap .vid{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.home .videoRecap .vid video{
+    width: 100%;
+    border-radius: 50px;
+}
+
+/* About */
+.aboutUs{
+    min-height: 200vh;
+}
+
+.aboutUs .aboutHack{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutUs .aboutHack h1{
+    text-align: center;
+    color: #43538C;
+    font-size: 72px;
+    font-weight: bolder;
+    margin-bottom: 50px;
+}
+
+.aboutUs .aboutHack .container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    /* padding: 0 40px; */
+}
+
+.aboutUs .aboutHack .container .left{
+    width: 50%;
+}
+
+.aboutUs .aboutHack .container .left p{
+    color: #7483B9;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.aboutUs .aboutHack .container .left p span{
+    color: #364680;
+}
+
+.aboutUs .aboutHack .container .left .buttons{
+    display: flex;
+    justify-content: space-between;
+}
+
+.aboutUs .aboutHack .container .left .buttons button{
+    font-size: 25px;
+    border-radius: 50px;
+    padding: 15px 50px;
+    background-image: linear-gradient(to right, #7382B8, #C1C9E7, #7382B8);
+    color: white;
+    border: none;
+    background-size: 300% 100%;
+    transition:0.3s ease-in-out;
+}
+
+.aboutUs .aboutHack .container .left .buttons button:hover{
+    background-position: 100% 0;
+    box-shadow: 0 4px 15px 0 rgba(67, 83, 140, 1);
+    transition: 0.3s ease-in-out;
+}
+
+.aboutUs .aboutHack .container .left .buttons button:active{
+    transform: translateY(5px);
+    transition: 0.2s ease-in-out;
+}
+
+.aboutUs .aboutHack .container .right{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url("assets/laptop.png");
+    background-repeat: no-repeat;
+    background-position: center; */
+}
+
+/* Join us */
+.aboutUs .joinUs{
+    height: 100vh;
+}
+
+.aboutUs .joinUs h1{
+    color: #7483B9;
+    font-size: 72px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.aboutUs .joinUs h2{
+    color: #364680;
+    font-size: 24px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.aboutUs .joinUs .container input[type=radio] {
+    display: none;
+}
+
+.aboutUs .joinUs .container{
+    width: 100%;
+    max-width: 800px;
+    max-height: 600px;
+    height: 100%;
+    transform-style: preserve-3d;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutUs .joinUs .container .cards{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    margin-top: 70px;
+}
+
+.aboutUs .joinUs .container .cards .card{
+    position: absolute;
+    width: 70%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: transform .4s ease;
+    cursor: pointer;
+    background-color: #7483B9;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 50px;
+}
+
+.aboutUs .joinUs .container .cards .card .cardImage{
+    height: 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    margin-bottom: 20px;
+}
+
+.aboutUs .joinUs .container .cards .card #cardImage1{
+    background-image: url(assets/network.png);
+}
+
+.aboutUs .joinUs .container .cards .card #cardImage2{
+    background-image: url(assets/mentor.png);
+}
+
+.aboutUs .joinUs .container .cards .card #cardImage3{
+    background-image: url(assets/cv.png);
+
+}
+
+.aboutUs .joinUs .container .cards .card .cardText{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutUs .joinUs .container .cards .card h1{
+    font-size: 36px;
+    font-weight: bold;
+    color: #37467C;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.aboutUs .joinUs .container .cards .card p{
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+}
+
+#item-1:checked ~ .cards #benefit-3, #item-2:checked ~ .cards #benefit-1, #item-3:checked ~ .cards #benefit-2 {
+    transform: translatex(-60%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cards #benefit-2, #item-2:checked ~ .cards #benefit-3, #item-3:checked ~ .cards #benefit-1 {
+    transform: translatex(60%) scale(.8);
+    opacity: .4;
+    z-index: 0;
+}
+
+#item-1:checked ~ .cards #benefit-1, #item-2:checked ~ .cards #benefit-2, #item-3:checked ~ .cards #benefit-3 {
+    transform: translatex(0) scale(1);
+    opacity: 1;
+    z-index: 1;
+
+    img {
+      box-shadow: 0px 0px 5px 0px rgba(81, 81, 81, 0.47);
+    }
+}
+
+#item-2:checked ~ .player #test {
+    transform: translateY(0);
+}
+
+#item-2:checked ~ .player #test  {
+    transform: translateY(-40px);
+}
+
+#item-3:checked ~ .player #test  {
+    transform: translateY(-80px);
+}
+
+/* Champoin Prizes */
+.prize{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to bottom, #FFFFFF, #588BA5);
+}
+
+.prize .container h1{
+    font-size: 72px;
+    font-weight: bolder;
+    color: #334257;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.prize .container .cardGroup{
+    display: flex;
+    justify-content: space-around;
+}
+
+.prize .container .cardGroup .card{
+    background-image: linear-gradient(to bottom right, #334257, #6B7D96);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px 50px;
+    color: white;
+    border-radius: 50px;
+    height: 550px;
+    margin: 20px;
+    width: 30%;
+    transition: 0.5s;
+}
+
+.prize .container .cardGroup .card:hover{
+    box-shadow: 0 15px 20px 5px rgba(67, 83, 140, 1);
+    transform: translateY(-20px);
+    transition: 0.5s;
+}
+
+.prize .container .cardGroup h1{
+    color: white;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.prize .container .cardGroup .card .fa-trophy{
+    font-size: 150px;
+    margin-bottom: 20px;
+}
+
+.prize .container .cardGroup .card #firstPlace{
+    color: #FFD700;
+}
+
+.prize .container .cardGroup .card #secondPlace{
+    color: #C0C0C0;
+}
+
+.prize .container .cardGroup .card #thirdPlace{
+    color: #CD7F32;
+}
+
+.prize .container .cardGroup .card .rewards{
+    font-size: 24px;
+}
+
+.prize .container .cardGroup .card .rewards i{
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+.rank{
+    position: absolute;
+    top: 75px;
+    font-size: 50px;
+    color: #334257;
+}
+
+/* timeline */
+.timeline{
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, #588BA5, #a3e0ff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline .timeContainer{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.timeline .timeContainer h1{
+    font-size: 72px;
+    font-weight: bolder;
+    color: #334257;
+    margin-bottom: 50px;
+}
+
+.timeline .timeContainer .graphics{
+    display: flex;
+    justify-content: space-;
+    width: 65vw;
+    background-image: url("assets/path.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.timeline .timeContainer .graphics .graphic{
+    display: flex;
+    flex-direction: column;
+    height: 450px;
+}
+
+.timelineImg{
+    transform: scale(1.2);
+    transition: 0.5s ease-in-out;
+}
+
+.timelineImg:hover{
+    transform: scale(1.2) translateY(-20px);
+    transition: 0.5s ease-in-out;
+    filter: drop-shadow(0 15px 10px #00000049);
+
+}
+
+#graphic1{
+    padding-top: 40px;
+}
+
+#graphic1 .text{
+    text-align: center;
+}
+
+#graphic1 .text h1{
+    font-size: 24px;
+    color: #889AB4;
+    margin: 0;
+    margin-top: 40px;
+}
+
+#graphic1 .text p{
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+}
+
+#graphic2{
+    justify-content: flex-end;
+    height: 500px;
+}
+
+#graphic2 .text{
+    text-align: center;
+}
+
+#graphic2 .text h1{
+    font-size: 24px;
+    color: #7483B9;
+    margin: 0;
+    margin-top: 40px;
+}
+
+#graphic2 .text p{
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+}
+
+#graphic3{
+    padding-top: 40px;
+}
+
+#graphic3 .text{
+    text-align: center;
+}
+
+#graphic3 .text h1{
+    font-size: 24px;
+    color: #5886A6;
+    margin: 0;
+    margin-top: 40px;
+}
+
+#graphic3 .text p{
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+}
+
+#graphic4{
+    justify-content: flex-end;
+    height: 500px;
+}
+
+#graphic4 .text{
+    text-align: center;
+}
+
+#graphic4 .text h1{
+    font-size: 24px;
+    color: #889AB4;
+    margin: 0;
+    margin-top: 40px;
+}
+
+#graphic4 .text p{
+    font-size: 16px;
+    color: black;
+    font-weight: 500;
+}
+
+/* mentor adn jury */
+.mentorJury{
+    min-height: 200vh;
+    background-image: linear-gradient(to bottom, #a3e0ff, #FFFFFF);
+}
+
+.mentorJury .mentor{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mentorJury .mentor h1{
+    color: #334257;
+    font-weight: bolder;
+}
+
+.mentorJury .jury{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mentorJury .jury h1{
+    color: #334257;
+    font-weight: bolder;
+}
