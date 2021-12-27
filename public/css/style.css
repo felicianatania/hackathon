@@ -357,15 +357,15 @@ body{
 }
 
 .aboutUs .joinUs .container .cards .card #cardImage1{
-    background-image: url(assets/network.png);
+    background-image: url(image/network.png);
 }
 
 .aboutUs .joinUs .container .cards .card #cardImage2{
-    background-image: url(assets/mentor.png);
+    background-image: url(image/mentor.png);
 }
 
 .aboutUs .joinUs .container .cards .card #cardImage3{
-    background-image: url(assets/cv.png);
+    background-image: url(image/cv.png);
 
 }
 

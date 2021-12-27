@@ -29,6 +29,7 @@ class CreateLeaderTable extends Migration
             $table->timestamps();
         });
 
+        
         return redirect(route('registerLeaderPage'));
     }
 
