@@ -91,10 +91,12 @@
             <div class="container">
                 <div class="left">
                     <p><span>Hackathon 5.0</span> is a 48-hour online coding competition where each team competes to create innovative applications or websites that could solve problems. This year is the 5th time Binus Computer Club (BNCC) held a Hackathon event. Throughout the years, Hackathon has produced many innovative ideas and become the main event of TechnoScape.</p>
+                    <form method="get" action="/register">
                     <div class="buttons">
                         <button>Register</button>
                        <a href="https://drive.google.com/file/d/15e9f_CZXtfw1x2ntNwXqm8qsympX6nis/view?usp=sharing" target="_blank" download><button>Download Guidebook</button></a>
                     </div>
+                </form>
                 </div>
                 <div class="right">
                     <img src="assets/laptop.png" alt="laptop">
@@ -190,6 +192,7 @@
             <h1>Our Timeline</h1>
             <div class="graphics">
                 <div class="graphic" id="graphic1">
+                    <img src="assets/platform1.png" alt="platform" class="timelineImg">
                     <div class="text">
                         <h1>Open Registration</h1>
                         <p>May, 31 2022</p>
