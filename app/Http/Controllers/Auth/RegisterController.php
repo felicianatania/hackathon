@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 
@@ -49,12 +50,22 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+
         return Validator::make($data, [
             'groupName' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'status' => ['required', 'integer'],
+            'fullname' => ['required'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'WA' => ['required', 'min:9', 'string'],
+            'lineId' => ['required'],
+            'github' => ['required'],
+            'birthPlace' => ['required'],
+            'birthDate' => ['required', 'date', 'before:-17 years'],
+            'CV' => ['required', 'mimes:jpg'],
+            'IdCard' => ['required', 'mimes:jpg'],
         ]);
+
     }
 
     /**
@@ -65,11 +76,26 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $CVName = request()->file('CV')->getClientOriginalName();
+        $CV = request()->file('CV')->storeAs('file-data', $CVName);
+
+        $IdCard_file_name = request()->file('IdCard')->getClientOriginalName();
+        $IdCard = request()->file('IdCard')->storeAs('file-data', $IdCard_file_name);
+
         return User::create([
             'groupName' => $data['groupName'],
-            'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'status' => $data['status']
+            'status' => $data['status'],
+            'fullname' => $data['fullname'],
+            'email' => $data['email'],
+            'WA' => $data['WA'],
+            'lineId' => $data['lineId'],
+            'github' => $data['github'],
+            'birthPlace' => $data['birthPlace'],
+            'birthDate' => $data['birthDate'],
+            'CV' => $CV,
+            'IdCard' => $IdCard
         ]);
+
     }
 }

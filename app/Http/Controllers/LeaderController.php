@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\LeaderRequest;
 use App\Models\Leader;
 use Illuminate\Http\Request;
 

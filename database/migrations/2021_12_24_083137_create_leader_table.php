@@ -15,21 +15,13 @@ class CreateLeaderTable extends Migration
     {
         Schema::create('leaders', function (Blueprint $table) {
             $table->id();
-            $table->string('fullname');
-            $table->string('email')->unique();
-            $table->string('WA')->unique();
-            $table->string('lineId')->unique();
-            $table->string('github');
-            $table->string('birthPlace');
-            $table->date('birthDate');
-            $table->string('CV');
-            $table->string('IdCard');
+            
             // $table->unsignedBigInteger('genreId');
             // $table->foreign('genreId')->references('id')->on('genres'); //foreign nama foreign key di id di table genres (ada di migration)
             $table->timestamps();
         });
 
-        
+
         return redirect(route('registerLeaderPage'));
     }
 
