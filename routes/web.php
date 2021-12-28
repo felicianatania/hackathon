@@ -20,13 +20,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register-leader-page', [LeaderController::class,'registerLeaderPage'])->name('registerLeaderPage');
-Route::post('/register-leader', [LeaderController::class, 'createLeader'])->name('createLeader');
-Route::get('/get-leaders', [LeaderController::class, 'getLeaders'])->name('getLeaders');
-
-Route::get('/register-member-page', [MemberController::class,'registerMemberPage'])->name('registerMemberPage');
-Route::post('/register-member', [MemberController::class, 'createMember'])->name('createMember');
-Route::get('/get-members', [MemberController::class, 'getMembers'])->name('getMembers');
+Route::get('/register-member-page/{id}', [MemberController::class,'registerMemberPage'])->name('registerMemberPage');
+Route::post('/register-member/{id}', [MemberController::class, 'createMember'])->name('createMember');
+Route::get('/get-members/{id}', [MemberController::class, 'getMembers'])->name('getMembers');
 
 
 // Route::get('/update-song/{id}', [SongController::class, 'getSongById'])->name('getSongById');

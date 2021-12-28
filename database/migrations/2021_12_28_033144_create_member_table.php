@@ -24,8 +24,10 @@ class CreateMemberTable extends Migration
             $table->date('birthDate');
             $table->string('CV');
             $table->string('IdCard');
-            // $table->unsignedBigInteger('genreId');
-            // $table->foreign('genreId')->references('id')->on('genres'); //foreign nama foreign key di id di table genres (ada di migration)
+            $table->unsignedBigInteger('groupId');//->default('id');
+            $table->foreign('groupId')->references('id')->on('users') //foreign nama foreign key di id di table genres (ada di migration)
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->timestamps();
         });
 

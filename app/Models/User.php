@@ -29,8 +29,12 @@ class User extends Authenticatable
         'birthPlace',
         'birthDate',
         'CV',
-        'IdCard'
+        'IdCard',
     ];
+
+    public function member(){
+        return $this -> hasMany(Member::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.

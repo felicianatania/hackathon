@@ -11,6 +11,10 @@ class Member extends Model
 
     protected $fillable = [
         'fullname', 'email', 'WA', 'lineId', 'github',
-        'birthPlace', 'birthDate', 'CV', 'IdCard',
+        'birthPlace', 'birthDate', 'CV', 'IdCard', 'groupId'
     ];
+
+    public function user(){
+        return $this -> hasOne(User::class);
+    }
 }

@@ -4,15 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MemberRequest;
 use App\Models\Member;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
-    public function registerMemberPage(){
-        return view('memberRegister');
+    public function getGroupById($id){
+        $group = User::find($id);
+        //dd($book);
+        return view('memberRegister', ['group' => $group]);
     }
 
-    public function createMember(MemberRequest $request){
+    public function createMember(MemberRequest $request, $id){
         $cv_file_name = $request->CV->getClientOriginalName();
         $CV = $request->file('CV')->storeAs('file-data', $cv_file_name);
 
@@ -29,6 +32,7 @@ class MemberController extends Controller
             'birthDate' => $request->birthDate,
             'CV' => $CV,
             'IdCard' => $IdCard,
+            'groupId' => $id
         ]);
 
         return redirect(route('registerMemberPage'));
