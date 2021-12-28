@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LeaderController;
+use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -22,6 +23,11 @@ Route::get('/', function () {
 Route::get('/register-leader-page', [LeaderController::class,'registerLeaderPage'])->name('registerLeaderPage');
 Route::post('/register-leader', [LeaderController::class, 'createLeader'])->name('createLeader');
 Route::get('/get-leaders', [LeaderController::class, 'getLeaders'])->name('getLeaders');
+
+Route::get('/register-member-page', [MemberController::class,'registerMemberPage'])->name('registerMemberPage');
+Route::post('/register-member', [MemberController::class, 'createMember'])->name('createMember');
+Route::get('/get-members', [MemberController::class, 'getMembers'])->name('getMembers');
+
 
 // Route::get('/update-song/{id}', [SongController::class, 'getSongById'])->name('getSongById');
 
