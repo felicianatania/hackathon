@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LeaderController;
 use App\Http\Controllers\MemberController;
 use Illuminate\Support\Facades\Auth;
@@ -24,6 +25,12 @@ Route::get('/register-member-page/{id}', [MemberController::class,'registerMembe
 Route::post('/register-member/{id}', [MemberController::class, 'createMember'])->name('createMember');
 Route::get('/get-group', [MemberController::class, 'getGroupById'])->name('getGroupById');
 
+Route::get('/get-groups', [AdminController::class, 'getGroups'])->name('getGroups');
+Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdd'])->name('getGroupByIdd');
+Route::patch('/update-group/{id}', [AdminController::class, 'updateGroup'])->name('updateGroup');
+Route::delete('/delete-group/{id}', [AdminController::class, 'deleteGroup'])->name('delete');
+
+Route::get('/search-group', [AdminController::class, 'searchGroup'])->name('searchGroup');
 
 // Route::get('/update-song/{id}', [SongController::class, 'getSongById'])->name('getSongById');
 
