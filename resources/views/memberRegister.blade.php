@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 @section('content')
     <h1>Add Member</h1>
-    <form action="{{route('createMember', ['id'=>$groups->id])}}" method="POST" enctype="multipart/form-data">
+    <form action="{{route('createMember', ['id'=>$groupId])}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="mb-3">
             <label for="fullname" class="form-label">Full Name</label>

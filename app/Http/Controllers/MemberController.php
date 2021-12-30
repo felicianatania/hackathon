@@ -9,11 +9,17 @@ use Illuminate\Http\Request;
 
 class MemberController extends Controller
 {
-    public function getGroupById($id){
-        $group = User::find($id);
+    public function getGroupById(Request $request){
+        $groupId = $request->user()->id;
         //dd($book);
-        return view('memberRegister', ['group' => $group]);
+        return view('memberRegister', ['groupId' => $groupId]);
     }
+
+    // public function getGroupById($id){
+    //     $group = User::find($id);
+    //     //dd($book);
+    //     return view('memberRegister', ['group' => $group]);
+    // }
 
     public function createMember(MemberRequest $request, $id){
         $cv_file_name = $request->CV->getClientOriginalName();
@@ -35,7 +41,7 @@ class MemberController extends Controller
             'groupId' => $id
         ]);
 
-        return redirect(route('registerMemberPage'));
+        return redirect(route('home'));
     }
 
 }

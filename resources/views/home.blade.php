@@ -13,7 +13,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
+                    <a href="{{route('getGroupById')}}"><button type="submit" class="btn btn-success">Add Member</button></a>
                     {{ __('You are logged in!') }}
                 </div>
             </div>
