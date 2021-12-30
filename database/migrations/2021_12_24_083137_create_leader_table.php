@@ -11,19 +11,19 @@ class CreateLeaderTable extends Migration
      *
      * @return void
      */
-    public function up()
-    {
-        Schema::create('leaders', function (Blueprint $table) {
-            $table->id();
-            
-            // $table->unsignedBigInteger('genreId');
-            // $table->foreign('genreId')->references('id')->on('genres'); //foreign nama foreign key di id di table genres (ada di migration)
-            $table->timestamps();
-        });
+    // public function up()
+    // {
+    //     Schema::create('leaders', function (Blueprint $table) {
+    //         $table->id();
+
+    //         // $table->unsignedBigInteger('genreId');
+    //         // $table->foreign('genreId')->references('id')->on('genres'); //foreign nama foreign key di id di table genres (ada di migration)
+    //         $table->timestamps();
+    //     });
 
 
-        return redirect(route('registerLeaderPage'));
-    }
+    //     return redirect(route('registerLeaderPage'));
+    // }
 
     /**
      * Reverse the migrations.
