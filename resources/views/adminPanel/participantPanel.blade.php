@@ -38,6 +38,9 @@
                 <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
               </li>
             </ul>
+            <form class="d-flex" type="get" action="{{url('/order-group')}}">
+                <button class="btn btn-outline-success" type="submit">Order</button>
+            </form>
             <form class="d-flex" type="get" action="{{url('/search-group')}}">
               <input class="form-control me-2" name="query" type="search" placeholder="Search groups" aria-label="Search">
               <button class="btn btn-outline-success" type="submit">Search</button>

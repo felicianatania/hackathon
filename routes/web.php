@@ -31,6 +31,7 @@ Route::patch('/update-group/{id}', [AdminController::class, 'updateGroup'])->nam
 Route::delete('/delete-group/{id}', [AdminController::class, 'deleteGroup'])->name('delete');
 
 Route::get('/search-group', [AdminController::class, 'searchGroup'])->name('searchGroup');
+Route::get('/order-group', [AdminController::class, 'orderGroup'])->name('orderGroup');
 
 // Route::get('/update-song/{id}', [SongController::class, 'getSongById'])->name('getSongById');
 

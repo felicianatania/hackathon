@@ -28,5 +28,10 @@ class AdminController extends Controller
         $search_text = $_GET['query'];
         $groups = User::where('groupName', 'LIKE', '%'.$search_text.'%')->get();
         return view('adminPanel.searchGroup', compact('groups'));
-     }
+    }
+
+    public function orderGroup(){
+        $groups = User::orderBy('groupName')->get();
+        return view('adminPanel.searchGroup', compact('groups'));
+    }
 }
