@@ -31,7 +31,7 @@ class CreateMemberTable extends Migration
             $table->timestamps();
         });
 
-        return redirect(route('registerMemberPage'));
+        return redirect(route('home'));
     }
 
     /**
