@@ -30,6 +30,7 @@ class User extends Authenticatable
         'birthDate',
         'CV',
         'IdCard',
+        'activation_token',
     ];
 
     public function member(){

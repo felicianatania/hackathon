@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use finfo;
 use Illuminate\Foundation\Auth\ResetsPasswords;
-use Illuminate\Support\Facades\Auth;
+use Illuminate\Foundation\Auth\User;
 
 class ResetPasswordController extends Controller
 {
@@ -29,15 +29,27 @@ class ResetPasswordController extends Controller
      * @var string
      */
     protected $redirectTo = RouteServiceProvider::HOME;
-    protected function redirectTo(){
-        if (Auth()->user()->status == 1){
-            return route('home');
-        }
-        elseif (Auth()->user()->status == 2){
-            return route('home');
-        }
-        elseif (Auth()->user()-> status == 3){
-            return route('home');
-        }
+
+    //update Password
+    protected function update(Request $request, $id)
+    {
+       $this->validate($request, [
+           'email' => 'required|email|exists:users',
+           'password' => 'required|min:8|confirmed',
+       ]);
+       $user=User::whereActivation_token($id)->first();
+       if($request->email !== $user->email){
+            return redirect()->back()->withErrors('email yang anda masukan salah');
+       }
+       else{
+
+           $user->update([
+               'password'=>bcrypt($request['password']),
+               'activation_token' =>null,
+           ]);
+           return redirect('login')->with('succes', 'password berhasil diperbarui');
+
+       }
+
     }
 }

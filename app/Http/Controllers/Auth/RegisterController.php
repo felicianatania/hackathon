@@ -9,6 +9,8 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use App\Events\Auth\ActivationEmail;
+use phpDocumentor\Reflection\Types\Mixed_;
 
 class RegisterController extends Controller
 {
@@ -94,7 +96,8 @@ class RegisterController extends Controller
             'birthPlace' => $data['birthPlace'],
             'birthDate' => $data['birthDate'],
             'CV' => $CV,
-            'IdCard' => $IdCard
+            'IdCard' => $IdCard,
+            'activation_token' => rand(100000, 999999)
         ]);
 
     }

@@ -46,5 +46,24 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+//forgetpw
+Route::post('/forgetpw', [App\Http\Controllers\auth\ForgotPasswordController::class, 'forgetpw'])->name('forgetpw');
 
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//veriftokenpw
+Route::get('/verifikasitoken', [App\Http\Controllers\auth\VerifikasiController::class, 'verifikasitoken'])->name('verifikasitoken');
+Route::post('/postveriftoken', [App\Http\Controllers\auth\VerifikasiController::class, 'postveriftoken'])->name('postveriftoken');
+
+//reset password controller setelah verifikasi token
+Route::resource('/resetpassword', [App\Http\Controllers\auth\ResetPasswordController::class]);
+
+
+
+Route::get('/maki', function (){
+    return view('auth.veriftokenaja');
+    }
+);
 
