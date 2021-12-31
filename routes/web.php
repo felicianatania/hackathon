@@ -57,9 +57,6 @@ Route::post('/forgetpw', [App\Http\Controllers\auth\ForgotPasswordController::cl
 Route::get('/verifikasitoken', [App\Http\Controllers\auth\VerifikasiController::class, 'verifikasitoken'])->name('verifikasitoken');
 Route::post('/postveriftoken', [App\Http\Controllers\auth\VerifikasiController::class, 'postveriftoken'])->name('postveriftoken');
 
-//reset password controller setelah verifikasi token
-Route::resource('/resetpassword', [App\Http\Controllers\auth\ResetPasswordController::class]);
-
 
 
 Route::get('/maki', function (){

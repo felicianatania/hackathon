@@ -22,7 +22,10 @@ class VerifikasiController extends Controller
         if($user==null){
             return redirect()->back()->with('error', 'token anda salah');
         }else{
-            return redirect()->route('password.reset', [$user->activation_token])->with('success', 'silahkan anda reset password');
+            $user->update([
+                'activation_token'=>rand(100000, 999999),
+            ]);
+            return redirect()->route('password.reset', [$user->activation_token])->with('succes', 'silahkan anda reset password');
         }
     }
 }
