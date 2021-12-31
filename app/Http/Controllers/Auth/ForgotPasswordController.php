@@ -32,7 +32,7 @@ class ForgotPasswordController extends Controller
         $user=User::whereEmail($request->email)->first();
 
         if($user == null){
-            return redirect()->back()->withErrors('error', 'email tidak terdaftar');
+            return redirect()->back()->with('error', 'token anda salah');
         }
         else{
             $user->update([
