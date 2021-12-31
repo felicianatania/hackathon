@@ -37,6 +37,7 @@ class ResetPasswordController extends Controller
            'email' => 'required|email|exists:users',
            'password' => 'required|min:8|confirmed',
        ]);
+
        $user=User::whereActivation_token($id)->first();
        if($request->email !== $user->email){
             return redirect()->back()->withErrors('email yang anda masukan salah');
@@ -45,7 +46,7 @@ class ResetPasswordController extends Controller
 
            $user->update([
                'password'=>bcrypt($request['password']),
-               'activation_token' =>null,
+               'activation_token' => null,
            ]);
            return redirect('login')->with('succes', 'password berhasil diperbarui');
 

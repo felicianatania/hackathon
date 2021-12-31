@@ -18,7 +18,6 @@ class VerifikasiController extends Controller
     public function postveriftoken(Request $request)
     {
         $user=User::whereActivation_token($request->activation_token)->first();
-
         if($user==null){
             return redirect()->back()->with('error', 'token anda salah');
         }else{
