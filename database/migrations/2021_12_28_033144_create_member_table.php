@@ -27,6 +27,7 @@ class CreateMemberTable extends Migration
             $table->unsignedBigInteger('groupId');//->default('id');
             $table->foreign('groupId')->references('id')->on('users') //foreign nama foreign key di id di table genres (ada di migration)
                 ->onUpdate('cascade')
+                //->cascadeOnDelete();
                 ->onDelete('cascade');
             $table->timestamps();
         });
