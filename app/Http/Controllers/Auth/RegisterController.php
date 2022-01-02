@@ -66,6 +66,7 @@ class RegisterController extends Controller
             'birthDate' => ['required', 'date', 'before:-17 years'],
             'CV' => ['required', 'mimes:jpg,png,jpeg,pdf'],
             'IdCard' => ['required', 'mimes:jpg,png,jpeg,pdf'],
+            //'verification' => ['required', 'integer'],
         ]);
 
     }
@@ -84,6 +85,8 @@ class RegisterController extends Controller
         $IdCard_file_name = request()->file('IdCard')->getClientOriginalName();
         $IdCard = request()->file('IdCard')->storeAs('file-data', $IdCard_file_name);
 
+        //$verfikasi = '0';
+
         return User::create([
             'groupName' => $data['groupName'],
             'password' => Hash::make($data['password']),
@@ -97,7 +100,8 @@ class RegisterController extends Controller
             'birthDate' => $data['birthDate'],
             'CV' => $CV,
             'IdCard' => $IdCard,
-            'activation_token' => rand(100000, 999999)
+            'activation_token' => rand(100000, 999999),
+            //'verification' => $verfikasi,
         ]);
 
     }

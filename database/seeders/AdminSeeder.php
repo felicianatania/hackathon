@@ -27,7 +27,8 @@ class AdminSeeder extends Seeder
             'birthDate' => '2001-01-01',
             'CV' => 'admin.jpg',
             'IdCard' => 'admin.jpg',
-            'activation_token' => 'Adm1n'
+            'activation_token' => 'Adm1n',
+            'verification' => '1',
         ]);
     }
 }

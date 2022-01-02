@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
             $table->date('birthDate');
             $table->string('CV');
             $table->string('IdCard');
+            $table->integer('verification')->default('0');
             $table->rememberToken();
             $table->timestamps();
         });
