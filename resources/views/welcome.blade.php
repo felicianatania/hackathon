@@ -10,12 +10,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="{{ URL::asset('assets/favicon.ico') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
     <!-- NavBar -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="navigationBar">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <span>
@@ -28,29 +28,29 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link {{ url('/#home') ? 'active' : '' }}" aria-current="page" href="#home">HOME</a>
+                <a class="nav-link active" aria-current="page" href="#home">HOME</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ url('/#about') ? 'active' : '' }}" href="#about">ABOUT</a>
+                <a class="nav-link" href="#about">ABOUT</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ url('/#prize') ? 'active' : '' }}" href="#prize">CHAMPION PRIZES</a>
+                <a class="nav-link" href="#prize">CHAMPION PRIZES</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link " {{ url('/#timelineSection') ? 'active' : '' }} href="#timelineSection">TIMELINE</a>
+                <a class="nav-link" href="#timelineSection">TIMELINE</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ url('/#mentorAndJury') ? 'active' : '' }}" href="#mentorAndJury">MENTOR & JURY</a>
+                <a class="nav-link" href="#mentorAndJury">MENTOR & JURY</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link {{ url('/#') ? 'active' : '' }}" href="#">FAQ</a>
+                <a class="nav-link" href="#faqSec">FAQ</a>
               </li>
             </ul>
           </div>
-          <form method="get" action="/login">
-            <button class="login" type="submit">
-                <span><i class="fas fa-sign-in-alt"></i></span> Login
-              </button>
+        <form method="get" action="/login">
+          <button class="login">
+              <span><i class="fas fa-sign-in-alt"></i></span> Login
+            </button>
         </form>
         </div>
     </nav>
@@ -91,12 +91,12 @@
             <div class="container">
                 <div class="left">
                     <p><span>Hackathon 5.0</span> is a 48-hour online coding competition where each team competes to create innovative applications or websites that could solve problems. This year is the 5th time Binus Computer Club (BNCC) held a Hackathon event. Throughout the years, Hackathon has produced many innovative ideas and become the main event of TechnoScape.</p>
-                    <form method="get" action="/register">
                     <div class="buttons">
+                    <form method="get" action="\register">
                         <button>Register</button>
+                    </form>
                        <a href="https://drive.google.com/file/d/15e9f_CZXtfw1x2ntNwXqm8qsympX6nis/view?usp=sharing" target="_blank" download><button>Download Guidebook</button></a>
                     </div>
-                </form>
                 </div>
                 <div class="right">
                     <img src="assets/laptop.png" alt="laptop">
@@ -117,7 +117,6 @@
               <div class="cards">
                   <label class="card" for="item-1" id="benefit-1">
                       <div class="cardImage" id="cardImage1">
-                          <img src="assets/network.png" >
                       </div>
                       <div class="cardText">
                         <h1>Increase Networking</h1>
@@ -146,15 +145,14 @@
     </section>
 
 
-    <!-- Champion Prized -->
+    <!-- Champion Prizes -->
     <section class="prize" id="prize">
         <div class="container">
             <h1>Champion Prizes</h1>
             <div class="cardGroup">
-                <div class="card">
-                    <i class="fas fa-trophy" id="firstPlace"></i>
+                <div class="card" id="firstPlace">
+                    <img src="assets/trophy1.png" alt="trophy">
                     <h1>First Rank</h1>
-                    <span class="rank">1</span>
                     <div class="rewards">
                         <i class="fas fa-money-bill-wave"></i> IDR 4.000.000 <br>
                         <i class="fas fa-gift"></i>  Merchandise <br>
@@ -162,20 +160,18 @@
 
                     </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-trophy" id="secondPlace"></i>
+                <div class="card" id="secondPlace">
+                    <img src="assets/trophy2.png" alt="trophy">
                     <h1>Second Rank</h1>
-                    <span class="rank">2</span>
                     <div class="rewards">
                         <i class="fas fa-money-bill-wave"></i> IDR 2.000.000 <br>
                         <i class="fas fa-gift"></i>  Merchandise <br>
                         <i class="fas fa-certificate"></i> E-Certificate
                     </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-trophy" id="thirdPlace"></i>
+                <div class="card" id="thirdPlace">
+                    <img src="assets/trophy3.png" alt="trophy">
                     <h1>Third Rank</h1>
-                    <span class="rank">3</span>
                     <div class="rewards">
                         <i class="fas fa-money-bill-wave"></i> IDR 1.000.000 <br>
                         <i class="fas fa-gift"></i>  Merchandise <br>
@@ -229,14 +225,234 @@
 
     <!-- mentor and jury -->
     <section class="mentorJury" id="mentorAndJury">
+        <!-- Mentor -->
         <div class="mentor">
             <h1>Our Mentors</h1>
+            <input type="radio" name="Mentorposition" checked />
+            <input type="radio" name="Mentorposition" />
+            <input type="radio" name="Mentorposition" />
+            <input type="radio" name="Mentorposition" />
+            <input type="radio" name="Mentorposition" />
+            <input type="radio" name="Mentorposition" />
+            <input type="radio" name="Mentorposition" />
+            <input type="radio" name="Mentorposition" />
+            <input type="radio" name="Mentorposition" />
+            <div id="carousel">
+              <div class="item">
+                  <h1>Design</h1>
+                  <img src="assets/mentor1.jpg" alt="" class="mentorImg">
+                  <h2>John Doe</h2>
+                  <p>UI/UX Designer <br>
+                    Ticket.com</p>
+              </div>
+              <div class="item">
+                  <h1>Design</h1>
+                  <img src="assets/mentor1.jpg" alt="" class="mentorImg">
+                  <h2>John Doe</h2>
+                  <p>Product Design Lead I <br>
+                    Ticket.com</p>
+              </div>
+              <div class="item">
+                  <h1>Design</h1>
+                  <img src="assets/mentor1.jpg" alt="" class="mentorImg">
+                  <h2>John Doe</h2>
+                  <p>Product Design Lead I <br>
+                    Ticket.com</p>
+              </div>
+              <div class="item">
+                  <h1>Technology</h1>
+                  <img src="assets/mentor2.jpg" alt="" class="mentorImg">
+                  <h2>Jane Doe</h2>
+                  <p>Product Design Lead I <br>
+                    Ticket.com</p>
+              </div>
+              <div class="item">
+                  <h1>Technology</h1>
+                  <img src="assets/mentor2.jpg" alt="" class="mentorImg">
+                  <h2>Jane Doe</h2>
+                  <p>Product Design Lead I <br>
+                    Ticket.com</p>
+              </div>
+              <div class="item">
+                  <h1>Technology</h1>
+                  <img src="assets/mentor2.jpg" alt="" class="mentorImg">
+                  <h2>Jane Doe</h2>
+                  <p>Product Design Lead I <br>
+                    Ticket.com</p>
+              </div>
+              <div class="item">
+                  <h1>Business</h1>
+                  <img src="assets/mentor3.jpg" alt="" class="mentorImg">
+                  <h2>John Doe</h2>
+                  <p>Product Design Lead I <br>
+                    Ticket.com</p>
+              </div>
+              <div class="item">
+                  <h1>Business</h1>
+                  <img src="assets/mentor3.jpg" alt="" class="mentorImg">
+                  <h2>John Doe</h2>
+                  <p>Product Design Lead I <br>
+                    Ticket.com</p>
+              </div>
+              <div class="item">
+                  <h1>Business</h1>
+                  <img src="assets/mentor3.jpg" alt="" class="mentorImg">
+                  <h2>John Doe</h2>
+                  <p>Product Design Lead I <br>
+                    Ticket.com</p>
+              </div>
+            </div>
         </div>
+
+        <!-- Jury -->
         <div class="jury">
             <h1>Our Jury</h1>
+            <input type="radio" name="Juryposition" checked />
+            <input type="radio" name="Juryposition" />
+            <input type="radio" name="Juryposition" />
+            <div id="Jurycarousel">
+                <div class="item">
+                    <img src="assets/jury1.jpg" alt="" class="juryImg">
+                    <h2>Jane Doe</h2>
+                    <p>UI/UX Designer <br>
+                      Ticket.com</p>
+                </div>
+                <div class="item">
+                    <img src="assets/jury2.jpg" alt="" class="juryImg">
+                    <h2>Susan Doe</h2>
+                    <p>Product Design Lead I <br>
+                      Ticket.com</p>
+                </div>
+                <div class="item">
+                    <img src="assets/jury3.jpg" alt="" class="juryImg">
+                    <h2>John Doe</h2>
+                    <p>Product Design Lead I <br>
+                      Ticket.com</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- FAQ -->
+    <section class="faq" id="faqSec">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faqContainer">
+            <div class="faqImg"></div>
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingOne">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            What are the requirements for participation?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque ad delectus eveniet placeat debitis facere autem soluta provident in similique consequuntur officia reprehenderit tempora, reiciendis aliquid, mollitia eligendi molestiae iusto!</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Is Hackathon 5.0 free of charge?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque et quis quam sint a, iusto placeat dignissimos nobis nulla fugit perferendis numquam, reiciendis non dolorum laborum quae id ullam voluptates.</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingThree">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            When is the registration deadline?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime ratione temporibus voluptatibus, cupiditate quo consequatur suscipit non repellat id enim recusandae aliquam placeat? Repudiandae blanditiis temporibus iure nihil veniam eos!</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingFour">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseFour">
+                            Can I join more than one team?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi excepturi, cumque placeat sapiente modi culpa, perferendis, quis fugiat architecto reprehenderit magni asperiores maiores. Harum nulla velit reprehenderit maxime voluptatibus eligendi!</div>
+                      </div>
+                    </div>
+                    <div class="accordion-item">
+                      <h2 class="accordion-header" id="flush-headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFive" aria-expanded="false" aria-controls="flush-collapseFive">
+                            If I don’t have either basic coding or design, may I participate?
+                        </button>
+                      </h2>
+                      <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dignissimos optio placeat sed officiis suscipit distinctio, aliquam obcaecati cumque at eveniet mollitia, esse possimus molestiae doloribus cupiditate. Adipisci odit delectus cumque!</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="w-100 py-4 flex-shrink-0">
+      <div class="container py-4">
+          <div class="row gy-4 gx-5">
+              <div class="col-lg-5 col-md-6">
+                  <h5 class="h1 text-white">FB.</h5>
+                  <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+
+              </div>
+              <div class="col-lg-2 col-md-6">
+                  <h5 class="text-white mb-3">Quick links</h5>
+                  <ul class="list-unstyled text-muted">
+                      <li><a href="#">Home</a></li>
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Champion Prizes</a></li>
+                      <li><a href="#">Timeline</a></li>
+                      <li><a href="#">Mentor & Jury</a></li>
+                      <li><a href="#">FAQ</a></li>
+                  </ul>
+              </div>
+              <div class="col-lg-5 col-md-6">
+                  <h5 class="text-white mb-3">Follow Us</h5>
+                  <div class="socialContainer">
+                    <a href="mailto:rnd@bncc.net">
+                        <div class="email">
+                            <span class="far fa-envelope"></span>
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com">
+                        <div class="facebook">
+                            <span class="fab fa-facebook-f"></span>
+                        </div>
+                    </a>
+                    <a href="https://www.twitter.com">
+                        <div class="twitter">
+                            <span class="fab fa-twitter"></span>
+                        </div>
+                    </a>
+                    <a href="https://www.linkedin.com">
+                        <div class="linkedin">
+                            <span class="fab fa-linkedin-in"></span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com">
+                        <div class="instagram">
+                            <span class="fab fa-instagram"></span>
+                        </div>
+                    </a>
+                </div>
+                <br>
+                  <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+              </div>
+          </div>
+          <hr>
+          <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">Hackathon 5.0</a></p>
+      </div>
+  </footer>
+  <script type="text/javascript" src="{{ URL::asset('js/landingPage.js') }}" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7c925acf6e.js" crossorigin="anonymous"></script>
 </body>
