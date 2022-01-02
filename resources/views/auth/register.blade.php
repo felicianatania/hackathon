@@ -38,7 +38,7 @@
                         <label for="groupInput">Group Name</label>
                         <div class="groupInput" id="groupInputGroup">
                             <i class="fas fa-users"></i>
-                            <input type="text" id="groupName" name="groupName" required value="{{ old('groupName') }}" placeholder="please enter your group name" oninput="validateGroup()" required>
+                            <input type="text" id="group" name="groupName" required value="{{ old('groupName') }}" placeholder="please enter your group name" oninput="validateGroup()" required>
                         </div>
                         <label for="password">Password</label>
                         <div class="groupInput" id="groupInputPass">
@@ -49,7 +49,7 @@
                         <label for="confirmPassword">Confirm Password</label>
                         <div class="groupInput" id="groupInputConfirm">
                             <i class="fas fa-key"></i>
-                            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="please confirm your password" oninput="confirmPass()" required>
+                            <input type="password" id="confirmPassword" name="password_confirmation" placeholder="please confirm your password" oninput="confirmPass()" required>
                         </div>
                         <div class="validation" id="confirmationPass">Your password confirmation does not match with your password</div>
                         <label for="status" >Status</label>
@@ -125,7 +125,7 @@
                     <label for="place">Birth Place</label>
                     <div class="groupInput" id="groupInputPlace">
                         <i class="fas fa-map-marker-alt"></i>
-                        <select id="place" oninput="validatePlace()" required>
+                        <select id="place" name="birthPlace" oninput="validatePlace()" required>
                                 <option name="birthPlace" value=""></option>
                                 <option name="birthPlace" value="Afganistan">Afghanistan</option>
                                 <option name="birthPlace" value="Albania">Albania</option>
