@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LeaderController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\PaymentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Facades\Auth;
@@ -23,9 +24,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register-member-page/{id}', [MemberController::class,'registerMemberPage'])->name('registerMemberPage');
+//Route::get('/register-member-page/{id}', [MemberController::class,'registerMemberPage'])->name('registerMemberPage');
 Route::post('/register-member/{id}', [MemberController::class, 'createMember'])->name('createMember');
 Route::get('/get-group', [MemberController::class, 'getGroupById'])->name('getGroupById');
+
+Route::post('/upload-payment/{id}', [PaymentController::class, 'createPayment'])->name('createPayment');
+Route::get('/get-group-payment', [PaymentController::class, 'getGroupByIdPayment'])->name('getGroupByIdPayment');
 
 Route::get('/get-groups', [AdminController::class, 'getGroups'])->name('getGroups');
 Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdd'])->name('getGroupByIdd');
