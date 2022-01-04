@@ -91,7 +91,7 @@ function validateStatus() {
   } else {
     document.getElementById("groupInputStatus").style.borderColor = "red";
     condition4 = false;
-  } 
+  }
 }
 
 function validateName() {
