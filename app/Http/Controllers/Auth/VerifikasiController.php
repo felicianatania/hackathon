@@ -25,6 +25,7 @@ class VerifikasiController extends Controller
                 'activation_token'=>rand(100000, 999999),
             ]);
             return redirect()->route('password.reset', [$user->activation_token])->with('succes', 'silahkan anda reset password');
+
         }
     }
 }

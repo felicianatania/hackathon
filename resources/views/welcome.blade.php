@@ -47,11 +47,23 @@
               </li>
             </ul>
           </div>
-        <form method="get" action="/login">
-          <button class="login">
-              <span><i class="fas fa-sign-in-alt"></i></span> Login
-            </button>
-        </form>
+          @guest
+          @csrf
+            @if (Route::has('login'))
+
+                <form method="get" action="/login">
+                    <button class="login">
+                        <span><i class="fas fa-sign-in-alt"></i></span> Login
+                    </button>
+                </form>
+            @endif
+          @else
+            <form method="get" action="\dashboard">
+                <button class="login">
+                    DASHBOARD
+                </button>
+            </form>
+        @endguest
         </div>
     </nav>
 
@@ -395,65 +407,216 @@
     </section>
 
 
-    <!-- Footer -->
-    <footer class="w-100 py-4 flex-shrink-0">
-      <div class="container py-4">
-          <div class="row gy-4 gx-5">
-              <div class="col-lg-5 col-md-6">
-                  <h5 class="h1 text-white">FB.</h5>
-                  <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+   <!-- Sponsors -->
+   <section class="sponsor">
+    <h1>Our Sponsors</h1>
+    <div class="platinum">
+        <h2>Platinum Sponsors</h2>
+        <div class="sponsorLogo">
+                <img src="assets/platinum1.svg" alt="logo">
+        </div>
+    </div>
+    <div class="gold">
+        <h2>Gold Sponsors</h2>
+        <div class="sponsorLogo">
+            <img src="assets/gold1.svg" alt="logo">
+            <img src="assets/gold2.svg" alt="logo">
+            <img src="assets/gold3.svg" alt="logo">
+         </div>
+    </div>
+    <div class="silver">
+        <h2>Silver Sponsors</h2>
+        <div class="sponsorLogo">
+            <img src="assets/silver1.svg" alt="logo">
+            <img src="assets/silver2.svg" alt="logo">
+        </div>
+    </div>
+</section>
 
-              </div>
-              <div class="col-lg-2 col-md-6">
-                  <h5 class="text-white mb-3">Quick links</h5>
-                  <ul class="list-unstyled text-muted">
-                      <li><a href="#">Home</a></li>
-                      <li><a href="#">About</a></li>
-                      <li><a href="#">Champion Prizes</a></li>
-                      <li><a href="#">Timeline</a></li>
-                      <li><a href="#">Mentor & Jury</a></li>
-                      <li><a href="#">FAQ</a></li>
-                  </ul>
-              </div>
-              <div class="col-lg-5 col-md-6">
-                  <h5 class="text-white mb-3">Follow Us</h5>
-                  <div class="socialContainer">
-                    <a href="mailto:rnd@bncc.net">
-                        <div class="email">
-                            <span class="far fa-envelope"></span>
-                        </div>
-                    </a>
-                    <a href="https://www.facebook.com">
-                        <div class="facebook">
-                            <span class="fab fa-facebook-f"></span>
-                        </div>
-                    </a>
-                    <a href="https://www.twitter.com">
-                        <div class="twitter">
-                            <span class="fab fa-twitter"></span>
-                        </div>
-                    </a>
-                    <a href="https://www.linkedin.com">
-                        <div class="linkedin">
-                            <span class="fab fa-linkedin-in"></span>
-                        </div>
-                    </a>
-                    <a href="https://www.instagram.com">
-                        <div class="instagram">
-                            <span class="fab fa-instagram"></span>
-                        </div>
-                    </a>
-                </div>
-                <br>
-                  <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-              </div>
-          </div>
-          <hr>
-          <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a class="text-primary" href="#">Hackathon 5.0</a></p>
-      </div>
-  </footer>
-  <script type="text/javascript" src="{{ URL::asset('js/landingPage.js') }}" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/7c925acf6e.js" crossorigin="anonymous"></script>
+<!-- Media Partner -->
+<section class="medPart">
+    <h1>Media Partner</h1>
+    <div class="slider" id="topSlider">
+        <div class="slide-track">
+            <div class="slide">
+                <img src="assets/medpart1.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart2.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart3.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart4.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart5.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart1.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart2.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart3.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart4.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart5.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart1.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart2.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart3.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart4.svg" height="100" width="250" alt="media partner" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart5.svg" height="100" width="250" alt="media partner" />
+            </div>
+        </div>
+    </div>
+    <div class="slider" id="botSlider">
+        <div class="slide-track">
+            <div class="slide">
+                <img src="assets/medpart6.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart7.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart8.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart9.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart10.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart6.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart7.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart8.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart9.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart10.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart6.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart7.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart8.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart9.svg" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+                <img src="assets/medpart10.svg" height="100" width="250" alt="" />
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Other Events -->
+<section class="otherEvents">
+    <h1>Other Events</h1>
+    <div class="virtualConference">
+        <img src="assets/virtualConference.png" alt="Virtual Conference">
+        <h2>Virtual Conference</h2>
+        <p><span>Virtual Conference</span> is a webinar and talk show series to educate the participants about business, design, and technology for 3 days in a virtual space. There will be inspiring speakers who are experts in their fields so that participants can implement this knowledge in the future.</p>
+        <button>Register Virtual Conference</button>
+    </div>
+    <img src="" alt="">
+    <img src="assets/developerWorkshop.png" alt="Developer Workshop">
+    <h2>Developer Workshop</h2>
+    <p><span>Developer Workshop</span> is an online workshop series that discusses intermediate technology with experienced trainers for 4 days. This event will be the place for participants to learn and achieve their dream career as a developer. Participants will gain many insights and experiences regarding developer topics from trainers who are experts in IT fields. Thus, you will be one step closer to reach your remarkable career.</p>
+    <button>Register Developer Workshop</button>
+</section>
+
+<!-- Footer -->
+<footer >
+    <div class="containerTop">
+        <div class="topLeft">
+            <h1>Contact Us  </h1>
+            <img src="assets/contactUs.png" alt="">
+            <h2>Our Social Media</h2>
+            <div class="socialContainer">
+                <a href="mailto:rnd@bncc.net">
+                    <div class="email">
+                        <span class="far fa-envelope"></span>
+                    </div>
+                </a>
+                <a href="https://www.facebook.com">
+                    <div class="facebook">
+                        <span class="fab fa-facebook-f"></span>
+                    </div>
+                </a>
+                <a href="https://www.twitter.com">
+                    <div class="twitter">
+                        <span class="fab fa-twitter"></span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com">
+                    <div class="linkedin">
+                        <span class="fab fa-linkedin-in"></span>
+                    </div>
+                </a>
+                <a href="https://www.instagram.com">
+                    <div class="instagram">
+                        <span class="fab fa-instagram"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="topRight">
+            <form method="POST" action="https://formspree.io/f/mzbozjjv">
+                <label for="contactUsName">Name</label>
+                <input type="text" name="name" id="contactUsName" required>
+
+                <label for="contactUsEmail">Email</label>
+                <input type="email" name="email" id="contactUsName" required>
+
+                <label for="contactUsSubject">Subject</label>
+                <input type="text" name="subject" id="contactUsSubject" required>
+                
+                <label for="contactUsMessage">Message</label>
+                <textarea name="message" id="contactUsMessage" cols="30" rows="1" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    <div class="containerBot">
+        <div class="line"></div>
+        <div class="text">
+            <span>Powered and Organized by Kelompok 5 Final Project TPM</span>
+            <span><a href="">Privacy Policy & Terms of Service</a></span>
+        </div>
+    </div>
+
+
+</footer>
+
+<script src="{{ URL::asset('js/landingPage.js') }}" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/7c925acf6e.js" crossorigin="anonymous"></script>
 </body>
 </html>
