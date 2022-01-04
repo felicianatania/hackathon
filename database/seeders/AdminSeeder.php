@@ -17,7 +17,7 @@ class AdminSeeder extends Seeder
         DB::table('users')->insert([
             'groupName'=>'Admin',
             'password'=>'YoshMangats33!',
-            'status'=> 1,
+            'status'=> 3,
             'fullname' => 'AdminHackathon',
             'email'=>'admin@bncc.net',
             'WA' => 'AdminHackathon',
