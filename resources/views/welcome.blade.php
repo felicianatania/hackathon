@@ -58,7 +58,7 @@
                 </form>
             @endif
           @else
-            <form method="get" action="\dashboard">
+            <form method="get" action="/dashboard">
                 <button class="login">
                     DASHBOARD
                 </button>
@@ -597,7 +597,7 @@
 
                 <label for="contactUsSubject">Subject</label>
                 <input type="text" name="subject" id="contactUsSubject" required>
-                
+
                 <label for="contactUsMessage">Message</label>
                 <textarea name="message" id="contactUsMessage" cols="30" rows="1" required></textarea>
                 <button type="submit">Send</button>
