@@ -5,11 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Leader extends Model
+class Payment extends Model
 {
-    use HasFactory;
     protected $fillable = [
-        'fullname', 'email', 'WA', 'lineId', 'github',
-        'birthPlace', 'birthDate', 'CV', 'IdCard',
+        'payment', 'groupId'
     ];
+
+    public function user(){
+        return $this -> hasOne(User::class);
+    }
+
+    use HasFactory;
 }
