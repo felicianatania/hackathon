@@ -33,6 +33,7 @@ Route::post('/upload-payment/{id}', [PaymentController::class, 'createPayment'])
 Route::get('/get-group-payment', [PaymentController::class, 'getGroupByIdPayment'])->name('getGroupByIdPayment');
 
 //Route::get('/get-groups', [AdminController::class, 'getGroups'])->name('getGroups');
+Route::get('/view-group/{id}', [AdminController::class, 'getGroupByIdView'])->name('getGroupByIdView');
 Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdd'])->name('getGroupByIdd');
 Route::patch('/update-group/{id}', [AdminController::class, 'updateGroup'])->name('updateGroup');
 Route::delete('/delete-group/{id}', [AdminController::class, 'deleteGroup'])->name('delete');

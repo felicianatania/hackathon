@@ -14,6 +14,12 @@ class AdminController extends Controller
         return view('adminPanel.participantPanel', ['groups' => $groups]);
     }
 
+    public function getGroupByIdView($id){
+        $group = User::find($id);
+        //dd($group);
+        return view('adminPanel.viewData', ['group' => $group]);
+    }
+
     public function getGroupByIdd($id){
         $group = User::find($id);
         //dd($group);
