@@ -26,7 +26,7 @@ Route::get('/', function () {
 });
 
 //Route::get('/register-member-page/{id}', [MemberController::class,'registerMemberPage'])->name('registerMemberPage');
-Route::post('/register-member/{id}', [MemberController::class, 'createMember'])->name('createMember');
+Route::post('/register-member/{id}/{memberNo}', [MemberController::class, 'createMember'])->name('createMember');
 Route::get('/get-group', [MemberController::class, 'getGroupById'])->name('getGroupById');
 
 Route::post('/upload-payment/{id}', [PaymentController::class, 'createPayment'])->name('createPayment');

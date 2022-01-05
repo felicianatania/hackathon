@@ -11,7 +11,7 @@ class Member extends Model
 
     protected $fillable = [
         'fullname', 'email', 'WA', 'lineId', 'github',
-        'birthPlace', 'birthDate', 'CV', 'IdCard', 'groupId'
+        'birthPlace', 'birthDate', 'CV', 'IdCard', 'groupId', 'memberNo'
     ];
 
     public function user(){

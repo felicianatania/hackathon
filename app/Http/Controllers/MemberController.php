@@ -12,7 +12,7 @@ class MemberController extends Controller
     public function getGroupById(Request $request){
         $groupId = $request->user()->id;
         //dd($book);
-        return view('memberRegister', ['groupId' => $groupId]);
+        return view('member.memberRegister', ['groupId' => $groupId]);
     }
 
     // public function getGroupById($id){
@@ -21,7 +21,7 @@ class MemberController extends Controller
     //     return view('memberRegister', ['group' => $group]);
     // }
 
-    public function createMember(MemberRequest $request, $id){
+    public function createMember(MemberRequest $request, $id, $memberNo){
         $cv_file_name = $request->CV->getClientOriginalName();
         $CV = $request->file('CV')->storeAs('file-data', $cv_file_name);
 
@@ -38,7 +38,8 @@ class MemberController extends Controller
             'birthDate' => $request->birthDate,
             'CV' => $CV,
             'IdCard' => $IdCard,
-            'groupId' => $id
+            'groupId' => $id,
+            'memberNo' => $memberNo,
         ]);
 
         return redirect(route('home'));

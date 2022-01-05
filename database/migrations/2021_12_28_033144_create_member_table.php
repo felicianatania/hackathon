@@ -29,6 +29,7 @@ class CreateMemberTable extends Migration
                 ->onUpdate('cascade')
                 //->cascadeOnDelete();
                 ->onDelete('cascade');
+            $table->integer('memberNo');
             $table->timestamps();
         });
 
