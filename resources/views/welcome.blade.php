@@ -115,6 +115,44 @@
                 </div>
             </div>
         </div>
+
+        <!-- Previously on Hackathon 5.0 -->
+        <div class="previous">
+            <h1>Previously on Hackathon 5.0</h1>
+            <p>Here are the key highlights of the previously hackathon</p>
+            <div id="carouselExampleIndicators" class="carousel slide carousel-dark" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="assets/previous1.png" class="d-block" alt="previous1">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/previous2.png" class="d-block" alt="previous2">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="assets/previous3.png" class="d-block" alt="previous3">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
         <!-- Join Us -->
         <div class="joinUs">
             <div class="header">

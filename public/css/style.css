@@ -419,6 +419,34 @@ body{
     transform: translateY(-80px);
 }
 
+/* Previously on Hackthon 5.0 */
+.aboutUs .previous {
+    min-height: 100vh;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .aboutUs .previous h1 {
+    font-size: 72px;
+    color: #43538c;
+    font-weight: bolder;
+  }
+
+  .aboutUs .previous p {
+    color: #7483b9;
+    font-size: 24px;
+    font-weight: 500;
+    margin-top: 20px;
+  }
+
+  .aboutUs .previous .carousel {
+    margin: 50px 0 100px 0;
+    width: 950px;
+  }
+
 /* Champoin Prizes */
 .prize{
     min-height: 100vh;
