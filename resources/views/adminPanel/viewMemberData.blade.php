@@ -114,7 +114,7 @@
                         type="text"
                         class="form-control"
                         id="name"
-                        value="{{$member->fullname}}"
+                        value="{{$member[0]->fullname}}"
                         placeholder="Full Name"
                       />
                     </div>
@@ -130,7 +130,7 @@
                         class="form-control"
                         id="Email"
                         placeholder="Email"
-                        value="{{$member->email}}"
+                        value="{{$member[0]->email}}"
                       />
                     </div>
                   </div>
@@ -144,7 +144,7 @@
                         class="form-control"
                         id="number"
                         placeholder="Whatsapp Number"
-                        value="{{$member->WA}}"
+                        value="{{$member[0]->WA}}"
                       />
                     </div>
                   </div>
@@ -158,7 +158,7 @@
                         class="form-control"
                         id="line"
                         placeholder="LINE ID"
-                        value="{{$member->lineId}}"
+                        value="{{$member[0]->lineId}}"
                       />
                     </div>
                   </div>
@@ -172,7 +172,7 @@
                         class="form-control"
                         id="github"
                         placeholder="Github/Gitlab ID"
-                        value="{{$member->github}}"
+                        value="{{$member[0]->github}}"
                       />
                     </div>
                   </div>
@@ -186,7 +186,7 @@
                         class="form-control"
                         id="birthplace"
                         placeholder="Birth Place"
-                        value="{{$member->birthPlace}}"
+                        value="{{$member[0]->birthPlace}}"
                       />
                     </div>
                   </div>
@@ -200,7 +200,7 @@
                         class="form-control"
                         id="birthdate"
                         placeholder="Birth date"
-                        value="{{$member->birthDate}}"
+                        value="{{$member[0]->birthDate}}"
                         onfocus="(this.type='date')"
                         onblur="if(this.value == '') this.type='text';"
                       />
@@ -238,7 +238,7 @@
                               </h5>
                             </div>
                             <div class="modal-body d-flex
-                            justify-content-center"">
+                            justify-content-center">
                             <img src="../asset/cv.jpg" alt="" />
                           </div>
                           <div class="modal-footer">
@@ -285,7 +285,7 @@
                             </h5>
                           </div>
                           <div class="modal-body d-flex
-                          justify-content-center"">
+                          justify-content-center">
                           <img src="../asset/cv.jpg" alt="" />
                         </div>
                         <div class="modal-footer">

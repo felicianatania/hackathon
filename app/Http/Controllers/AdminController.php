@@ -26,11 +26,13 @@ class AdminController extends Controller
         $group = User::find($id);
         //dd($group);
         return view('adminPanel.viewData', ['group' => $group]);
+        // return view('layouts.adminPanel', ['group' => $group]);
     }
     public function getMemberByIdView($id, $memberNo){
         $member = DB::table('members')->where('groupId',$id)->where('memberNo',$memberNo)->get();
         //dd($group);
         return view('adminPanel.viewMemberData', ['member' => $member]);
+        // return view('layouts.adminPanel', ['member' => $member]);
     }
 
 
