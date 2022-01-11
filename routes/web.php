@@ -35,6 +35,7 @@ Route::get('/get-group-payment', [PaymentController::class, 'getGroupByIdPayment
 //Route::get('/get-groups', [AdminController::class, 'getGroups'])->name('getGroups');
 //Route::get('/admin-dashboard', [AdminController::class,'dashboardPage'])->name('dashboardPage');
 Route::get('/view-group/{id}', [AdminController::class, 'getGroupByIdView'])->name('getGroupByIdView');
+Route::get('/view-member/{id}/{memberNo}', [AdminController::class, 'getMemberByIdView'])->name('getMemberByIdView');
 Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdd'])->name('getGroupByIdd');
 Route::patch('/update-group/{id}', [AdminController::class, 'updateGroup'])->name('updateGroup');
 Route::patch('/verify-group/{id}', [AdminController::class, 'verifyGroup'])->name('verifyGroup');

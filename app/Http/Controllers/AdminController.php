@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Member;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller
 {
@@ -25,6 +27,12 @@ class AdminController extends Controller
         //dd($group);
         return view('adminPanel.viewData', ['group' => $group]);
     }
+    public function getMemberByIdView($id, $memberNo){
+        $member = DB::table('members')->where('groupId',$id)->where('memberNo',$memberNo)->get();
+        //dd($group);
+        return view('adminPanel.viewMemberData', ['member' => $member]);
+    }
+
 
     public function getGroupByIdd($id){
         $group = User::find($id);

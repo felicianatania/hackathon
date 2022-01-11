@@ -50,7 +50,6 @@
           @guest
           @csrf
             @if (Route::has('login'))
-
                 <form method="get" action="/login">
                     <button class="login">
                         <span><i class="fas fa-sign-in-alt"></i></span> Login
@@ -58,11 +57,15 @@
                 </form>
             @endif
           @else
-            <form method="get" action="/dashboard">
+            @if (Auth::user()->status == '3')
+                <a href="{{route('getGroupsDashboard')}}"><button type="submit" class="login">DASHBOARD</button></a>
+            @else
                 <button class="login">
                     DASHBOARD
                 </button>
-            </form>
+            @endif
+            {{-- <form method="get" action="/dashboard">
+            </form> --}}
         @endguest
         </div>
     </nav>

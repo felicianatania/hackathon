@@ -82,7 +82,7 @@
             <a class="nav-link" aria-current="page" href="#">leader</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('getMemberByIdView', ['id'=>$group->id, 'memberNo'=>1])}}">Member 1</a>
+            <a class="nav-link" href="#">Member 1</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Member 2</a>
@@ -114,7 +114,7 @@
                         type="text"
                         class="form-control"
                         id="name"
-                        value="{{$group->fullname}}"
+                        value="{{$member->fullname}}"
                         placeholder="Full Name"
                       />
                     </div>
@@ -130,7 +130,7 @@
                         class="form-control"
                         id="Email"
                         placeholder="Email"
-                        value="{{$group->email}}"
+                        value="{{$member->email}}"
                       />
                     </div>
                   </div>
@@ -144,7 +144,7 @@
                         class="form-control"
                         id="number"
                         placeholder="Whatsapp Number"
-                        value="{{$group->WA}}"
+                        value="{{$member->WA}}"
                       />
                     </div>
                   </div>
@@ -158,7 +158,7 @@
                         class="form-control"
                         id="line"
                         placeholder="LINE ID"
-                        value="{{$group->lineId}}"
+                        value="{{$member->lineId}}"
                       />
                     </div>
                   </div>
@@ -172,7 +172,7 @@
                         class="form-control"
                         id="github"
                         placeholder="Github/Gitlab ID"
-                        value="{{$group->github}}"
+                        value="{{$member->github}}"
                       />
                     </div>
                   </div>
@@ -186,7 +186,7 @@
                         class="form-control"
                         id="birthplace"
                         placeholder="Birth Place"
-                        value="{{$group->birthPlace}}"
+                        value="{{$member->birthPlace}}"
                       />
                     </div>
                   </div>
@@ -200,7 +200,7 @@
                         class="form-control"
                         id="birthdate"
                         placeholder="Birth date"
-                        value="{{$group->birthDate}}"
+                        value="{{$member->birthDate}}"
                         onfocus="(this.type='date')"
                         onblur="if(this.value == '') this.type='text';"
                       />

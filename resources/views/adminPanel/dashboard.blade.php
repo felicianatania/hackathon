@@ -182,7 +182,7 @@
                         </div>
                       </div>
                     </div>
-                    <a href="../forgot.html" class="btn btn-secondary btn-lg " tabindex="-1" role="button" aria-disabled="true">view</a>
+                    <a href="{{route('getGroupByIdView', ['id'=>$group->id])}}" class="btn btn-secondary btn-lg " tabindex="-1" role="button" aria-disabled="true">View</a>
                   </td>
             </tr>
             @endforeach
