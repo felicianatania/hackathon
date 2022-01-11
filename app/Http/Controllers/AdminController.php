@@ -14,6 +14,12 @@ class AdminController extends Controller
         return view('adminPanel.participantPanel', ['groups' => $groups]);
     }
 
+    public function getGroupsDashboard(){
+        $groups = User::all()->except(1);
+        //$book = DB::table('books')->get();
+        return view('adminPanel.dashboard', ['groups' => $groups]);
+    }
+
     public function getGroupByIdView($id){
         $group = User::find($id);
         //dd($group);
@@ -41,4 +47,18 @@ class AdminController extends Controller
         $groups = User::orderBy('groupName')->get()->except(1);
         return view('adminPanel.searchGroup', compact('groups'));
     }
+
+    public function verifyGroup($id){
+        $group = User::find($id);
+
+        $group -> update([
+            'verification' => 1,
+        ]);
+
+        return redirect(route('getGroupsDashboard'));
+    }
+
+    // public function dashboardPage(){
+    //     return view('adminPanel.dashboard');
+    // }
 }
