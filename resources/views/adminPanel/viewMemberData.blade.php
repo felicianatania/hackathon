@@ -79,10 +79,10 @@
       <div class="view">
         <ul class="nav nav-pills nav-fill">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">leader</a>
+            <a class="nav-link" aria-current="page" href="{{route('getGroupByIdView', ['id'=>$member[0]->groupId])}}">leader</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Member 1</a>
+            <a class="nav-link" href="{{route('getMemberByIdView', ['id'=>$member[0]->groupId, 'memberNo'=>1])}}">Member 1</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Member 2</a>
