@@ -50,10 +50,10 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">HOME</a>
+              <a class="nav-link" aria-current="page" href="{{url('/home')}}">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">DASHBOARD</a>
+              <a class="nav-link" aria-current="page" href="{{route('getGroupsDashboard')}}">DASHBOARD</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="#">PARTICIPANT</a>

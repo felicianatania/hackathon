@@ -30,11 +30,20 @@ class AdminController extends Controller
 
     public function getMemberByIdView($id, $memberNo){
         $member = DB::table('members')->where('groupId',$id)->where('memberNo',$memberNo)->get();
-        //dd($group);
-        if ($member === null) {
+        if ($member == null) {
             return view('cobacobi');
-         }
-        return view('adminPanel.viewMemberData', ['member' => $member]);
+        }
+
+        return view('adminPanel.viewMember', ['member' => $member]);
+        // if($memberNo == 1){
+        //     return view('adminPanel.viewMember1', ['member' => $member]);
+        // }
+        // else if($memberNo == 2){
+        //     return view('adminPanel.viewMember2', ['member' => $member]);
+        // }
+        // else if($memberNo == 3){
+        //     return view('adminPanel.viewMember3', ['member' => $member]);
+        // }
     }
 
 
