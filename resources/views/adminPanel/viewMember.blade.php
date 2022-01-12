@@ -238,25 +238,10 @@
       </div>
 
     @else
-
-    <div class="container d-flex justify-content-center align-items-center">
-        <div class="view">
-          {{-- <ul class="nav nav-pills nav-fill">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{route('getGroupByIdView', ['id'=>$member[0]->groupId])}}">leader</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('getMemberByIdView', ['id'=>$member[0]->groupId, 'memberNo'=>1])}}">Member 1</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{{route('getMemberByIdView', ['id'=>$member[0]->groupId, 'memberNo'=>2])}}">Member 2</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link"href="{{route('getMemberByIdView', ['id'=>$member[0]->groupId, 'memberNo'=>3])}}">Member 3</a>
-            </li>
-          </ul> --}}
-
           <!-- ~~~ -->
+          <ul class="nav nav-pills nav-fill">
+           
+          </ul>
           <div class="member"></div>
           <div class="data">
             <div
@@ -267,6 +252,9 @@
                 <div class="card-body">
                   <div class="title mb-5 text-center">
                     <h2>NO DATA</h2>
+                    <form>
+                        <input type="button" value="Go back!" onclick="history.back()">
+                    </form>
                   </div>
                 </div>
               </div>
