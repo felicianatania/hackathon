@@ -52,7 +52,7 @@
             @if (Route::has('login'))
                 <form method="get" action="/login">
                     <button class="login">
-                        <span><i class="fas fa-sign-in-alt"></i></span> Login
+                        <span><i class="fas fa-sign-in-alt"></i></span> LOGIN
                     </button>
                 </form>
             @endif
@@ -87,7 +87,10 @@
             <div class="recapContainer">
                 <div class="text">
                     <h1>Video Recap</h1>
-                    <p>Watch the biggest annual technology event held by Bina Nusantara Club (BNCC), <span>TechnoScape 2021</span>.</p>
+                    <p>Watch the biggest annual technology event held by Bina Nusantara Computer Club (BNCC),
+                        <span>TechnoScape
+                            2021</span>.
+                    </p>
                 </div>
                 <div class="vid">
                     <video controls>
@@ -105,7 +108,7 @@
             <h1>About Hackthon 5.0</h1>
             <div class="container">
                 <div class="left">
-                    <p><span>Hackathon 5.0</span> is a 48-hour online coding competition where each team competes to create innovative applications or websites that could solve problems. This year is the 5th time Binus Computer Club (BNCC) held a Hackathon event. Throughout the years, Hackathon has produced many innovative ideas and become the main event of TechnoScape.</p>
+                    <p><span>Hackathon 5.0</span> is a 48-hour online coding competition where each team competes to create innovative applications or websites that could solve problems. This year is the 5th time Bina Nusantara Computer Club (BNCC) held a Hackathon event. Throughout the years, Hackathon has produced many innovative ideas and become the main event of TechnoScape.</p>
                     <div class="buttons">
                     <form method="get" action="\register">
                         <button>Register</button>
@@ -281,11 +284,11 @@
         <!-- Mentor -->
         <div class="mentor">
             <h1>Our Mentors</h1>
+            <input type="radio" name="Mentorposition" />
+            <input type="radio" name="Mentorposition" />
+            <input type="radio" name="Mentorposition" />
+            <input type="radio" name="Mentorposition" />
             <input type="radio" name="Mentorposition" checked />
-            <input type="radio" name="Mentorposition" />
-            <input type="radio" name="Mentorposition" />
-            <input type="radio" name="Mentorposition" />
-            <input type="radio" name="Mentorposition" />
             <input type="radio" name="Mentorposition" />
             <input type="radio" name="Mentorposition" />
             <input type="radio" name="Mentorposition" />
@@ -359,9 +362,9 @@
 
         <!-- Jury -->
         <div class="jury">
-            <h1>Our Jury</h1>
-            <input type="radio" name="Juryposition" checked />
+            <h1>Our Jurys</h1>
             <input type="radio" name="Juryposition" />
+            <input type="radio" name="Juryposition" checked />
             <input type="radio" name="Juryposition" />
             <div id="Jurycarousel">
                 <div class="item">
