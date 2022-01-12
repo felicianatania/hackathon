@@ -29,10 +29,10 @@ class AdminController extends Controller
     }
 
     public function getMemberByIdView($id, $memberNo){
-        $member = DB::table('members')->where('groupId',$id)->where('memberNo',$memberNo)->get();
-        if ($member == null) {
-            return view('cobacobi');
-        }
+        $member = DB::table('members')->where('groupId',$id)->where('memberNo',$memberNo)->get()->toArray();;
+        // if ($member->count()) {
+        //     return view('cobacobi');
+        // }
 
         return view('adminPanel.viewMember', ['member' => $member]);
         // if($memberNo == 1){
