@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    background-image: linear-gradient(to right, #7382b8, white);
+    min-height: 100vh;
+    font-family: "Poppins", sans-serif;
+  }
+
+  /* Navbar */
+  .navbar {
+    font-size: 23px;
+    font-weight: 600;
+    background-color: rgba(0, 0, 0, 0.04);
+    /* padding: 18px 50px; */
+  }
+
+  .navbar .container-md .logout {
+    font-size: 20px;
+    border-radius: 50px;
+    padding: 10px 20px;
+    background: none;
+    border: 2px solid white;
+    color: #ffff;
+    text-decoration: none;
+  }
+
+  .navbar .container-md .logout:hover {
+    background: #ffff;
+    border: 2px solid white;
+    color: #334257;
+    transition: 0.9s;
+  }
+
+  .collapse .navbar-nav .nav-item {
+    padding: 0 40px;
+  }
+
+  /* content */
+  .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 150px;
+  }
+
+  .container .steps {
+    flex: 1;
+  }
+
+  .container .desc {
+    flex: 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .container .desc #step {
+    width: 90%;
+  }
+
+  .container .desc #step h1 {
+    color: white;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    padding-top: 50px;
+  }
+
+  /* Registration Period */
+  .regisPeriod {
+    min-height: 68.5vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container .desc .regisPeriod h1 {
+    margin-bottom: 100px;
+  }
+
+  .container .desc .regisPeriod img {
+    justify-self: center;
+  }
+
+  .container .desc .regisPeriod .earlyBird {
+    color: #333;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .container .desc .regisPeriod .earlyBird #headline {
+    font-weight: normal;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 30px;
+  }
+
+  .container .desc .regisPeriod .earlyBird #headlineEnd {
+    display: none;
+    font-weight: 600;
+    letter-spacing: 0.125rem;
+    text-transform: uppercase;
+    font-size: 50px;
+    margin-top: 50px;
+    color: #364680cc;
+  }
+
+  .container .desc .regisPeriod .earlyBird #countdown ul li {
+    display: inline-block;
+    font-size: 1em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+    background-color: #364680cc;
+    border-radius: 20px;
+    margin: 0 15px;
+    width: 150px;
+    color: white;
+  }
+
+  .container .desc .regisPeriod .earlyBird #countdown ul li span {
+    display: block;
+    font-size: 3.5rem;
+  }
+
+  .container .desc .regisPeriod .earlyBird .done {
+    display: none;
+    padding: 1rem;
+  }
+
+  @media all and (max-width: 768px) {
+    h1 {
+      font-size: calc(1.5rem * var(--smaller));
+    }
+
+    li {
+      font-size: calc(1.125rem * var(--smaller));
+    }
+
+    li span {
+      font-size: calc(3.375rem * var(--smaller));
+    }
+  }
+
+  /* Payment Account */
+  .paymentAcc {
+    min-height: 71vh;
+  }
+
+  /* Upload payment proof */
+  .upload {
+    min-height: 80vh;
+  }
+
+  .drag-area {
+    border: 2px dashed #fff;
+    height: 500px;
+    width: 100%;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+  }
+  .drag-area.active {
+    border: 2px solid #000;
+  }
+  .drag-area .icon {
+    font-size: 100px;
+    color: #000;
+  }
+  .drag-area header {
+    font-size: 30px;
+    font-weight: 500;
+    color: #000;
+  }
+  .drag-area span {
+    font-size: 25px;
+    font-weight: 500;
+    color: #000;
+    margin: 10px 0 15px 0;
+  }
+  .drag-area span.fileDesc {
+    font-size: 20px;
+    font-weight: 500;
+    color: #00000080;
+    margin: 0px 0 15px 0;
+  }
+  .drag-area button {
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #00000080;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .drag-area img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  .upload button[type="submit"] {
+    width: 100%;
+    font-size: 30px;
+    background-color: #00000080;
+    border: 3px solid #00000000;
+    color: white;
+    margin-top: 10px;
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s;
+  }
+
+  .upload button[type="submit"]:hover {
+    background: none;
+    border: none;
+    border: 3px solid #000000;
+    padding: 10px;
+    color: #000000;
+    transition: 0.3s;
+  }
+
+  /* verifitcation condition */
+  .container .desc .verification #verifyCondition {
+    background-color: white;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    color: #7382b8;
+    margin-bottom: 50px;
+  }
+
+  .container .desc .verification #verifyCondition .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 2;
+    font-size: 56px;
+    font-weight: 600;
+  }
+
+  .container .desc .verification #verifyCondition .right {
+    flex: 10;
+    font-size: 20;
+    font-weight: 600;
+  }
