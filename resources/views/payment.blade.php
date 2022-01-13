@@ -31,10 +31,10 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">HOME</a>
+                        <a class="nav-link" aria-current="page" href="{{ url('/') }}">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="#">DASHBOARD</a>
+                        <a class="nav-link" aria-current="page" href="/dashboard">DASHBOARD</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="#">PAYMENT</a>
@@ -45,8 +45,12 @@
                 </ul>
             </div>
             <!-- <button type="button" class="logout"></button> -->
-            <a class="button logout" href="../login.html" role="button"><span><i class="fas fa-sign-in-alt"></i></span>
-                LOGOUT</a>
+            <form action="{{route('logout')}}" method="POST">
+                @csrf
+                <button class="button logout">
+                    <span><i class="fas fa-sign-in-alt"></i></span> LOGOUT
+                </button>
+            </form>
         </div>
     </nav>
 

@@ -12,11 +12,11 @@
   }
 
   /* NavBar-start */
-
   .navbar {
     font-size: 23px;
-    font-weight: 600;
+    font-weight: 400;
     background-color: rgba(0, 0, 0, 0.04);
+    letter-spacing: 5px;
     /* padding: 18px 50px; */
   }
 
@@ -56,6 +56,7 @@
     border-radius: 45px;
     font-size: 20px;
     font-weight: bolder;
+    border: 2px solid #C4DAE4;
   }
 
   .form-control {
@@ -86,6 +87,20 @@
 
   .btn:focus {
     box-shadow: none;
+  }
+
+  .modal-content{
+    background-color: #F4F7FF !important;
+  }
+
+  .modal-footer {
+    display: flex;
+    justify-content: center !important;
+  }
+
+  .modal-header {
+    display: flex;
+    justify-content: center !important;
   }
 
   .inputfile {
@@ -133,3 +148,15 @@
     color: #334257;
     font-weight: bolder;
   }
+
+  .nav-link:hover{
+    color: #548CA8;
+    }
+
+    .nav-link:focus{
+      color: #548CA8;
+    }
+    .buttonsavecancel{
+      padding-right: 3.25rem;
+    }
+  

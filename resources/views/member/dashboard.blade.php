@@ -52,7 +52,7 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">HOME</a>
+              <a class="nav-link active" aria-current="page" href="/">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#"
@@ -60,19 +60,18 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./payment/payment.html">PAYMENT</a>
+              <a class="nav-link" href="{{route('getGroupByIdPayment')}}">PAYMENT</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="./timeline.html">TIMELINE</a>
             </li>
           </ul>
         </div>
-        {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        <form action="{{route('logout')}}" method="POST">
             @csrf
-        </form> --}}
-        <form  action="{{ route('logout') }}" method="POST">
-            @csrf
-        <a class="button logout" type="{{ route('logout') }}" role="button"><span><i class="fas fa-sign-in-alt"></i></span> LOGOUT</a>
+            <button class="button logout">
+                <span><i class="fas fa-sign-in-alt"></i></span> LOGOUT
+            </button>
         </form>
       </div>
     </nav>
