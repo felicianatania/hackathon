@@ -40,7 +40,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-image: url(./asset/bgpw.png);
+        background-image: url(/assets/bgpw.png);
         background-position: center bottom;
         /* background-repeat: no-repeat; */
         background-size: 100%;

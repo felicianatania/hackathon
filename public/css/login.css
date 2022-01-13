@@ -1,0 +1,134 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: poppins;
+  color: white;
+}
+
+body {
+  height: 100vh;
+  background-image: linear-gradient(95deg, #070f2d, #7b87b0);
+  background-repeat: no-repeat;
+}
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/assets/bg.png);
+  background-position: 0%;
+  background-repeat: no-repeat;
+  background-size: 50%;
+}
+
+.judul {
+  height: 100vh;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.7rem;
+}
+
+.judul > h1 {
+  margin-left: -50px;
+  width: 50%;
+  font-size: 70px;
+  text-align: center;
+  text-shadow: 1px 2px black;
+}
+
+.pwd {
+  background: transparent;
+  border-radius: 0px;
+  box-shadow: rgba(100, 100, 111, 0.5) 0px 7px 20px 0px;
+  position: relative;
+  border-bottom: 2px solid white;
+}
+
+.pwd input {
+  background: transparent;
+  border: none;
+
+  font-size: 1.2em;
+}
+.pwd input:focus {
+  outline: none;
+}
+
+.pwd i {
+  font-size: 1.4em;
+  padding: 1em;
+
+  transition: 0.3s;
+}
+
+.pwd .fa-eye,
+.pwd .fa-eye-slash {
+  cursor: pointer;
+
+  width: 1.2em;
+}
+
+.pwd > div:nth-child(2) {
+  position: relative;
+}
+
+.form-control {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  width: 100%;
+  color: white;
+  border-radius: 0px;
+  /* height: 50px; */
+}
+
+.form-control:focus {
+  color: white;
+  box-shadow: transparent;
+  transform: all 12s ease-out;
+  box-shadow: none;
+  border: none;
+  border-bottom: 2px solid white;
+}
+
+.input-group-text {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid white;
+  border-radius: 0px;
+}
+
+input::placeholder {
+  color: #ffffffb7 !important;
+}
+
+.forgot {
+  float: right;
+  text-decoration: none;
+}
+
+.signup {
+  display: flex;
+  justify-content: center;
+  letter-spacing: 3px;
+}
+
+a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.btn {
+  color: #ffffff;
+  border-radius: 15px;
+  height: 45px;
+  font-size: 20px;
+}
+.btn:hover {
+  background: white;
+  border: 2px solid white;
+  color: #334257;
+  transition: 0.6s;
+}

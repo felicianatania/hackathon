@@ -13,10 +13,16 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <a href="{{route('getGroupsDashboard')}}"><button type="submit" class="btn btn-success">Admin Dashboard</button></a>
+
+                    @if($number===2)
+                        <a href="#"><button type="submit" class="btn btn-success">Member Dashboard</button></a>
+                    @else
+                        <a href="{{route('getGroupsDashboard')}}"><button type="submit" class="btn btn-success">Admin Dashboard</button></a>
+                    @endif
                     <a href="{{route('getGroupById')}}"><button type="submit" class="btn btn-success">Add Member</button></a>
                     <a href="{{route('getGroupByIdPayment')}}"><button type="submit" class="btn btn-success">Upload Payment</button></a>
                     {{ __('You are logged in!') }}
+
                 </div>
             </div>
         </div>
