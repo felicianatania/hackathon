@@ -23,10 +23,10 @@ class MemberController extends Controller
 
     public function createMember(MemberRequest $request, $id, $memberNo){
         $cv_file_name = $request->CV->getClientOriginalName();
-        $CV = $request->file('CV')->storeAs('file-data', $cv_file_name);
+        $CV = $request->file('CV')->storeAs('file', $cv_file_name);
 
         $IdCard_file_name = $request->IdCard->getClientOriginalName();
-        $IdCard = $request->file('IdCard')->storeAs('file-data', $IdCard_file_name);
+        $IdCard = $request->file('IdCard')->storeAs('file', $IdCard_file_name);
 
         Member::create([
             'fullname' => $request->fullname,

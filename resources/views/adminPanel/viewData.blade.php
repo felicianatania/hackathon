@@ -168,7 +168,7 @@
                             <div class="modal-body d-flex
                             justify-content-center">
                             {{-- {{ $url = Storage::url('public/file-data/', ); }} --}}
-                            <img src="{{ route('jobImage', $CV->image) }}" alt="CV image" title="CV image">
+                            <img src="{{ asset('storage/file/'.$CV->image) }}"  title="CV Image">
                           </div>
                           <div class="modal-footer">
                             <button
