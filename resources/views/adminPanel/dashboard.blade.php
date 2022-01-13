@@ -149,6 +149,15 @@
                 </td>
                 <td>
                     @if ($group->verification===0)
+                    <form action="{{route('verifyGroup', ['id'=>$group->id])}}" method="post">
+                        @csrf
+                        @method('PATCH')
+                        <button type="submit" class="btn btn-primary">Verify</button>
+                    </form>
+                    @endif
+                </td>
+                {{-- <td>
+                    @if ($group->verification===0)
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Verify
                         </button>
@@ -168,13 +177,11 @@
                           <div class="modal-body text-center fs-5">Verify This Group</div>
 
                           <div class="d-flex justify-content-around mb-3">
-                            {{-- <a href="{{route('verifyGroup', ['id'=>$group->id, 'value' => 1])}}"><button type="submit" class="btn btn-primary">Verify</button></a> --}}
                             <form action="{{route('verifyGroup', ['id'=>$group->id])}}" method="post">
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn btn-primary">Verify</button>
                             </form>
-                            {{-- <button type="button" class="btn btn-primary"> Verify </button> --}}
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
                               Close
                             </button>
@@ -183,7 +190,7 @@
                       </div>
                     </div>
                     <a href="{{route('getGroupByIdView', ['id'=>$group->id])}}" class="btn btn-secondary btn-lg " tabindex="-1" role="button" aria-disabled="true">View</a>
-                  </td>
+                  </td> --}}
             </tr>
             @endforeach
 

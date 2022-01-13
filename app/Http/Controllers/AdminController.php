@@ -24,7 +24,6 @@ class AdminController extends Controller
 
     public function getGroupByIdView($id){
         $group = User::find($id);
-        $CV= User::find($id);
         //dd($group);
         return view('adminPanel.viewData', ['group' => $group]);
     }
