@@ -168,7 +168,7 @@
                               </div>
                               <div class="modal-body d-flex
                               justify-content-center">
-                              <img src="../asset/cv.jpg" alt="" />
+                              <img src="{{ asset('storage/'.$member[0]->CV) }}"  title="CV Image" alt="No data yet">
                             </div>
                             <div class="modal-footer">
                               <button
@@ -183,6 +183,9 @@
                         </div>
                       </div>
                     </div>
+
+
+                    
                     <div class="flazz">
                       <button
                         type="button"
@@ -215,7 +218,7 @@
                             </div>
                             <div class="modal-body d-flex
                             justify-content-center">
-                            <img src="../asset/cv.jpg" alt="" />
+                            <img src="{{ asset('storage/'.$member[0]->IdCard) }}"  title="IdCard Image" alt="No data yet">
                           </div>
                           <div class="modal-footer">
                             <button

@@ -134,6 +134,8 @@
                       />
                     </div>
                   </div>
+
+
                   <div class="view d-flex justify-content-around pt-3">
                     <div class="cv">
                       <button
@@ -168,7 +170,7 @@
                             <div class="modal-body d-flex
                             justify-content-center">
                             {{-- {{ $url = Storage::url('public/file-data/', ); }} --}}
-                            <img src="{{ asset('storage/file/'.$CV->image) }}"  title="CV Image">
+                            <img src="{{ asset('storage/'.$group->CV) }}"  title="CV Image" alt="No data yet">
                           </div>
                           <div class="modal-footer">
                             <button
@@ -183,6 +185,10 @@
                       </div>
                     </div>
                   </div>
+
+
+
+                  
                   <div class="flazz">
                     <button
                       type="button"
@@ -215,7 +221,7 @@
                           </div>
                           <div class="modal-body d-flex
                           justify-content-center">
-                          <img src="../asset/cv.jpg" alt="" />
+                          <img src="{{ asset('storage/'.$group->IdCard) }}"  title="IdCard Image" alt="No data yet">
                         </div>
                         <div class="modal-footer">
                           <button

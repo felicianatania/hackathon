@@ -26,7 +26,7 @@ class AdminController extends Controller
         $group = User::find($id);
         $CV= User::find($id);
         //dd($group);
-        return view('adminPanel.viewData', ['group' => $group, 'CV' => $CV]);
+        return view('adminPanel.viewData', ['group' => $group]);
     }
 
     public function getMemberByIdView($id, $memberNo){
