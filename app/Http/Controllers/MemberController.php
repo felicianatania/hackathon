@@ -46,12 +46,12 @@ class MemberController extends Controller
         return redirect(route('home'));
     }
 
-    public function dashboardView(Request $request, $memberNo){
+    public function dashboardView(Request $request){
         $groupId = $request->user()->id;
         $group = User::find($groupId);
-        $member = DB::table('members')->where('memberNo',$memberNo)->get()->toArray();
+        //$member = DB::table('members')->where('memberNo',$memberNo)->get()->toArray();
 
-        return view('member.dashboard', ['group' => $group, 'member' => $member]);
+        return view('member.dashboard', ['group' => $group]);
     }
 
 

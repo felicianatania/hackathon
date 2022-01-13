@@ -306,6 +306,147 @@
         </div>
         <div class="card">
           <div class="card-body">
+            <form action="{{route('createMember', ['id'=>$group->id, 'memberNo'=>1])}}" method="post" enctype="multipart/form-data">
+                @csrf
+              <div class="row mb-3">
+                <label for="name" class="col-sm-3 col-form-label"
+                  >Full Name</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="fullname"
+                    id="name"
+                    placeholder="Full Name"
+                  />
+                </div>
+              </div>
+
+              <div class="row mb-3">
+                <label for="Email" class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-8">
+                  <input
+                    type="email"
+                    class="form-control"
+                    name="email"
+                    id="Email"
+                    placeholder="Email"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="number" class="col-sm-3 col-form-label"
+                  >Whatsapp Number</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="tel"
+                    class="form-control"
+                    name="WA"
+                    id="number"
+                    placeholder="Whatsapp Number"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="line" class="col-sm-3 col-form-label"
+                  >LINE ID</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="lineId"
+                    id="line"
+                    placeholder="LINE ID"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="github" class="col-sm-3 col-form-label"
+                  >Github/Gitlab ID</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="github"
+                    id="github"
+                    placeholder="Github/Gitlab ID"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="birthplace" class="col-sm-3 col-form-label"
+                  >Birth Place</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="birthPlace"
+                    id="birthplace"
+                    placeholder="Birth Place"
+                  />
+                </div>
+              </div>
+              <div class="row mb-3">
+                <label for="birthdate" class="col-sm-3 col-form-label"
+                  >Birth Date</label
+                >
+                <div class="col-sm-8">
+                  <input
+                    type="date"
+                    class="form-control"
+                    name="birthDate"
+                    id="birthdate"
+                    placeholder="Birth date"
+                    onfocus="(this.type='date')"
+                    onblur="if(this.value == '') this.type='text';"
+                  />
+                </div>
+              </div>
+              <div class="view d-flex justify-content-around pt-3">
+                <input
+                  type="file"
+                  {{-- name="file" --}}
+                  id="file"
+                  name="CV"
+                  class="addcv inputfile"
+                  data-multiple-caption="{count} files selected"
+                  multiple
+                />
+                <label for="file"><span>Add CV</span></label>
+
+                <input
+                  type="file"
+                  {{-- name="file" --}}
+                  id="file"
+                  name="IdCard"
+                  class="addflazz inputfile"
+                  data-multiple-caption="{count1} files selected"
+                  multiple
+                />
+                <label for="file"><span>Add Flazz</span></label>
+              </div>
+              <div class="submit d-flex justify-content-center mt-3">
+                <button type="submit" class="btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      {{-- <div
+        class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
+        id="member1"
+      >
+        <div class="title mb-5">
+          <h2>Member 2</h2>
+        </div>
+        <div class="card">
+          <div class="card-body">
             <form action="">
               <div class="row mb-3">
                 <label for="name" class="col-sm-3 col-form-label"
@@ -315,7 +456,7 @@
                   <input
                     type="text"
                     class="form-control"
-                    value="{{$member[0]->fullname}}"
+                    value=""
                     id="name"
                     placeholder="Full Name"
                   />
@@ -427,15 +568,15 @@
             </form>
           </div>
         </div>
-      </div>
+      </div> --}}
 
-      <div class="button d-flex justify-content-center">
+      {{-- <div class="button d-flex justify-content-center">
         <div class="form-group change">
           <label for="">&nbsp;</label><br />
           <a class="btn btn-success add-more">+ Add New Member</a>
         </div>
       </div>
-    </div>
+    </div> --}}
 
     <!-- contact person -->
     <div class="CP" style="margin: 120px;">
@@ -448,11 +589,11 @@
           <h4>Devina Kayla</h4>
         </div>
         <div class="linecp d-flex mb-3">
-          <img src="../asset/Line.png" alt="line icon">
+          <img src="/assets/Line.png" alt="line icon">
           <h4 class="ms-4">davinakayla13</h4>
         </div>
         <div class="wacp d-flex">
-          <img src="../asset/waa.jpg" style="height: 35px;" alt="wa icon">
+          <img src="/assets/waa.jpg" style="height: 35px;" alt="wa icon">
           <h4 class="ms-4">08977977740</h4>
         </div>
       </div>
@@ -461,11 +602,11 @@
           <h4>Carina Prasetia</h4>
         </div>
         <div class="linecp d-flex mb-3">
-          <img src="../asset/Line.png" alt="line icon">
+          <img src="/assets/Line.png" alt="line icon">
           <h4 class="ms-4">carinaprasetia</h4>
         </div>
         <div class="wacp d-flex">
-          <img src="../asset/waa.jpg" style="height: 35px;" alt="wa icon">
+          <img src="/assets/waa.jpg" style="height: 35px;" alt="wa icon">
           <h4 class="ms-4">085891017100</h4>
         </div>
       </div>
