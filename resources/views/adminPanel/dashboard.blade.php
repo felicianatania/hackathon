@@ -156,7 +156,7 @@
                     </form>
                     @endif
                 </td>
-                {{-- <td>
+                <td>
                     @if ($group->verification===0)
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Verify
@@ -190,7 +190,7 @@
                       </div>
                     </div>
                     <a href="{{route('getGroupByIdView', ['id'=>$group->id])}}" class="btn btn-secondary btn-lg " tabindex="-1" role="button" aria-disabled="true">View</a>
-                  </td> --}}
+                  </td>
             </tr>
             @endforeach
 
