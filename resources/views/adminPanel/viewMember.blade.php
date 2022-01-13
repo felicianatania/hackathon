@@ -8,7 +8,7 @@
         <div class="view">
           <ul class="nav nav-pills nav-fill">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="{{route('getGroupByIdView', ['id'=>$member[0]->groupId])}}">leader</a>
+              <a class="nav-link" aria-current="page" href="{{route('getGroupByIdView', ['id'=>$member[0]->groupId])}}">Leader</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="{{route('getMemberByIdView', ['id'=>$member[0]->groupId, 'memberNo'=>1])}}">Member 1</a>
@@ -31,7 +31,7 @@
               <div class="card">
                 <div class="card-body">
                   <div class="title mb-5 text-center">
-                    <h2>Team A</h2>
+                    <h2>{{$group->groupName}}</h2>
                   </div>
                   <form action="">
                     <div class="row mb-3">

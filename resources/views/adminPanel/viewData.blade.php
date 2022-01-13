@@ -30,7 +30,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="title mb-5 text-center">
-                  <h2>Team A</h2>
+                  <h2>{{$group->groupName}}</h2>
                 </div>
                 <form action="">
                   <div class="row mb-3">
