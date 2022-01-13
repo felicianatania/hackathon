@@ -45,9 +45,11 @@ class MemberController extends Controller
         return redirect(route('home'));
     }
 
-    public function dashboardView(){
-        return view('member.dashboard');
+    public function dashboardView(Request $request){
+        $groupId = $request->user()->id;
+        $group = User::find($groupId);
 
+        return view('member.dashboard', ['group' => $group]);
     }
 
 }

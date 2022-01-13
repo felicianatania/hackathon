@@ -83,7 +83,7 @@
     <div class="container">
       <div class="dashboard">
         <div class="greetings">
-          <h1 class="fw-bolder">Hello Group Name,</h1>
+          <h1 class="fw-bolder">Hello {{$group->groupName}},</h1>
           <h2>Welcome Back!</h2>
         </div>
 
@@ -104,6 +104,7 @@
                       <input
                         type="text"
                         class="form-control"
+                        value="{{$group->fullname}}"
                         id="name"
                         placeholder="Full Name"
                       />
@@ -118,6 +119,7 @@
                       <input
                         type="email"
                         class="form-control"
+                        value="{{$group->email}}"
                         id="Email"
                         placeholder="Email"
                       />
@@ -131,6 +133,7 @@
                       <input
                         type="tel"
                         class="form-control"
+                        value="{{$group->WA}}"
                         id="number"
                         placeholder="Whatsapp Number"
                       />
@@ -144,6 +147,7 @@
                       <input
                         type="text"
                         class="form-control"
+                        value="{{$group->lineId}}"
                         id="line"
                         placeholder="LINE ID"
                       />
@@ -157,6 +161,7 @@
                       <input
                         type="text"
                         class="form-control"
+                        value="{{$group->github}}"
                         id="github"
                         placeholder="Github/Gitlab ID"
                       />
@@ -170,6 +175,7 @@
                       <input
                         type="text"
                         class="form-control"
+                        value="{{$group->birthPlace}}"
                         id="birthplace"
                         placeholder="Birth Place"
                       />
@@ -183,6 +189,7 @@
                       <input
                         type="date"
                         class="form-control"
+                        value="{{$group->birthDate}}"
                         id="birthdate"
                         placeholder="Birth date"
                         onfocus="(this.type='date')"
@@ -223,8 +230,8 @@
                             </h5>
                           </div>
                           <div class="modal-body d-flex
-                          justify-content-center"">
-                          <img src="../asset/cv.jpg" alt="" />
+                          justify-content-center">
+                          <img src="{{ asset('storage/'.$group->CV) }}" alt="No data yet" />
                         </div>
                         <div class="modal-footer">
                           <button
@@ -270,7 +277,7 @@
                           </h5>
                         </div>
                         <div class="modal-body d-flex justify-content-center"">
-                        <img src="../asset/cv.jpg" alt="flazz" />
+                        <img src="{{ asset('storage/'.$group->IdCard) }}" alt="No data yet" />
                       </div>
                       <div class="modal-footer">
                         <button
