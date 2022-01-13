@@ -34,7 +34,7 @@ class AdminController extends Controller
         //     return view('cobacobi');
         // }
 
-        return view('adminPanel.viewMember', ['member' => $member]);
+        return view('adminPanel.viewMember', ['member' => $member, 'groupId'=>$id]);
         // if($memberNo == 1){
         //     return view('adminPanel.viewMember1', ['member' => $member]);
         // }
