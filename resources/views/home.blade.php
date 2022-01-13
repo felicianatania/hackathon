@@ -15,7 +15,7 @@
                     @endif
 
                     @if($number===2)
-                        <a href="#"><button type="submit" class="btn btn-success">Member Dashboard</button></a>
+                        <a href="/dashboard"><button type="submit" class="btn btn-success">Member Dashboard</button></a>
                     @else
                         <a href="{{route('getGroupsDashboard')}}"><button type="submit" class="btn btn-success">Admin Dashboard</button></a>
                     @endif

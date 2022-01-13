@@ -65,6 +65,8 @@ Route::group(['middleware' => IsAdminMiddleware::class], function(){
 Route::get('/verifikasitoken', [App\Http\Controllers\auth\VerifikasiController::class, 'verifikasitoken'])->name('verifikasitoken');
 Route::post('/postveriftoken', [App\Http\Controllers\auth\VerifikasiController::class, 'postveriftoken'])->name('postveriftoken');
 
+//dashboard panel
+Route::get('/dashboard', [MemberController::class, 'dashboardView'])->name('dashboardView');
 
 
 Route::get('/maki', function (){

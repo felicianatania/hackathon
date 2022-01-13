@@ -1,0 +1,163 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  color: #ffff;
+  background-image: linear-gradient(to bottom right, #7382b8, #e4e4e4);
+  min-height: 180rem;
+}
+
+/* NavBar-start */
+
+.navbar {
+  font-size: 23px;
+  font-weight: 600;
+  background-color: rgba(0, 0, 0, 0.04);
+  /* padding: 18px 50px; */
+}
+
+.navbar .container-md .logout {
+  font-size: 20px;
+  border-radius: 50px;
+  padding: 10px 20px;
+  background: none;
+  border: 2px solid white;
+  color: #ffff;
+  text-decoration: none;
+}
+
+.navbar .container-md .logout:hover {
+  background: #ffff;
+  border: 2px solid white;
+  color: #334257;
+  transition: 0.9s;
+}
+
+.collapse .navbar-nav .nav-item {
+  padding: 0 40px;
+}
+/* nav-end */
+
+/* dashboard */
+.greetings {
+  margin: 8rem;
+}
+.greetings > h1 {
+  font-size: 50px;
+}
+.greetings > h2 {
+  color: hsla(0, 0%, 100%, 0.8);
+}
+
+.card {
+  width: 70rem;
+  background-color: #f4f7ff;
+  color: #364680;
+  padding: 50px;
+  border-radius: 45px;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.form-control {
+  border-radius: 10px;
+  height: 50px;
+  border-color: #dadff1;
+}
+.form-control:focus {
+  box-shadow: none;
+  border-color: #dadff1;
+}
+.btn {
+  font-size: 20px;
+  border-radius: 50px;
+  padding: 10px 50px;
+  background: #7382b888;
+  border: 2px solid white;
+  color: #334257;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background: white;
+  border: 2px solid #dadff1;
+  color: #334257;
+  transition: 0.5s;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.modal-content{
+  background-color: #F4F7FF !important;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center !important;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: center !important;
+}
+
+/* try */
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile + label {
+  font-size: 20px;
+  font-weight: bold;
+  color: #334257;
+  background-color: #ffffff;
+  display: inline-block;
+  padding: 10px 50px;
+  border: 2px solid #dadff1;
+  border-radius: 50px;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+  background-color: #5768a7;
+}
+
+inputfile + label {
+  cursor: pointer; /* "hand" cursor */
+}
+
+.inputfile:focus + label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
+}
+
+/* cp */
+
+.right{
+  background-color: #F4F7FF;
+  color: #45548B;
+  padding: 40px;
+  width: 23rem;
+  border-radius: 35px;
+  
+}
+
+.left{
+  background-color: #F4F7FF;
+  color: #45548B;
+  padding: 40px;
+  width: 23rem;
+  border-radius: 35px;
+  
+}

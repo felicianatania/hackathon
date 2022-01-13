@@ -45,4 +45,9 @@ class MemberController extends Controller
         return redirect(route('home'));
     }
 
+    public function dashboardView(){
+        return view('member.dashboard');
+
+    }
+
 }
