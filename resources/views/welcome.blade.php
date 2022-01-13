@@ -60,9 +60,7 @@
             @if (Auth::user()->status == '3')
                 <a href="{{route('getGroupsDashboard')}}"><button type="submit" class="login">DASHBOARD</button></a>
             @else
-                <button class="login">
-                    DASHBOARD
-                </button>
+                <a href="{{route('dashboardView')}}"><button type="submit" class="login">DASHBOARD</button></a>
             @endif
             {{-- <form method="get" action="/dashboard">
             </form> --}}

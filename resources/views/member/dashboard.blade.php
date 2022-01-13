@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +19,7 @@
     />
     <link rel="stylesheet" href="{{ URL::asset('css/dashboardmember.css') }}" />
 
-    <link rel="icon" type="image/x-icon" href="./payment/asset/favicon.ico" />
+    <link rel="icon" type="image/x-icon" href="{{ URL::asset('assets/favicon.ico') }}" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -66,10 +67,13 @@
             </li>
           </ul>
         </div>
-        <!-- <button type="button" class="logout"></button> -->
-        <a class="button logout" href="../login.html" role="button"
-          ><span><i class="fas fa-sign-in-alt"></i></span> LOGOUT</a
-        >
+        {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+            @csrf
+        </form> --}}
+        <form  action="{{ route('logout') }}" method="POST">
+            @csrf
+        <a class="button logout" type="{{ route('logout') }}" role="button"><span><i class="fas fa-sign-in-alt"></i></span> LOGOUT</a>
+        </form>
       </div>
     </nav>
 
@@ -88,7 +92,7 @@
           <!-- leader -->
           <div class="leader d-flex flex-column align-items-center mb-5">
             <div class="title mb-5">
-              <h2>Leader’s Information</h2>
+              <h2>Leader's Information</h2>
             </div>
             <div class="card">
               <div class="card-body">
