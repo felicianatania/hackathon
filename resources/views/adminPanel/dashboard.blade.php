@@ -51,7 +51,7 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{url('/home')}}">HOME</a>
+              <a class="nav-link active" aria-current="page" href="{{url('/')}}">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{route('getGroupsDashboard')}}"
@@ -63,10 +63,13 @@
             </li>
           </ul>
         </div>
-        <!-- <button type="button" class="logout"></button> -->
-        <a class="button logout" href="../login.html" role="button"
-          ><span><i class="fas fa-sign-in-alt"></i></span> LOGOUT</a
-        >
+        <form action="{{route('logout')}}" method="POST">
+            @csrf
+            <button class="button logout">
+                <span><i class="fas fa-sign-in-alt"></i></span> LOGOUT
+                {{-- <button type="submit" class="button logout" role="button">Logout</button> --}}
+            </button>
+        </form>
       </div>
     </nav>
 

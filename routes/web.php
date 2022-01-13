@@ -25,6 +25,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/timeline', function () {
+    return view('member.timeline');
+});
+
 //Route::get('/register-member-page/{id}', [MemberController::class,'registerMemberPage'])->name('registerMemberPage');
 Route::post('/register-member/{id}/{memberNo}', [MemberController::class, 'createMember'])->name('createMember');
 Route::get('/get-group', [MemberController::class, 'getGroupById'])->name('getGroupById');

@@ -63,7 +63,7 @@
               <a class="nav-link" href="{{route('getGroupByIdPayment')}}">PAYMENT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="./timeline.html">TIMELINE</a>
+              <a class="nav-link" href="{{url('timeline')}}">TIMELINE</a>
             </li>
           </ul>
         </div>

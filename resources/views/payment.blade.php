@@ -40,7 +40,7 @@
                         <a class="nav-link active" href="#">PAYMENT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">TIMELINE</a>
+                        <a class="nav-link" href="{{url('timeline')}}">TIMELINE</a>
                     </li>
                 </ul>
             </div>
