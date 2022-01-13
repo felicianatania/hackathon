@@ -44,6 +44,7 @@ Route::get('/edit-group/{id}', [AdminController::class, 'getGroupByIdEdit'])->na
 Route::get('/edit-member/{id}/{memberNo}', [AdminController::class, 'getMemberByIdEdit'])->name('getMemberByIdEdit');
 // Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdEdit'])->name('getGroupByIdEdit');
 Route::patch('/update-group/{id}', [AdminController::class, 'updateGroup'])->name('updateGroup');
+Route::patch('/update-member/{id}/{memberNo}', [AdminController::class, 'updateMember'])->name('updateMember');
 Route::patch('/verify-group/{id}', [AdminController::class, 'verifyGroup'])->name('verifyGroup');
 Route::delete('/delete-group/{id}', [AdminController::class, 'deleteGroup'])->name('delete');
 

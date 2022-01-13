@@ -79,16 +79,16 @@
       <div class="view">
         <ul class="nav nav-pills nav-fill">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="{{route('getGroupByIdEdit', ['id'=>$group->id])}}">Leader</a>
+            <a class="nav-link" aria-current="page" href="{{route('getGroupByIdEdit', ['id'=>$groupId])}}">Leader</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$group->id, 'memberNo'=>1])}}">Member 1</a>
+            <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$groupId, 'memberNo'=>1])}}">Member 1</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$group->id, 'memberNo'=>2])}}">Member 2</a>
+            <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$groupId, 'memberNo'=>2])}}">Member 2</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$group->id, 'memberNo'=>3])}}">Member 3</a>
+            <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$groupId, 'memberNo'=>3])}}">Member 3</a>
           </li>
         </ul>
 
@@ -105,7 +105,7 @@
                 <div class="title mb-5 text-center">
                   <h2>{{$group->groupName}}</h2>
                 </div>
-                <form action="{{route('updateGroup', ['id' => $group->id])}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('updateMember', ['id' => $member[0]->id, 'memberNo' => $member[0]->memberNo])}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('patch')
                   <div class="row mb-3">
@@ -118,7 +118,7 @@
                         class="form-control"
                         id="name"
                         name='fullname'
-                        value="{{$group->fullname}}"
+                        value="{{$member[0]->fullname}}"
                         placeholder="Full Name"
                       />
                     </div>
@@ -134,7 +134,7 @@
                         class="form-control"
                         id="Email"
                         name='email'
-                        value="{{$group->email}}"
+                        value="{{$member[0]->email}}"
                         placeholder="Email"
                       />
                     </div>
@@ -149,7 +149,7 @@
                         class="form-control"
                         id="number"
                         name='WA'
-                        value="{{$group->WA}}"
+                        value="{{$member[0]->WA}}"
                         placeholder="Whatsapp Number"
                       />
                     </div>
@@ -164,7 +164,7 @@
                         class="form-control"
                         id="line"
                         name='lineId'
-                        value="{{$group->lineId}}"
+                        value="{{$member[0]->lineId}}"
                         placeholder="LINE ID"
                       />
                     </div>
@@ -179,7 +179,7 @@
                         class="form-control"
                         id="github"
                         name='github'
-                        value="{{$group->github}}"
+                        value="{{$member[0]->github}}"
                         placeholder="Github/Gitlab ID"
                       />
                     </div>
@@ -194,7 +194,7 @@
                         class="form-control"
                         id="birthplace"
                         name='birthPlace'
-                        value="{{$group->birthPlace}}"
+                        value="{{$member[0]->birthPlace}}"
                         placeholder="Birth Place"
                       />
                     </div>
@@ -209,7 +209,7 @@
                         class="form-control"
                         id="birthdate"
                         name='birthDate'
-                        value="{{$group->birthDate}}"
+                        value="{{$member[0]->birthDate}}"
                         placeholder="Birth date"
                         onfocus="(this.type='date')"
                         onblur="if(this.value == '') this.type='text';"

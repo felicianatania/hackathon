@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\MemberRequest;
 use App\Models\Member;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -54,8 +55,9 @@ class AdminController extends Controller
     }
 
     public function getMemberByIdEdit($id, $memberNo){
-        $member = DB::table('members')->where('groupId',$id)->where('memberNo',$memberNo)->get()->toArray();;
-        return view('adminPanel.updateGroup', ['member' => $member, 'groupId'=>$id]);
+        $member = DB::table('members')->where('groupId',$id)->where('memberNo',$memberNo)->get()->toArray();
+        $group = User::find($id);
+        return view('adminPanel.updateMember', ['member' => $member, 'groupId'=>$id, 'group'=>$group]);
     }
 
     public function deleteGroup($id){
@@ -97,9 +99,25 @@ class AdminController extends Controller
             'birthDate' => $request->birthDate,
         ]);
 
+        return redirect()->route('getGroupByIdEdit', ['id' => $id]);
+    }
+
+    public function updateMember(MemberRequest $request, $id, $memberNo){
+        $member = Member::find($id);
+
+        $member -> update([
+            'fullname' => $request->fullname,
+            'email' => $request->email,
+            'WA' => $request->WA,
+            'lineId' => $request->lineId,
+            'github' => $request->github,
+            'birthPlace' => $request->birthPlace,
+            'birthDate' => $request->birthDate,
+        ]);
+
         //return redirect(route('getGroupByIdEdit'));
         //return redirect()->route( 'getGroupByIdEdit' )->with( [ 'id' => $id ] );
-        return redirect()->route('getGroupByIdEdit', ['id' => $id]);
+        return redirect()->route('getMemberByIdEdit', ['id' => $id, 'memberNo'=>$memberNo]);
     }
 
     // public function dashboardPage(){
