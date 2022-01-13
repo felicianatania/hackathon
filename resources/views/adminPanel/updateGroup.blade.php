@@ -16,13 +16,14 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="edit.css" />
+    <link rel="stylesheet" href="{{ asset('css/edit.css') }}" />
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
-    <title>admin panel</title>
+    <link rel="icon" type="image/x-icon" href="{{ URL::asset('assets/favicon.ico') }}">
+    <title>Edit Group</title>
   </head>
   <body>
     <!-- navbar-start -->
@@ -50,20 +51,23 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">HOME</a>
+              <a class="nav-link" aria-current="page" href="{{url('/home')}}">HOME</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">DASHBOARD</a>
+              <a class="nav-link" aria-current="page" href="{{route('getGroupsDashboard')}}">DASHBOARD</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="#">PARTICIPANT</a>
             </li>
           </ul>
         </div>
-        <!-- <button type="button" class="logout"></button> -->
-        <a class="button logout" href="../login.html" role="button"
-          ><span><i class="fas fa-sign-in-alt"></i></span> LOGOUT</a
-        >
+        <form action="{{route('logout')}}" method="POST">
+            @csrf
+            <button class="button logout">
+                <span><i class="fas fa-sign-in-alt"></i></span> LOGOUT
+                {{-- <button type="submit" class="button logout" role="button">Logout</button> --}}
+            </button>
+        </form>
       </div>
     </nav>
 
@@ -75,16 +79,16 @@
       <div class="view">
         <ul class="nav nav-pills nav-fill">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">leader</a>
+            <a class="nav-link" aria-current="page" href="{{route('getGroupByIdEdit', ['id'=>$group->id])}}">Leader</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Member 1</a>
+            <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$group->id, 'memberNo'=>1])}}">Member 1</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Member 2</a>
+            <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$group->id, 'memberNo'=>2])}}">Member 2</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Member 3</a>
+            <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$group->id, 'memberNo'=>3])}}">Member 3</a>
           </li>
         </ul>
 
@@ -95,12 +99,15 @@
             class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
             id="member1"
           >
+
             <div class="card">
               <div class="card-body">
                 <div class="title mb-5 text-center">
                   <h2>Team A</h2>
                 </div>
-                <form action="">
+                <form action="{{route('updateGroup', ['id' => $group->id])}}" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    @method('patch')
                   <div class="row mb-3">
                     <label for="name" class="col-sm-3 col-form-label"
                       >Full Name</label
@@ -110,6 +117,8 @@
                         type="text"
                         class="form-control"
                         id="name"
+                        name='fullname'
+                        value="{{$group->fullname}}"
                         placeholder="Full Name"
                       />
                     </div>
@@ -124,6 +133,8 @@
                         type="email"
                         class="form-control"
                         id="Email"
+                        name='email'
+                        value="{{$group->email}}"
                         placeholder="Email"
                       />
                     </div>
@@ -137,6 +148,8 @@
                         type="tel"
                         class="form-control"
                         id="number"
+                        name='WA'
+                        value="{{$group->WA}}"
                         placeholder="Whatsapp Number"
                       />
                     </div>
@@ -150,6 +163,8 @@
                         type="text"
                         class="form-control"
                         id="line"
+                        name='lineId'
+                        value="{{$group->lineId}}"
                         placeholder="LINE ID"
                       />
                     </div>
@@ -163,6 +178,8 @@
                         type="text"
                         class="form-control"
                         id="github"
+                        name='github'
+                        value="{{$group->github}}"
                         placeholder="Github/Gitlab ID"
                       />
                     </div>
@@ -176,6 +193,8 @@
                         type="text"
                         class="form-control"
                         id="birthplace"
+                        name='birthPlace'
+                        value="{{$group->birthPlace}}"
                         placeholder="Birth Place"
                       />
                     </div>
@@ -189,6 +208,8 @@
                         type="date"
                         class="form-control"
                         id="birthdate"
+                        name='birthDate'
+                        value="{{$group->birthDate}}"
                         placeholder="Birth date"
                         onfocus="(this.type='date')"
                         onblur="if(this.value == '') this.type='text';"
@@ -198,23 +219,16 @@
 
                   <div class="buttonsavecancel d-flex justify-content-end">
                     <div class="submit">
-                      <input
-                        class="btn btn-primary"
-                        type="submit"
-                        value="Save"
-                      />
+                      <input class="btn" type="submit" value="Save" />
                     </div>
                     <div class="cancel">
-                      <input
-                        class="btn btn-primary"
-                        type="reset"
-                        value="cancel"
-                      />
+                      <input class="btn" type="reset" value="cancel" />
                     </div>
                   </div>
                 </form>
               </div>
             </div>
+        </form>
           </div>
         </div>
       </div>

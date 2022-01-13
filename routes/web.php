@@ -36,7 +36,9 @@ Route::get('/get-group-payment', [PaymentController::class, 'getGroupByIdPayment
 //Route::get('/admin-dashboard', [AdminController::class,'dashboardPage'])->name('dashboardPage');
 Route::get('/view-group/{id}', [AdminController::class, 'getGroupByIdView'])->name('getGroupByIdView');
 Route::get('/view-member/{id}/{memberNo}', [AdminController::class, 'getMemberByIdView'])->name('getMemberByIdView');
-Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdd'])->name('getGroupByIdd');
+Route::get('/edit-group/{id}', [AdminController::class, 'getGroupByIdEdit'])->name('getGroupByIdEdit');
+Route::get('/edit-member/{id}/{memberNo}', [AdminController::class, 'getMemberByIdEdit'])->name('getMemberByIdEdit');
+// Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdEdit'])->name('getGroupByIdEdit');
 Route::patch('/update-group/{id}', [AdminController::class, 'updateGroup'])->name('updateGroup');
 Route::patch('/verify-group/{id}', [AdminController::class, 'verifyGroup'])->name('verifyGroup');
 Route::delete('/delete-group/{id}', [AdminController::class, 'deleteGroup'])->name('delete');
@@ -56,6 +58,7 @@ Route::post('/forgetpw', [App\Http\Controllers\auth\ForgotPasswordController::cl
 Route::group(['middleware' => IsAdminMiddleware::class], function(){
 	Route::get('/get-groups', [AdminController::class, 'getGroups'])->name('getGroups');
 	Route::get('/groups-dashboard', [AdminController::class, 'getGroupsDashboard'])->name('getGroupsDashboard');
+    Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdEdit'])->name('getGroupByIdEdit');
 });
 
 

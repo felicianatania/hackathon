@@ -64,7 +64,7 @@
                 <td>{{ $group->groupName }}</td>
                 <td>
                     <a href="{{route('getGroupByIdView', ['id'=>$group->id])}}"><button type="submit" class="btn btn-success">View</button></a>
-                    <a href="{{route('getGroupByIdd', ['id'=>$group->id])}}"><button type="submit" class="btn btn-success">Edit</button></a>
+                    <a href="{{route('getGroupByIdEdit', ['id'=>$group->id])}}"><button type="submit" class="btn btn-success">Edit</button></a>
                     <form action="{{route('delete', ['id'=>$group->id])}}" method="post">
                         @csrf
                         @method('delete')

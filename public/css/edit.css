@@ -15,12 +15,12 @@
 
   .navbar {
     font-size: 23px;
-    font-weight: 600;
+    font-weight: 400;
     background-color: rgba(0, 0, 0, 0.04);
+    letter-spacing: 5px;
     /* padding: 18px 50px; */
   }
-
-  .navbar .container-md .logout {
+  .container-md .logout {
     font-size: 20px;
     border-radius: 50px;
     padding: 10px 20px;
@@ -44,7 +44,7 @@
   .title > h2 {
     font-weight: bolder;
     letter-spacing: 5px;
-    color: #000;
+    color: rgba(0, 0, 0, 0.849);
   }
 
   .card {
@@ -55,6 +55,7 @@
     border-radius: 45px;
     font-size: 20px;
     font-weight: bolder;
+    border-color: #C4DAE4;
   }
   .form-control {
     border-radius: 10px;
@@ -79,7 +80,7 @@
 
   .btn:hover {
     background: white;
-    border: 2px solid #dadff1;
+    border: 2px solid #C4DAE4;
     color: #334257;
     transition: 0.5s;
   }
@@ -87,6 +88,8 @@
   .btn:focus {
     box-shadow: none;
   }
+
+
 
   .inputfile {
     width: 0.1px;
@@ -113,7 +116,7 @@
     background-color: #5768a7;
   }
 
-  inputfile + label {
+  .inputfile + label {
     cursor: pointer; /* "hand" cursor */
   }
 
@@ -133,5 +136,16 @@
     font-size: large;
     color: #334257;
     font-weight: bolder;
+  }
+
+  .nav-link:hover{
+  color: #548CA8;
+  }
+
+  .nav-link:focus{
+    color: #548CA8;
+  }
+  .buttonsavecancel{
+    padding-right: 3.25rem;
   }
   

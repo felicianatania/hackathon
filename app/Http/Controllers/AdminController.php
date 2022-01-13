@@ -46,11 +46,15 @@ class AdminController extends Controller
         // }
     }
 
-
-    public function getGroupByIdd($id){
+    public function getGroupByIdEdit($id){
         $group = User::find($id);
         //dd($group);
         return view('adminPanel.updateGroup', ['group' => $group]);
+    }
+
+    public function getMemberByIdEdit($id, $memberNo){
+        $member = DB::table('members')->where('groupId',$id)->where('memberNo',$memberNo)->get()->toArray();;
+        return view('adminPanel.updateGroup', ['member' => $member, 'groupId'=>$id]);
     }
 
     public function deleteGroup($id){
@@ -77,6 +81,24 @@ class AdminController extends Controller
         ]);
 
         return redirect(route('getGroupsDashboard'));
+    }
+
+    public function updateGroup(Request $request, $id){
+        $group = User::find($id);
+
+        $group -> update([
+            'fullname' => $request->fullname,
+            'email' => $request->email,
+            'WA' => $request->WA,
+            'lineId' => $request->lineId,
+            'github' => $request->github,
+            'birthPlace' => $request->birthPlace,
+            'birthDate' => $request->birthDate,
+        ]);
+
+        //return redirect(route('getGroupByIdEdit'));
+        //return redirect()->route( 'getGroupByIdEdit' )->with( [ 'id' => $id ] );
+        return redirect()->route('getGroupByIdEdit', ['id' => $id]);
     }
 
     // public function dashboardPage(){
