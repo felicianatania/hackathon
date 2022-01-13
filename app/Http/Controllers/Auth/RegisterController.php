@@ -80,10 +80,10 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         $CVName = request()->file('CV')->getClientOriginalName();
-        $CV = request()->file('CV')->storeAs('file-data', $CVName);
+        $CV = request()->file('CV')->storeAs('file', $CVName);
 
         $IdCard_file_name = request()->file('IdCard')->getClientOriginalName();
-        $IdCard = request()->file('IdCard')->storeAs('file-data', $IdCard_file_name);
+        $IdCard = request()->file('IdCard')->storeAs('file', $IdCard_file_name);
 
         //$verfikasi = '0';
 

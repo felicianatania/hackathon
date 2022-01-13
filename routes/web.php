@@ -72,3 +72,11 @@ Route::get('/maki', function (){
     }
 );
 
+
+
+//show cv image and id card
+
+Route::prefix('image')->group(function () {
+    Route::get('file/{filename}','imagecontroller@showJobImage')
+    ->name('CV');
+});

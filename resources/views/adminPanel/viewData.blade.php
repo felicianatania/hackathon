@@ -166,8 +166,9 @@
                               </h5>
                             </div>
                             <div class="modal-body d-flex
-                            justify-content-center"">
-                            <img src="../asset/cv.jpg" alt="" />
+                            justify-content-center">
+                            {{-- {{ $url = Storage::url('public/file-data/', ); }} --}}
+                            <img src="{{ route('jobImage', $CV->image) }}" alt="CV image" title="CV image">
                           </div>
                           <div class="modal-footer">
                             <button
@@ -213,7 +214,7 @@
                             </h5>
                           </div>
                           <div class="modal-body d-flex
-                          justify-content-center"">
+                          justify-content-center">
                           <img src="../asset/cv.jpg" alt="" />
                         </div>
                         <div class="modal-footer">
