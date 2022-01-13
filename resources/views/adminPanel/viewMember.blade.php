@@ -185,20 +185,20 @@
                     </div>
 
 
-                    
+
                     <div class="flazz">
                       <button
                         type="button"
                         class="btn"
                         data-bs-toggle="modal"
-                        data-bs-target="#view"
+                        data-bs-target="#viewidcard"
                       >
                         View flazz / ID card
                       </button>
 
                       <div
                         class="modal fade"
-                        id="view"
+                        id="viewidcard"
                         tabindex="-1"
                         aria-labelledby="viewflazz"
                         aria-hidden="true"

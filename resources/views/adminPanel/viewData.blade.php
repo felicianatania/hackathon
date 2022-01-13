@@ -7,7 +7,7 @@
       <div class="view">
         <ul class="nav nav-pills nav-fill">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="#">leader</a>
+            <a class="nav-link" aria-current="page" href="#">Leader</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('getMemberByIdView', ['id'=>$group->id, 'memberNo'=>1])}}">Member 1</a>
@@ -188,20 +188,20 @@
 
 
 
-                  
+
                   <div class="flazz">
                     <button
                       type="button"
                       class="btn"
                       data-bs-toggle="modal"
-                      data-bs-target="#view"
+                      data-bs-target="#viewidcard"
                     >
                       View flazz / ID card
                     </button>
 
                     <div
                       class="modal fade"
-                      id="view"
+                      id="viewidcard"
                       tabindex="-1"
                       aria-labelledby="viewflazz"
                       aria-hidden="true"
