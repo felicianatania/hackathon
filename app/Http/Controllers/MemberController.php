@@ -6,6 +6,7 @@ use App\Http\Requests\MemberRequest;
 use App\Models\Member;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MemberController extends Controller
 {
@@ -45,11 +46,13 @@ class MemberController extends Controller
         return redirect(route('home'));
     }
 
-    public function dashboardView(Request $request){
+    public function dashboardView(Request $request, $memberNo){
         $groupId = $request->user()->id;
         $group = User::find($groupId);
+        $member = DB::table('members')->where('memberNo',$memberNo)->get()->toArray();
 
-        return view('member.dashboard', ['group' => $group]);
+        return view('member.dashboard', ['group' => $group, 'member' => $member]);
     }
+
 
 }

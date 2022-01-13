@@ -315,6 +315,7 @@
                   <input
                     type="text"
                     class="form-control"
+                    value="{{$member[0]->fullname}}"
                     id="name"
                     placeholder="Full Name"
                   />
