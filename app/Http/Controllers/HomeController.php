@@ -25,13 +25,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $groups = User::all()->except(1);
-        $group=Auth::id();
-        if($group === 1){
-            return view('adminPanel.dashboard', ['groups' => $groups]);
-        }else{
-            return view('member.dashboard');
-        }
-
+        return view('welcome');
     }
 }

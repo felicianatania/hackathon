@@ -10,6 +10,9 @@ class PaymentController extends Controller
 {
     public function getGroupByIdPayment(Request $request){
         $groupId = $request->user()->id;
+        $payment = DB::table('users')
+            ->join('payments')
+            ->select('')
         return view('payment', ['groupId' => $groupId]);
     }
 
