@@ -247,7 +247,7 @@
                           </div>
                           <div class="modal-body d-flex
                           justify-content-center">
-                          <img src="{{ asset('storage/'.$group->payment) }}" name="payment" alt="No data" />
+                          <img src="{{ asset('storage/'.$group->imagepayment) }}" name="payment" alt="No data" />
                         </div>
                         <div class="modal-footer">
                           <button

@@ -12,14 +12,14 @@ class PaymentController extends Controller
 {
     public function getGroupByIdPayment(Request $request){
         $groupId = $request->user()->id;
-        $payment = DB::table('users')
+        //$payment = DB::table('users')
             // ->join('payments')
             // ->select('users.id')
             // ->where();
-            ->join('payments', 'git', '=', 'shops.shop_id')
-            ->where('customer_contact', $contact_no)
-            ->get();
-        return view('payment', ['groupId' => $groupId, 'payments'=> $payment]);
+            // ->join('payments', 'git', '=', 'shops.shop_id')
+            // ->where('customer_contact', $contact_no)
+            // ->get();
+        return view('payment', ['groupId' => $groupId]);
     }
 
     public function createPayment(PaymentRequest $request, $id){
