@@ -276,7 +276,7 @@
                           Flazz / ID Card
                           </h5>
                         </div>
-                        <div class="modal-body d-flex justify-content-center"">
+                        <div class="modal-body d-flex justify-content-center">
                         <img src="{{ asset('storage/'.$group->IdCard) }}" alt="No data yet" />
                       </div>
                       <div class="modal-footer">
