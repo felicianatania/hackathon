@@ -21,10 +21,10 @@ class validasicontroller extends Controller
 
     public function validasiUser(){
         if(Auth::user()->status == '3'){
-                return view('welcome');
+                return redirect(route('getGroupsDashboard'));
             }
             else{
-                return view('welcome');
+                return redirect(route('dashboardView'));
             }
     }
 }
