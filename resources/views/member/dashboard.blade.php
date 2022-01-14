@@ -296,11 +296,237 @@
           </div>
         </div>
       </div>
-      <!-- member -->
-      <div
+      <!-- member 1-->
+      @if(!empty($member1))
+        <div
         class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
         id="member1"
-      >
+        >
+        <div class="title mb-5">
+            <h2>Member 1</h2>
+        </div>
+        <div class="card">
+            <div class="card-body">
+            <form action="">
+                <div class="row mb-3">
+                <label for="name" class="col-sm-3 col-form-label"
+                    >Full Name</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member1[0]->fullname}}"
+                    id="name"
+                    placeholder="Full Name"
+                    />
+                </div>
+                </div>
+
+                <div class="row mb-3">
+                <label for="Email" class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-8">
+                    <input
+                    type="email"
+                    class="form-control"
+                    value="{{$member1[0]->email}}"
+                    id="Email"
+                    placeholder="Email"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="number" class="col-sm-3 col-form-label"
+                    >Whatsapp Number</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="tel"
+                    class="form-control"
+                    value="{{$member1[0]->WA}}"
+                    id="number"
+                    placeholder="Whatsapp Number"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="line" class="col-sm-3 col-form-label"
+                    >LINE ID</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member1[0]->lineId}}"
+                    id="line"
+                    placeholder="LINE ID"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="github" class="col-sm-3 col-form-label"
+                    >Github/Gitlab ID</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member1[0]->github}}"
+                    id="github"
+                    placeholder="Github/Gitlab ID"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="birthplace" class="col-sm-3 col-form-label"
+                    >Birth Place</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member1[0]->birthPlace}}"
+                    id="birthplace"
+                    placeholder="Birth Place"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="birthdate" class="col-sm-3 col-form-label"
+                    >Birth Date</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="date"
+                    class="form-control"
+                    value="{{$member1[0]->birthDate}}"
+                    id="birthdate"
+                    placeholder="Birth date"
+                    onfocus="(this.type='date')"
+                    onblur="if(this.value == '') this.type='text';"
+                    />
+                </div>
+                </div>
+                {{-- <div class="view d-flex justify-content-around pt-3"> --}}
+                {{-- <div class="box">
+                    <input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1 addcv" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file-1"><span>Add CV</span></label>
+                </div> --}}
+                {{-- <div class="box">
+                    <input type="file" name="file-2[]" id="file-2" class="inputfile inputfile-2 addflazz" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file-2"><span>Add Flazz</span></label>
+                </div>
+                </div>
+                <div class="submit d-flex justify-content-center mt-3">
+                <button type="submit" class="btn">Submit</button>
+                </div> --}}
+                <div class="view d-flex justify-content-around pt-3">
+                    <div class="cv">
+                      <button
+                        type="button"
+                        class="btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#view"
+                      >
+                        View CV
+                      </button>
+
+                      <div
+                        class="modal fade"
+                        id="view"
+                        tabindex="-1"
+                        aria-labelledby="viewCV"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center"
+                        >
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5
+                                class="modal-title fw-bolder"
+                                id="viewCV"
+                                style="font-size: 25px"
+                              >
+                                CV
+                              </h5>
+                            </div>
+                            <div class="modal-body d-flex
+                            justify-content-center">
+                            <img src="{{ asset('storage/'.$member1[0]->CV) }}"  title="CV Image" alt="No data yet">
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn"
+                              data-bs-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="flazz">
+                    <button
+                      type="button"
+                      class="btn"
+                      data-bs-toggle="modal"
+                      data-bs-target="#viewidcard"
+                    >
+                      View flazz / ID card
+                    </button>
+
+                    <div
+                      class="modal fade"
+                      id="viewidcard"
+                      tabindex="-1"
+                      aria-labelledby="viewflazz"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5
+                              class="modal-title fw-bolder"
+                              id="viewCV"
+                              style="font-size: 25px"
+                            >
+                              Flazz / ID Card
+                            </h5>
+                          </div>
+                          <div class="modal-body d-flex
+                          justify-content-center">
+                          <img src="{{ asset('storage/'.$member1[0]->IdCard) }}"  title="IdCard Image" alt="No data yet">
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+      @else
+        <div
+            class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
+            id="member1"
+        >
         <div class="title mb-5">
           <h2>Member 1</h2>
         </div>
@@ -425,151 +651,731 @@
           </div>
         </div>
       </div>
+      @endif
+      {{-- end member 1 --}}
+
+      {{-- member 2 --}}
+      @if(!empty($member2))
+        <div
+        class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
+        id="member1"
+        >
+        <div class="title mb-5">
+            <h2>Member 2</h2>
+        </div>
+        <div class="card">
+            <div class="card-body">
+            <form action="">
+                <div class="row mb-3">
+                <label for="name" class="col-sm-3 col-form-label"
+                    >Full Name</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member2[0]->fullname}}"
+                    id="name"
+                    placeholder="Full Name"
+                    />
+                </div>
+                </div>
+
+                <div class="row mb-3">
+                <label for="Email" class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-8">
+                    <input
+                    type="email"
+                    class="form-control"
+                    value="{{$member2[0]->email}}"
+                    id="Email"
+                    placeholder="Email"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="number" class="col-sm-3 col-form-label"
+                    >Whatsapp Number</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="tel"
+                    class="form-control"
+                    value="{{$member2[0]->WA}}"
+                    id="number"
+                    placeholder="Whatsapp Number"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="line" class="col-sm-3 col-form-label"
+                    >LINE ID</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member2[0]->lineId}}"
+                    id="line"
+                    placeholder="LINE ID"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="github" class="col-sm-3 col-form-label"
+                    >Github/Gitlab ID</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member2[0]->github}}"
+                    id="github"
+                    placeholder="Github/Gitlab ID"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="birthplace" class="col-sm-3 col-form-label"
+                    >Birth Place</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member2[0]->birthPlace}}"
+                    id="birthplace"
+                    placeholder="Birth Place"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="birthdate" class="col-sm-3 col-form-label"
+                    >Birth Date</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="date"
+                    class="form-control"
+                    value="{{$member2[0]->birthDate}}"
+                    id="birthdate"
+                    placeholder="Birth date"
+                    onfocus="(this.type='date')"
+                    onblur="if(this.value == '') this.type='text';"
+                    />
+                </div>
+                </div>
+                {{-- <div class="view d-flex justify-content-around pt-3"> --}}
+                {{-- <div class="box">
+                    <input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1 addcv" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file-1"><span>Add CV</span></label>
+                </div> --}}
+                {{-- <div class="box">
+                    <input type="file" name="file-2[]" id="file-2" class="inputfile inputfile-2 addflazz" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file-2"><span>Add Flazz</span></label>
+                </div>
+                </div>
+                <div class="submit d-flex justify-content-center mt-3">
+                <button type="submit" class="btn">Submit</button>
+                </div> --}}
+                <div class="view d-flex justify-content-around pt-3">
+                    <div class="cv">
+                      <button
+                        type="button"
+                        class="btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#view"
+                      >
+                        View CV
+                      </button>
+
+                      <div
+                        class="modal fade"
+                        id="view"
+                        tabindex="-1"
+                        aria-labelledby="viewCV"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center"
+                        >
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5
+                                class="modal-title fw-bolder"
+                                id="viewCV"
+                                style="font-size: 25px"
+                              >
+                                CV
+                              </h5>
+                            </div>
+                            <div class="modal-body d-flex
+                            justify-content-center">
+                            <img src="{{ asset('storage/'.$member2[0]->CV) }}"  title="CV Image" alt="No data yet">
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn"
+                              data-bs-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="flazz">
+                    <button
+                      type="button"
+                      class="btn"
+                      data-bs-toggle="modal"
+                      data-bs-target="#viewidcard"
+                    >
+                      View flazz / ID card
+                    </button>
+
+                    <div
+                      class="modal fade"
+                      id="viewidcard"
+                      tabindex="-1"
+                      aria-labelledby="viewflazz"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5
+                              class="modal-title fw-bolder"
+                              id="viewCV"
+                              style="font-size: 25px"
+                            >
+                              Flazz / ID Card
+                            </h5>
+                          </div>
+                          <div class="modal-body d-flex
+                          justify-content-center">
+                          <img src="{{ asset('storage/'.$member2[0]->IdCard) }}"  title="IdCard Image" alt="No data yet">
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+      @else
+        <div
+            class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
+            id="member1"
+        >
+            <div class="title mb-5">
+            <h2>Member 2</h2>
+            </div>
+            <div class="card">
+            <div class="card-body">
+                <form action="{{route('createMember', ['id'=>$group->id, 'memberNo'=>2])}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                <div class="row mb-3">
+                    <label for="name" class="col-sm-3 col-form-label"
+                    >Full Name</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="fullname"
+                        id="name"
+                        placeholder="Full Name"
+                    />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="Email" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-8">
+                    <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        id="Email"
+                        placeholder="Email"
+                    />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="number" class="col-sm-3 col-form-label"
+                    >Whatsapp Number</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="tel"
+                        class="form-control"
+                        name="WA"
+                        id="number"
+                        placeholder="Whatsapp Number"
+                    />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="line" class="col-sm-3 col-form-label"
+                    >LINE ID</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="lineId"
+                        id="line"
+                        placeholder="LINE ID"
+                    />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="github" class="col-sm-3 col-form-label"
+                    >Github/Gitlab ID</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="github"
+                        id="github"
+                        placeholder="Github/Gitlab ID"
+                    />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="birthplace" class="col-sm-3 col-form-label"
+                    >Birth Place</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="birthPlace"
+                        id="birthplace"
+                        placeholder="Birth Place"
+                    />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="birthdate" class="col-sm-3 col-form-label"
+                    >Birth Date</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="date"
+                        class="form-control"
+                        name="birthDate"
+                        id="birthdate"
+                        placeholder="Birth date"
+                        onfocus="(this.type='date')"
+                        onblur="if(this.value == '') this.type='text';"
+                    />
+                    </div>
+                </div>
+                <div class="view d-flex justify-content-around pt-3">
+                    <div class="box">
+                    <input type="file" name="CV" id="file-1" class="inputfile inputfile-1 addcv" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file-1"><span>Add CV</span></label>
+                    </div>
+
+                    <div class="box">
+                    <input type="file" name="IdCard" id="file-2" class="inputfile inputfile-2 addflazz" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file-2"><span>Add Flazz</span></label>
+                    </div>
+                </div>
+                <div class="submit d-flex justify-content-center mt-3">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+      @endif
+      {{-- end member 2 --}}
+
+      {{-- member 3 --}}
+      @if(!empty($member3))
+        <div
+        class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
+        id="member1"
+        >
+        <div class="title mb-5">
+            <h2>Member 3</h2>
+        </div>
+        <div class="card">
+            <div class="card-body">
+            <form action="">
+                <div class="row mb-3">
+                <label for="name" class="col-sm-3 col-form-label"
+                    >Full Name</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member3[0]->fullname}}"
+                    id="name"
+                    placeholder="Full Name"
+                    />
+                </div>
+                </div>
+
+                <div class="row mb-3">
+                <label for="Email" class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-8">
+                    <input
+                    type="email"
+                    class="form-control"
+                    value="{{$member3[0]->email}}"
+                    id="Email"
+                    placeholder="Email"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="number" class="col-sm-3 col-form-label"
+                    >Whatsapp Number</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="tel"
+                    class="form-control"
+                    value="{{$member3[0]->WA}}"
+                    id="number"
+                    placeholder="Whatsapp Number"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="line" class="col-sm-3 col-form-label"
+                    >LINE ID</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member3[0]->lineId}}"
+                    id="line"
+                    placeholder="LINE ID"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="github" class="col-sm-3 col-form-label"
+                    >Github/Gitlab ID</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member3[0]->github}}"
+                    id="github"
+                    placeholder="Github/Gitlab ID"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="birthplace" class="col-sm-3 col-form-label"
+                    >Birth Place</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="text"
+                    class="form-control"
+                    value="{{$member3[0]->birthPlace}}"
+                    id="birthplace"
+                    placeholder="Birth Place"
+                    />
+                </div>
+                </div>
+                <div class="row mb-3">
+                <label for="birthdate" class="col-sm-3 col-form-label"
+                    >Birth Date</label
+                >
+                <div class="col-sm-8">
+                    <input
+                    type="date"
+                    class="form-control"
+                    value="{{$member3[0]->birthDate}}"
+                    id="birthdate"
+                    placeholder="Birth date"
+                    onfocus="(this.type='date')"
+                    onblur="if(this.value == '') this.type='text';"
+                    />
+                </div>
+                </div>
+                {{-- <div class="view d-flex justify-content-around pt-3"> --}}
+                {{-- <div class="box">
+                    <input type="file" name="file-1[]" id="file-1" class="inputfile inputfile-1 addcv" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file-1"><span>Add CV</span></label>
+                </div> --}}
+                {{-- <div class="box">
+                    <input type="file" name="file-2[]" id="file-2" class="inputfile inputfile-2 addflazz" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file-2"><span>Add Flazz</span></label>
+                </div>
+                </div>
+                <div class="submit d-flex justify-content-center mt-3">
+                <button type="submit" class="btn">Submit</button>
+                </div> --}}
+                <div class="view d-flex justify-content-around pt-3">
+                    <div class="cv">
+                      <button
+                        type="button"
+                        class="btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#view"
+                      >
+                        View CV
+                      </button>
+
+                      <div
+                        class="modal fade"
+                        id="view"
+                        tabindex="-1"
+                        aria-labelledby="viewCV"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center"
+                        >
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5
+                                class="modal-title fw-bolder"
+                                id="viewCV"
+                                style="font-size: 25px"
+                              >
+                                CV
+                              </h5>
+                            </div>
+                            <div class="modal-body d-flex
+                            justify-content-center">
+                            <img src="{{ asset('storage/'.$member3[0]->CV) }}"  title="CV Image" alt="No data yet">
+                          </div>
+                          <div class="modal-footer">
+                            <button
+                              type="button"
+                              class="btn"
+                              data-bs-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
+                  <div class="flazz">
+                    <button
+                      type="button"
+                      class="btn"
+                      data-bs-toggle="modal"
+                      data-bs-target="#viewidcard"
+                    >
+                      View flazz / ID card
+                    </button>
+
+                    <div
+                      class="modal fade"
+                      id="viewidcard"
+                      tabindex="-1"
+                      aria-labelledby="viewflazz"
+                      aria-hidden="true"
+                    >
+                      <div
+                        class="modal-dialog modal-lg modal-dialog-centered d-flex justify-content-center"
+                      >
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5
+                              class="modal-title fw-bolder"
+                              id="viewCV"
+                              style="font-size: 25px"
+                            >
+                              Flazz / ID Card
+                            </h5>
+                          </div>
+                          <div class="modal-body d-flex
+                          justify-content-center">
+                          <img src="{{ asset('storage/'.$member3[0]->IdCard) }}"  title="IdCard Image" alt="No data yet">
+                        </div>
+                        <div class="modal-footer">
+                          <button
+                            type="button"
+                            class="btn"
+                            data-bs-dismiss="modal"
+                          >
+                            Close
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </form>
+            </div>
+        </div>
+        </div>
+      @else
+        <div
+            class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
+            id="member1"
+        >
+            <div class="title mb-5">
+            <h2>Member 3</h2>
+            </div>
+            <div class="card">
+            <div class="card-body">
+                <form action="{{route('createMember', ['id'=>$group->id, 'memberNo'=>3])}}" method="post" enctype="multipart/form-data">
+                    @csrf
+                <div class="row mb-3">
+                    <label for="name" class="col-sm-3 col-form-label"
+                    >Full Name</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="fullname"
+                        id="name"
+                        placeholder="Full Name"
+                    />
+                    </div>
+                </div>
+
+                <div class="row mb-3">
+                    <label for="Email" class="col-sm-3 col-form-label">Email</label>
+                    <div class="col-sm-8">
+                    <input
+                        type="email"
+                        class="form-control"
+                        name="email"
+                        id="Email"
+                        placeholder="Email"
+                    />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="number" class="col-sm-3 col-form-label"
+                    >Whatsapp Number</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="tel"
+                        class="form-control"
+                        name="WA"
+                        id="number"
+                        placeholder="Whatsapp Number"
+                    />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="line" class="col-sm-3 col-form-label"
+                    >LINE ID</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="lineId"
+                        id="line"
+                        placeholder="LINE ID"
+                    />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="github" class="col-sm-3 col-form-label"
+                    >Github/Gitlab ID</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="github"
+                        id="github"
+                        placeholder="Github/Gitlab ID"
+                    />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="birthplace" class="col-sm-3 col-form-label"
+                    >Birth Place</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="birthPlace"
+                        id="birthplace"
+                        placeholder="Birth Place"
+                    />
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="birthdate" class="col-sm-3 col-form-label"
+                    >Birth Date</label
+                    >
+                    <div class="col-sm-8">
+                    <input
+                        type="date"
+                        class="form-control"
+                        name="birthDate"
+                        id="birthdate"
+                        placeholder="Birth date"
+                        onfocus="(this.type='date')"
+                        onblur="if(this.value == '') this.type='text';"
+                    />
+                    </div>
+                </div>
+                <div class="view d-flex justify-content-around pt-3">
+                    <div class="box">
+                    <input type="file" name="CV" id="file-1" class="inputfile inputfile-1 addcv" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file-1"><span>Add CV</span></label>
+                    </div>
+
+                    <div class="box">
+                    <input type="file" name="IdCard" id="file-2" class="inputfile inputfile-2 addflazz" data-multiple-caption="{count} files selected" multiple />
+                    <label for="file-2"><span>Add Flazz</span></label>
+                    </div>
+                </div>
+                <div class="submit d-flex justify-content-center mt-3">
+                    <button type="submit" class="btn">Submit</button>
+                </div>
+                </form>
+            </div>
+            </div>
+        </div>
+      @endif
+
+      {{-- end member 3 --}}
     </div>
   </form>
 </div>
 </div>
 </div>
 
-      {{-- <div
-        class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
-        id="member1"
-      >
-        <div class="title mb-5">
-          <h2>Member 2</h2>
-        </div>
-        <div class="card">
-          <div class="card-body">
-            <form action="">
-              <div class="row mb-3">
-                <label for="name" class="col-sm-3 col-form-label"
-                  >Full Name</label
-                >
-                <div class="col-sm-8">
-                  <input
-                    type="text"
-                    class="form-control"
-                    value=""
-                    id="name"
-                    placeholder="Full Name"
-                  />
-                </div>
-              </div>
-
-              <div class="row mb-3">
-                <label for="Email" class="col-sm-3 col-form-label">Email</label>
-                <div class="col-sm-8">
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="Email"
-                    placeholder="Email"
-                  />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="number" class="col-sm-3 col-form-label"
-                  >Whatsapp Number</label
-                >
-                <div class="col-sm-8">
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="number"
-                    placeholder="Whatsapp Number"
-                  />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="line" class="col-sm-3 col-form-label"
-                  >LINE ID</label
-                >
-                <div class="col-sm-8">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="line"
-                    placeholder="LINE ID"
-                  />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="github" class="col-sm-3 col-form-label"
-                  >Github/Gitlab ID</label
-                >
-                <div class="col-sm-8">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="github"
-                    placeholder="Github/Gitlab ID"
-                  />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="birthplace" class="col-sm-3 col-form-label"
-                  >Birth Place</label
-                >
-                <div class="col-sm-8">
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="birthplace"
-                    placeholder="Birth Place"
-                  />
-                </div>
-              </div>
-              <div class="row mb-3">
-                <label for="birthdate" class="col-sm-3 col-form-label"
-                  >Birth Date</label
-                >
-                <div class="col-sm-8">
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="birthdate"
-                    placeholder="Birth date"
-                    onfocus="(this.type='date')"
-                    onblur="if(this.value == '') this.type='text';"
-                  />
-                </div>
-              </div>
-              <div class="view d-flex justify-content-around pt-3">
-                <input
-                  type="file"
-                  name="file"
-                  id="file"
-                  class="addcv inputfile"
-                  data-multiple-caption="{count} files selected"
-                  multiple
-                />
-                <label for="file"><span>Add CV</span></label>
-
-                <input
-                  type="file"
-                  name="file"
-                  id="file"
-                  class="addflazz inputfile"
-                  data-multiple-caption="{count1} files selected"
-                  multiple
-                />
-                <label for="file"><span>Add Flazz</span></label>
-              </div>
-              <div class="submit d-flex justify-content-center mt-3">
-                <button type="submit" class="btn">Submit</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div> --}}
-
-      {{-- <div class="button d-flex justify-content-center">
-        <div class="form-group change">
-          <label for="">&nbsp;</label><br />
-          <a class="btn btn-success add-more">+ Add New Member</a>
-        </div>
-      </div>
-    </div> --}}
 
     <!-- contact person -->
     <div class="CP" style="margin: 120px;">
