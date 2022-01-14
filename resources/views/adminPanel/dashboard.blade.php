@@ -170,7 +170,7 @@
                     </form>
                     @endif
 
-                    @if ($group->verification===0)
+                    {{-- @if ($group->verification===0)
                     <button
                     type="button"
                     class="btn"
@@ -179,7 +179,7 @@
                   >
                     Verify
                   </button>
-                  @endif
+                  @endif--}}
 
                   <!-- Modal -->
                   <div
@@ -201,7 +201,7 @@
                                 @method('PATCH')
                                 <button type="submit" class="btn">Verify</button>
                             </form>
-                          {{-- <button type="button" class="btn">verify</button> --}}
+                          <button type="button" class="btn">verify</button>
                           <button
                             type="button"
                             class="btn"
