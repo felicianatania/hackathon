@@ -46,8 +46,8 @@ Route::patch('/update-member/{id}/{memberNo}/{groupId}', [AdminController::class
 Route::patch('/verify-group/{id}', [AdminController::class, 'verifyGroup'])->name('verifyGroup');
 Route::delete('/delete-group/{id}', [AdminController::class, 'deleteGroup'])->name('delete');
 
-Route::get('/search-group', [AdminController::class, 'searchGroup'])->name('searchGroup');
-Route::get('/order-group', [AdminController::class, 'orderGroup'])->name('orderGroup');
+// Route::get('/search-group', [AdminController::class, 'searchGroup'])->name('searchGroup');
+// Route::get('/order-group', [AdminController::class, 'orderGroup'])->name('orderGroup');
 
 Auth::routes();
 
@@ -63,6 +63,10 @@ Route::group(['middleware' => IsAdminMiddleware::class], function(){
 	Route::get('/groups-dashboard', [AdminController::class, 'getGroupsDashboard'])->name('getGroupsDashboard');
     Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdEdit'])->name('getGroupByIdEdit');
     Route::get('/update-member/{id}/{memberNo}', [AdminController::class, 'getMemberByIdEdit'])->name('getMemberByIdEdit');
+    Route::get('/search-dashboard', [AdminController::class, 'searchDashboard'])->name('searchDashboard');
+    Route::get('/order-dashboard', [AdminController::class, 'orderDashboard'])->name('orderDashboard');
+    Route::get('/search-participant', [AdminController::class, 'searchParticipant'])->name('searchParticipant');
+    Route::get('/order-participant', [AdminController::class, 'orderParticipant'])->name('orderParticipant');
 });
 
 

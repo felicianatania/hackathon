@@ -80,15 +80,26 @@ class AdminController extends Controller
         return redirect(route('getGroups'));
     }
 
-    public function searchGroup(){
+    public function searchParticipant(){
         $search_text = $_GET['query'];
         $groups = User::where('groupName', 'LIKE', '%'.$search_text.'%')->get()->except(1);
-        return view('adminPanel.searchGroup', compact('groups'));
+        return view('adminPanel.searchParticipant', compact('groups'));
     }
 
-    public function orderGroup(){
+    public function searchDashboard(){
+        $search_text = $_GET['query'];
+        $groups = User::where('groupName', 'LIKE', '%'.$search_text.'%')->get()->except(1);
+        return view('adminPanel.searchDashboard', compact('groups'));
+    }
+
+    public function orderParticipant(){
         $groups = User::orderBy('groupName')->get()->except(1);
-        return view('adminPanel.searchGroup', compact('groups'));
+        return view('adminPanel.searchParticipant', compact('groups'));
+    }
+
+    public function orderDashboard(){
+        $groups = User::orderBy('groupName')->get()->except(1);
+        return view('adminPanel.searchDashboard', compact('groups'));
     }
 
     public function verifyGroup($id){
@@ -103,7 +114,7 @@ class AdminController extends Controller
 
     public function updateGroup(Request $request, $id){
         $group = User::find($id);
-        
+
         $group -> update([
             'fullname' => $request->fullname,
             'email' => $request->email,

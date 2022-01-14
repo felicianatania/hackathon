@@ -83,15 +83,15 @@
         <div class="fitur d-flex justify-content-center">
           <div class="search m-3" style="width: 54rem">
             <form class="d-flex" type="get" action="{{url('/search-dashboard')}}">
-                <input
-                  class="form-control search me-2"
-                  type="search"
-                  name="query"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button class="btn btn-outline-success" type="submit">Search</button>
-              </form>
+              <input
+                class="form-control search me-2"
+                type="search"
+                name="query"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
           </div>
           <div class="filter m-3">
             <div class="dropdown">
@@ -123,7 +123,7 @@
                 Sort
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="{{url('/order-dashboard')}}">by name</a></li>
+                <li><a class="dropdown-item" href="#">by name</a></li>
               </ul>
             </div>
           </div>
