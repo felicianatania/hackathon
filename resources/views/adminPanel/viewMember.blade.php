@@ -271,9 +271,9 @@
                 <div class="card-body">
                   <div class="title mb-5 text-center">
                     <h2>NO DATA</h2>
-                    <form>
+                    {{-- <form>
                         <input type="button" value="Go back!" onclick="history.back()">
-                    </form>
+                    </form> --}}
                   </div>
                 </div>
               </div>
