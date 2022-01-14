@@ -105,7 +105,7 @@
                 <div class="title mb-5 text-center">
                   <h2>{{$group->groupName}}</h2>
                 </div>
-                <form action="{{route('updateMember', ['id' => $member[0]->id, 'memberNo' => $member[0]->memberNo])}}" method="POST" enctype="multipart/form-data">
+                <form action="{{route('updateMember', ['id' => $member[0]->id, 'memberNo' => $member[0]->memberNo, 'groupId' => $groupId])}}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('patch')
                   <div class="row mb-3">
@@ -228,7 +228,7 @@
                 </form>
               </div>
             </div>
-        </form>
+        {{-- </form> --}}
           </div>
         </div>
       </div>

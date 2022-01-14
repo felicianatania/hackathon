@@ -110,10 +110,11 @@ class AdminController extends Controller
         return redirect()->route('getGroupByIdEdit', ['id' => $id]);
     }
 
-    public function updateMember(MemberRequest $request, $id, $memberNo){
+    public function updateMember(MemberRequest $request, $id, $memberNo, $groupId){
         $member = Member::find($id);
+        dd($member);
         //$member = Member::where('id', $id);
-        //$member = DB::table('members')->where('id',$id)->where('memberNo',$memberNo)->get();
+        //$member = DB::table('members')->where('groupId',$groupId)->where('memberNo',$memberNo)->get();
 
 
         $member -> update([
@@ -128,7 +129,7 @@ class AdminController extends Controller
 
         //return redirect(route('getGroupByIdEdit'));
         //return redirect()->route( 'getGroupByIdEdit' )->with( [ 'id' => $id ] );
-        return redirect()->route('getMemberByIdEdit', ['id' => $id, 'memberNo'=>$memberNo]);
+        return redirect()->route('getMemberByIdEdit', ['id' => $groupId, 'memberNo'=>$memberNo]);
     }
 
     // public function dashboardPage(){
