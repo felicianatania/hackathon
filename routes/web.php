@@ -65,8 +65,12 @@ Route::group(['middleware' => IsAdminMiddleware::class], function(){
     Route::get('/update-member/{id}/{memberNo}', [AdminController::class, 'getMemberByIdEdit'])->name('getMemberByIdEdit');
     Route::get('/search-dashboard', [AdminController::class, 'searchDashboard'])->name('searchDashboard');
     Route::get('/order-dashboard', [AdminController::class, 'orderDashboard'])->name('orderDashboard');
+    Route::get('/verified-dashboard', [AdminController::class, 'filterVerifiedDashboard'])->name('filterVerifiedDashboard');
+    Route::get('/unverified-dashboard', [AdminController::class, 'filterUnverifiedDashboard'])->name('filterUnverifiedDashboard');
     Route::get('/search-participant', [AdminController::class, 'searchParticipant'])->name('searchParticipant');
     Route::get('/order-participant', [AdminController::class, 'orderParticipant'])->name('orderParticipant');
+    Route::get('/verified-participant', [AdminController::class, 'filterVerifiedParticipant'])->name('filterVerifiedParticipant');
+    Route::get('/unverified-participant', [AdminController::class, 'filterUnverifiedParticipant'])->name('filterUnverifiedParticipant');
 });
 
 

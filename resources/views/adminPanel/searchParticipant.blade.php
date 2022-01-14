@@ -105,9 +105,9 @@
                 Filters
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">All</a></li>
-                <li><a class="dropdown-item" href="#">Verified</a></li>
-                <li><a class="dropdown-item" href="#">Unverified</a></li>
+                <li><a class="dropdown-item" href="{{url('/get-groups')}}">All</a></li>
+                <li><a class="dropdown-item" href="{{url('/verified-participant')}}">Verified</a></li>
+                <li><a class="dropdown-item" href="{{url('/unverified-participant')}}">Unverified</a></li>
               </ul>
             </div>
           </div>

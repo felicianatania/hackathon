@@ -80,6 +80,26 @@ class AdminController extends Controller
         return redirect(route('getGroups'));
     }
 
+    public function filterUnverifiedDashboard(){
+        $groups = User::where('verification', 0)->get()->except(1);
+        return view('adminPanel.searchDashboard', compact('groups'));
+    }
+
+    public function filterVerifiedDashboard(){
+        $groups = User::where('verification', 1)->get()->except(1);
+        return view('adminPanel.searchDashboard', compact('groups'));
+    }
+
+    public function filterUnverifiedParticipant(){
+        $groups = User::where('verification', 0)->get()->except(1);
+        return view('adminPanel.searchParticipant', compact('groups'));
+    }
+
+    public function filterVerifiedParticipant(){
+        $groups = User::where('verification', 1)->get()->except(1);
+        return view('adminPanel.searchParticipant', compact('groups'));
+    }
+
     public function searchParticipant(){
         $search_text = $_GET['query'];
         $groups = User::where('groupName', 'LIKE', '%'.$search_text.'%')->get()->except(1);

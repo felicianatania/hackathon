@@ -105,9 +105,9 @@
                 Filters
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">All</a></li>
-                <li><a class="dropdown-item" href="#">Verified</a></li>
-                <li><a class="dropdown-item" href="#">Unverified</a></li>
+                <li><a class="dropdown-item" href="{{url('/groups-dashboard')}}">All</a></li>
+                <li><a class="dropdown-item" href="{{url('/verified-dashboard')}}">Verified</a></li>
+                <li><a class="dropdown-item" href="{{url('/unverified-dashboard')}}">Unverified</a></li>
               </ul>
             </div>
           </div>
@@ -154,7 +154,7 @@
                 <p class="align-middle">{{ $group->groupName }}</p>
               </div>
             </td>
-                @if ($group->verification===1)
+                @if ($group->verification===0)
                     <td class="d-flex justify-content-center mt-3" style="border: none;"><b class="unverified">Unverified</b></td>
                 @else
                     <td class="d-flex justify-content-center mt-3" style="border: none;"><b class="verified">Verified</b></td>
