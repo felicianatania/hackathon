@@ -23,8 +23,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
     />
     <link rel="stylesheet" href="{{ asset('css/home.css') }}">
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <title>Dashboard Admin</title>
+    <title>Admin Panel</title>
   </head>
   <body>
     <!-- navbar-start -->
@@ -78,13 +77,13 @@
 
     <!-- dashboard-start -->
     <!-- welcome -->
-    <div class="container d-flex justify-content-center align-items-end mb-5">
+    <div class="container d-flex justify-content-center align-items-center">
       <div class="dashboard">
         <div class="fitur d-flex justify-content-center">
-          <div class="search m-3" style="width: 54rem">
+          <div class="search">
             <form class="d-flex">
               <input
-                class="form-control search me-2"
+                class="form-control me-2"
                 type="search"
                 placeholder="Search"
                 aria-label="Search"
@@ -92,10 +91,10 @@
               <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
             </form>
           </div>
-          <div class="filter m-3">
+          <div class="filter">
             <div class="dropdown">
               <button
-                class="btn btnfiltersort dropdown-toggle"
+                class="btn btn-secondary dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
@@ -110,10 +109,10 @@
               </ul>
             </div>
           </div>
-          <div class="sort m-3">
+          <div class="sort">
             <div class="dropdown">
               <button
-                class="btn btnfiltersort dropdown-toggle"
+                class="btn btn-secondary dropdown-toggle"
                 type="button"
                 id="dropdownMenuButton1"
                 data-bs-toggle="dropdown"
@@ -132,36 +131,26 @@
 
     <!-- content -->
     <div class="container">
-      <table class="table shadow-lg ">
+      <table class="table">
         <thead>
           <tr>
-            <th scope="col" width="200" class="align-middle text-center text-white">
-              Team List
-            </th>
-            <th scope="col" class="align-middle text-center text-white">Status</th>
-            <th scope="col" width="100" class="align-middle text-center text-white">
-              Action
-            </th>
+            <th scope="col">Team List</th>
+            <th scope="col">Status</th>
+            <th scope="col">Action</th>
           </tr>
         </thead>
-        <tbody class="mb-5">
-        @foreach ($groups as $group)
-          <tr>
-            <td class="align-middle text-center">
-              <div class="d-inline-flex">
-                <img src="assets/participant/adminpaneldas.png" alt="" />
-                <p class="align-middle">{{ $group->groupName }}</p>
-              </div>
-            </td>
-                @if ($group->verification===1)
-                    <td class="d-flex justify-content-center mt-3" style="border: none;"><b class="unverified">Unverified</b></td>
-                @else
-                    <td class="d-flex justify-content-center mt-3" style="border: none;"><b class="verified">Verified</b></td>
-                @endif
-            </td>
-            <td class="justify-content-center align-items-end">
-              <div class="d-flex">
-                <div class="verify m-3">
+        <tbody>
+            @foreach ($groups as $group)
+                <tr>
+                <td>{{ $group->groupName }}</td>
+                <td>
+                    @if ($group->verification===1)
+                        Verified
+                    @else
+                        Unverified
+                    @endif
+                </td>
+                <td>
                     @if ($group->verification===0)
                     <form action="{{route('verifyGroup', ['id'=>$group->id])}}" method="post">
                         @csrf
@@ -169,104 +158,91 @@
                         <button type="submit" class="btn btn-primary">Verify</button>
                     </form>
                     @endif
-
+                </td>
+                <td>
                     @if ($group->verification===0)
-                    <button
-                    type="button"
-                    class="btn"
-                    data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
-                  >
-                    Verify
-                  </button>
-                  @endif
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        Verify
+                        </button>
+                    @endif
 
-                  <!-- Modal -->
-                  <div
-                    class="modal fade"
-                    id="exampleModal"
-                    tabindex="-1"
-                    aria-labelledby="exampleModalLabel"
-                    aria-hidden="true"
-                  >
-                    <div class="modal-dialog modal-dialog-centered">
-                      <div class="modal-content">
-                        <div class="modal-body text-center fs-5">
-                          verify this Group
-                        </div>
 
-                        <div class="d-flex justify-content-around mb-3">
+                    <!-- Modal -->
+                    <div
+                      class="modal fade"
+                      id="exampleModal"
+                      tabindex="-1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog  modal-sm modal-dialog-centered ">
+                        <div class="modal-content">
+                          <div class="modal-body text-center fs-5">Verify This Group</div>
+
+                          <div class="d-flex justify-content-around mb-3">
                             <form action="{{route('verifyGroup', ['id'=>$group->id])}}" method="post">
                                 @csrf
                                 @method('PATCH')
-                                <button type="submit" class="btn">Verify</button>
+                                <button type="submit" class="btn btn-primary">Verify</button>
                             </form>
-                          {{-- <button type="button" class="btn">verify</button> --}}
-                          <button
-                            type="button"
-                            class="btn"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="edit m-3">
-                  <div class="edit">
-                    <button
-                      type="button"
-                      class="btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#view"
-                    >
-                      View
-                    </button>
-
-                    <div
-                      class="modal fade"
-                      id="view"
-                      tabindex="-1"
-                      aria-labelledby="view"
-                      aria-hidden="true"
-                    >
-                      <div
-                        class="modal-dialog d-flex justify-content-center"
-                      >
-                        <div class="modal-content">
-                          <div class="modal-header d-flex justify-content-center">
-                            <h5
-                              class="modal-title fw-bolder"
-                              id="view"
-                              style="font-size: 25px"
-                            >
-                            Payment Proof
-                            </h5>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                              Close
+                            </button>
                           </div>
-                          <div class="modal-body d-flex
-                          justify-content-center">
-                          {{-- <img src="{{ asset('storage/'.$group->payment->payment) }}" alt="" /> --}}
-                        </div>
-                        <div class="modal-footer">
-                          <button
-                            type="button"
-                            class="btn"
-                            data-bs-dismiss="modal"
-                          >
-                            Close
-                          </button>
                         </div>
                       </div>
                     </div>
+                    <a href="{{route('getGroupByIdView', ['id'=>$group->id])}}" class="btn btn-secondary btn-lg " tabindex="-1" role="button" aria-disabled="true">View</a>
+                  </td>
+            </tr>
+            @endforeach
+
+
+          {{-- <tr>
+            <td>Team b</td>
+            <td>Unverified</td>
+            <td>
+              <button
+                type="button"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                Verify
+              </button>
+
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog  modal-sm modal-dialog-centered ">
+                  <div class="modal-content">
+                    <div class="modal-body text-center fs-5">verify this Group</div>
+
+                    <div class="d-flex justify-content-around mb-3">
+
+                      <button type="button" class="btn btn-primary">
+                       verify
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                    </div>
                   </div>
-                </div>
                 </div>
               </div>
+              <a href="../forgot.html" class="btn btn-secondary btn-lg " tabindex="-1" role="button" aria-disabled="true">view</a>
             </td>
-          </tr>
-          @endforeach
+          </tr> --}}
+
         </tbody>
       </table>
     </div>
@@ -281,6 +257,5 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
   </body>
 </html>

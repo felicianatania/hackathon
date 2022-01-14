@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\MemberRequest;
 use App\Models\Member;
+use App\Models\Payment;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,9 +20,16 @@ class AdminController extends Controller
 
     public function getGroupsDashboard(){
         $groups = User::all()->except(1);
+        //$payments = Payment::all()->except(1);
         //$book = DB::table('books')->get();
-        return view('adminPanel.dashboard', ['groups' => $groups]);
+        return view('adminPanel.dashboard', ['groups' => $groups]); //'payments'=>$payments]);
     }
+
+    // public function getPaymentByGroupId($groupId){
+    //     //$payment = DB::table('payments')->where('groupId',$groupId)->get()->toArray();
+    //     $payment = Auth::user()->payment;
+    //     return (['payment'=>$payment]);
+    // }
 
     public function getGroupByIdView($id){
         $group = User::find($id);
