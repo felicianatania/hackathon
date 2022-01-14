@@ -43,7 +43,7 @@ class MemberController extends Controller
             'memberNo' => $memberNo,
         ]);
 
-        return redirect(route('home'));
+        return redirect(route('ValidasiUser'));
     }
 
     public function dashboardView(Request $request){

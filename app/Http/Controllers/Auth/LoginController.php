@@ -52,12 +52,6 @@ class LoginController extends Controller
         ]);
         if(auth()->attempt(array('groupName' => $input['groupName'], 'password' => $input['password'])))
         {
-            // if(Auth::user()->status == '3'){
-            //     return redirect()->route('getGroupsDashboard');
-            // }
-            // else{
-            //     return redirect()->route('dashboardView');
-            // }
             return redirect()->route('ValidasiUser');
         }else{
             return redirect()->route('login')

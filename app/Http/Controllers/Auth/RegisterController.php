@@ -103,6 +103,5 @@ class RegisterController extends Controller
             'activation_token' => rand(100000, 999999),
             //'verification' => $verfikasi,
         ]);
-
     }
 }
