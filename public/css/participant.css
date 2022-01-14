@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Poppins", sans-serif;
+    color: #ffff;
+    background-image: linear-gradient(to bottom right, #547ca8, #e4e4e4);
+    min-height: 180rem;
+  }
+
+  /* NavBar-start */
+  .navbar-brand {
+    width: 200px;
+  }
+  .navbar {
+    font-size: 23px;
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0.04);
+    letter-spacing: 5px;
+    /* padding: 18px 50px; */
+  }
+
+  .navbar .container-md .logout {
+    font-size: 20px;
+    border-radius: 50px;
+    padding: 10px 20px;
+    background: none;
+    border: 2px solid white;
+    color: #ffff;
+    text-decoration: none;
+  }
+
+  .navbar .container-md .logout:hover {
+    background: #ffff;
+    border: 2px solid white;
+    color: #334257;
+    transition: 0.9s;
+  }
+
+  .collapse .navbar-nav .nav-item {
+    padding: 0 40px;
+  }
+  /* nav-end */
+
+  /* fitur */
+
+  .container {
+    height: 25vh;
+  }
+
+  thead {
+
+  background-color: #548ca87d;
+    border-bottom: 8px solid #548ca8ab;
+   /* box-shadow: 100px black; */
+  }
+
+  tbody {
+    background-color: #ffff;
+  }
+  tbody > tr {
+    border-bottom: 8px solid #548ca8ab;
+  }
+
+  /* table{
+    /* border:2px solid #548ca8ab !important ;
+    box-shadow: 100px !important;
+  }  */
+
+  .btn {
+    font-size: 20px;
+    border-radius: 50px;
+    padding: 10px 50px;
+    background: #ffff;
+    border: 2px solid #547da875;
+    color: #548ca8;
+    font-weight: bold;
+  }
+
+  .btn:hover {
+    background: white;
+    border: 2px solid #dadff1;
+    color: #334257;
+    transition: 0.5s;
+  }
+
+  .btn:focus {
+    box-shadow: none;
+  }
+
+  .btnfiltersort {
+    background-color: #ffff;
+    border-radius: 15px;
+  }
+
+  .search{
+    height: 55px;
+  }
+
+  td >.unverified{
+    background-color: #7382b83f !important;
+
+    width : 9rem;
+    border-radius: 25px;
+    color: red;
+    padding: 10px 0px;
+  }
+
+  .verified{
+    background-color: #7382b83f !important;
+
+    width : 9rem;
+    border-radius: 25px;
+    color: #67B668;
+    padding: 10px 0px;
+  }

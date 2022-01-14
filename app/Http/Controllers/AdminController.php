@@ -104,6 +104,9 @@ class AdminController extends Controller
 
     public function updateMember(MemberRequest $request, $id, $memberNo){
         $member = Member::find($id);
+        //$member = Member::where('id', $id);
+        //$member = DB::table('members')->where('id',$id)->where('memberNo',$memberNo)->get();
+
 
         $member -> update([
             'fullname' => $request->fullname,
