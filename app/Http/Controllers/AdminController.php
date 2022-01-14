@@ -9,6 +9,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Storage;
 
 class AdminController extends Controller
 {
@@ -20,9 +21,15 @@ class AdminController extends Controller
 
     public function getGroupsDashboard(){
         $groups = User::all()->except(1);
+        $imagepayment = DB::table('payments')->select('payment')->get();
+        //dd($imagepayment);
         //$payments = Payment::all()->except(1);
         //$book = DB::table('books')->get();
-        return view('adminPanel.dashboard', ['groups' => $groups]); //'payments'=>$payments]);
+        return view('adminPanel.dashboard', ['groups' => $groups, 'imagepayment' => $imagepayment]); //'payments'=>$payments]);
+    }
+
+    public function viewpayment(){
+
     }
 
     // public function getPaymentByGroupId($groupId){
@@ -96,7 +103,7 @@ class AdminController extends Controller
 
     public function updateGroup(Request $request, $id){
         $group = User::find($id);
-
+        
         $group -> update([
             'fullname' => $request->fullname,
             'email' => $request->email,
