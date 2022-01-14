@@ -12,6 +12,7 @@ class PaymentController extends Controller
 {
     public function getGroupByIdPayment(Request $request){
         $groupId = $request->user()->id;
+        $payment = DB::table('payments')->where('groupId',$groupId)->get()->toArray();
         //$payment = DB::table('users')
             // ->join('payments')
             // ->select('users.id')
@@ -19,7 +20,7 @@ class PaymentController extends Controller
             // ->join('payments', 'git', '=', 'shops.shop_id')
             // ->where('customer_contact', $contact_no)
             // ->get();
-        return view('payment', ['groupId' => $groupId]);
+        return view('payment', ['groupId' => $groupId, 'payment' => $payment]);
     }
 
     public function createPayment(PaymentRequest $request, $id){
@@ -28,7 +29,7 @@ class PaymentController extends Controller
 
         Payment::create([
             'payment' => $payment,
-            'groupId' => $id
+            'groupId' => $id,
         ]);
 
         return redirect(route('home'));

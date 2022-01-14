@@ -80,6 +80,7 @@
                 <img src="assets/payment/account.png" alt="payment account">
             </div>
             <div class="upload" id="step">
+            @if(empty($payment))
                 <h1>Upload Payment Proof</h1>
                 <form action="{{route('createPayment', ['id'=>$groupId])}}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -95,6 +96,13 @@
 
                     <button type="submit">SUBMIT</button>
                 </form>
+            @else
+                @if(Auth::user()->verification == '0')
+                    <h1>Your Payment Proof is Being Checked</h1>
+                @else
+                    <h1>Congrats! Your Payment Proof is Accepted</h1>
+                @endif
+            @endif
 
             </div>
             <div class="verification" id="step">
