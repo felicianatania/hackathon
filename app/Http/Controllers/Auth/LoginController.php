@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Auth;
 
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -42,15 +44,21 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         $input = $request->all();
-
+        //$auth=Auth::user();
+        //$auth=Auth::user()->id;
         $this->validate($request, [
             'groupName' => 'required',
             'password' => 'required',
         ]);
-
         if(auth()->attempt(array('groupName' => $input['groupName'], 'password' => $input['password'])))
         {
-            return redirect()->route('home');
+            // if(Auth::user()->status == '3'){
+            //     return redirect()->route('getGroupsDashboard');
+            // }
+            // else{
+            //     return redirect()->route('dashboardView');
+            // }
+            return redirect()->route('ValidasiUser');
         }else{
             return redirect()->route('login')
                 ->with('error','Group Name And Password Are Wrong.');

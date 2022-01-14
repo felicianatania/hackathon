@@ -76,6 +76,8 @@ Route::post('/postveriftoken', [App\Http\Controllers\auth\VerifikasiController::
 //dashboard panel
 Route::get('/dashboard', [MemberController::class, 'dashboardView'])->name('dashboardView');
 
+//verifikasi user admin atau tidak setelah login
+Route::get('/blala', [App\Http\Controllers\validasicontroller::class, 'ValidasiUser'])->name('ValidasiUser');
 
 Route::get('/maki', function (){
     return view('auth.veriftokenaja');

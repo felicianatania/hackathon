@@ -25,11 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $groups = User::all()->except(1);
         $group=Auth::id();
         if($group === 1){
-            return view('home', ['group' => $group, 'number'=> 1]);
+            return view('adminPanel.dashboard', ['groups' => $groups]);
         }else{
-            return view('home', ['group' => $group, 'number'=> 2]);
+            return view('member.dashboard');
         }
 
     }

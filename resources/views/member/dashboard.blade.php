@@ -408,27 +408,15 @@
                 </div>
               </div>
               <div class="view d-flex justify-content-around pt-3">
-                <input
-                  type="file"
-                  {{-- name="file" --}}
-                  id="file"
-                  name="CV"
-                  class="addcv inputfile"
-                  data-multiple-caption="{count} files selected"
-                  multiple
-                />
-                <label for="file"><span>Add CV</span></label>
+                <div class="box">
+                  <input type="file" name="CV" id="file-1" class="inputfile inputfile-1 addcv" data-multiple-caption="{count} files selected" multiple />
+                  <label for="file-1"><span>Add CV</span></label>
+                </div>
 
-                <input
-                  type="file"
-                  {{-- name="file" --}}
-                  id="file"
-                  name="IdCard"
-                  class="addflazz inputfile"
-                  data-multiple-caption="{count1} files selected"
-                  multiple
-                />
-                <label for="file"><span>Add Flazz</span></label>
+                <div class="box">
+                  <input type="file" name="IdCard" id="file-2" class="inputfile inputfile-2 addflazz" data-multiple-caption="{count} files selected" multiple />
+                  <label for="file-2"><span>Add Flazz</span></label>
+                </div>
               </div>
               <div class="submit d-flex justify-content-center mt-3">
                 <button type="submit" class="btn">Submit</button>
@@ -437,6 +425,11 @@
           </div>
         </div>
       </div>
+    </div>
+  </form>
+</div>
+</div>
+</div>
 
       {{-- <div
         class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
