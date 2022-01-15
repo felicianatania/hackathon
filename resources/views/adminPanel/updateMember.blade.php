@@ -27,6 +27,8 @@
   </head>
   <body>
     <!-- navbar-start -->
+    @if(!empty($member))
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-md">
         <div>
@@ -233,6 +235,92 @@
         </div>
       </div>
     </div>
+
+    @else
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-md">
+          <div>
+            <a class="navbar-brand" href="#"
+              ><span><i class="fab fa-hackerrank"></i></span
+            ></a>
+          </div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-center"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{{url('/home')}}">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="{{route('getGroupsDashboard')}}">DASHBOARD</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="{{route('getGroups')}}">PARTICIPANT</a>
+              </li>
+            </ul>
+          </div>
+          <form action="{{route('logout')}}" method="POST">
+              @csrf
+              <button class="button logout">
+                  <span><i class="fas fa-sign-in-alt"></i></span> LOGOUT
+                  {{-- <button type="submit" class="button logout" role="button">Logout</button> --}}
+              </button>
+          </form>
+        </div>
+      </nav>
+    <div class="container d-flex justify-content-center align-items-center">
+        <div class="view">
+          <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="{{route('getGroupByIdView', ['id'=>$groupId])}}">leader</a>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$groupId, 'memberNo'=>1])}}">Member 1</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$groupId, 'memberNo'=>2])}}">Member 2</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('getMemberByIdEdit', ['id'=>$groupId, 'memberNo'=>3])}}">Member 3</a>
+              </li>
+          </ul>
+          <!-- ~~~ -->
+          <ul class="nav nav-pills nav-fill">
+
+          </ul>
+          <div class="member"></div>
+          <div class="data">
+            <div
+              class="member after-add-more d-flex flex-column align-items-center mt-5 mb-5"
+              id="member1"
+            >
+              <div class="card">
+                <div class="card-body">
+                  <div class="title mb-5 text-center">
+                    <h2>NO DATA</h2>
+                    {{-- <form>
+                        <input type="button" value="Go back!" onclick="history.back()">
+                    </form> --}}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      @endif
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
