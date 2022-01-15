@@ -91,7 +91,9 @@
                         <span class="fileDesc">File should be in .PNG or .JPG or .JPEG format</span>
                         <span>OR</span>
                         <button>Browse File</button>
-                        <input type="file" id="payment" name='payment' hidden required>
+                        {{-- <input type="file" id="payment" name='payment' hidden required> --}}
+                        <input type="file" name="payment" id="file-1" class="inputfile inputfile-1 addpayment" data-multiple-caption="{count} files selected" multiple hidden required/>
+                        <label for="file-1"><span></span></label>
                     </div>
 
                     <button type="submit">SUBMIT</button>
@@ -150,6 +152,38 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/7c925acf6e.js" crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/7c925acf6e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script>
+      var inputs = document.querySelectorAll(".addpayment");
+      Array.prototype.forEach.call(inputs, function (input) {
+        var label = input.nextElementSibling,
+          labelVal = label.innerHTML;
+
+        input.addEventListener("change", function (e) {
+          var fileName = "";
+          if (this.files && this.files.length > 1)
+            fileName = (
+              this.getAttribute("data-multiple-caption") || ""
+            ).replace("{count}", this.files.length);
+          else fileName = e.target.value.split("\\").pop();
+
+          if (fileName) label.querySelector("span").innerHTML = fileName;
+          else label.innerHTML = labelVal;
+        });
+      });
+      // aaaaa
+
+    </script>
 </body>
 
 </html>

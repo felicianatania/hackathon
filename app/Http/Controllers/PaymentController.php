@@ -32,6 +32,7 @@ class PaymentController extends Controller
             'groupId' => $id,
         ]);
 
-        return redirect(route('home'));
+        //return redirect(route('home'));
+        return redirect(route('getGroupByIdPayment'));
     }
 }
