@@ -149,12 +149,42 @@
 
   /* Payment Account */
   .paymentAcc {
-    min-height: 71vh;
+    min-height: 78vh;
   }
 
   /* Upload payment proof */
   .upload {
-    min-height: 80vh;
+    min-height: 88vh;
+  }
+  .upload .uploadContainer {
+    background-color: white;
+    width: 100%;
+    height: 500px;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 52px;
+    text-align: center;
+  }
+  .upload .uploadContainer i {
+    font-size: 72px;
+    margin-bottom: 20px;
+  }
+  #verifying i {
+    color: rgb(71, 162, 192);
+  }
+  #accepted i {
+    color: green;
+  }
+  #rejected i {
+    color: red;
+  }
+  #rejected p {
+    font-size: 24px;
+    line-height: auto;
   }
 
   .drag-area {

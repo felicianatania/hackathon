@@ -107,7 +107,7 @@
     background-color: #7382b83f !important;
     width : 10rem;
     border-radius: 25px;
-    color: red;
+    color: rgb(255, 210, 8);
     padding: 15px;
   }
 
@@ -119,5 +119,15 @@
     width : 10rem;
     border-radius: 25px;
     color: #67B668;
+    padding: 15px;
+  }
+  .rejected{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #7382b83f !important;
+    width : 10rem;
+    border-radius: 25px;
+    color: red;
     padding: 15px;
   }

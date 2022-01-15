@@ -100,9 +100,27 @@
                 </form>
             @else
                 @if(Auth::user()->verification == '0')
-                    <h1>Your Payment Proof is Being Checked</h1>
+                    <!-- Verifiying -->
+                    <h1>Upload Payment Proof</h1>
+                    <div class="uploadContainer" id="verifying">
+                        <i class="fas fa-spinner"></i>
+                        Payment is being verified
+                    </div>
+                @elseif(Auth::user()->verification == '-1')
+                    <!-- Rejected -->
+                    <h1>Upload Payment Proof</h1>
+                    <div class="uploadContainer" id="rejected">
+                        <i class="fas fa-times-circle"></i>
+                        Payment has been rejected<br>
+                        <p>Please contact one of our committees</p>
+                    </div>
                 @else
-                    <h1>Congrats! Your Payment Proof is Accepted</h1>
+                    <!-- Accepted -->
+                    <h1>Upload Payment Proof</h1>
+                    <div class="uploadContainer" id="accepted">
+                        <i class="fas fa-check-circle"></i>
+                        Payment has been accepted
+                    </div>
                 @endif
             @endif
 
