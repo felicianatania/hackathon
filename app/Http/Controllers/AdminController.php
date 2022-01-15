@@ -21,16 +21,21 @@ class AdminController extends Controller
 
     public function getGroupsDashboard(){
         $groups = User::all()->except(1);
-        $imagepayment = DB::table('payments')->select('payment')->get();
+        $imagepayments = DB::table('payments')->select('payment')->get();
         //$group = DB::table('payments')->select('groupId')->get();
-        //dd($imagepayment);
+        //dd($imagepayments);
         //$payments = Payment::all()->except(1);
         //$book = DB::table('books')->get();
-        return view('adminPanel.dashboard', ['groups' => $groups, 'imagepayment' => $imagepayment]); //'payments'=>$payments]);
+        return view('adminPanel.dashboard', ['groups' => $groups, 'imagepayments' => $imagepayments]); //'payments'=>$payments]);
     }
-    public function serveassets($imageSource){
-        $sourceFile = storage_path("app/public/payment-data/".$imageSource);
-        return response()->file($sourceFile);
+
+    //get image Payment
+    public function imagePayment($id){
+        $imagepayment= DB::table('payments')->where('groupId',$id)->get()->toArray();
+        //return Redirect::to('https://www.pakainfo.com');
+        //return redirect()->away('');
+        return view('adminPanel.imagepayment', ['imagepayment' => $imagepayment ]);
+        //return redirect()->route('getMemberByIdEdit', ['id' => $groupId, 'memberNo'=>$memberNo]);
     }
 
     // public function getPaymentByGroupId($groupId){

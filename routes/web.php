@@ -73,8 +73,6 @@ Route::group(['middleware' => IsAdminMiddleware::class], function(){
     Route::get('/unverified-participant', [AdminController::class, 'filterUnverifiedParticipant'])->name('filterUnverifiedParticipant');
 });
 
-//route image payment
-Route::get('/assets/{imageSource}', [AdminController::class, "serveassets"])->name("serveassets");
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //veriftokenpw
@@ -93,3 +91,5 @@ Route::get('/maki', function (){
 );
 
 
+//get image payment from dashboard admin panel
+Route::get('/imagePayment/{id}', [App\Http\Controllers\AdminController::class, 'imagePayment'])->name('imagePayment');

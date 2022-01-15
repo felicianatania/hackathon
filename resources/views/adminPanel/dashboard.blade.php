@@ -217,14 +217,22 @@
                 </div>
                 <div class="edit m-3">
                   <div class="edit">
-                    <button
-                      type="button"
-                      class="btn"
-                      data-bs-toggle="modal"
-                      data-bs-target="#view"
-                    >
-                      View
-                    </button>
+
+                    <form action="{{ URL::route('imagePayment', ['id'=>$group->id]) }}" method="GET" target="_blank" enctype="multipart/form-data">
+                        @csrf
+                        <button
+
+                        type="submit"
+                        class="btn"
+                        {{-- href="{{ URL::route('imagePayment') }}" --}}
+                        {{-- <a href="{{ URL::route('imagePayment') }}" target="_blank"> </a> --}}
+                        {{-- data-bs-toggle="modal"
+                        data-bs-target="#view" --}}
+                        >
+                        View
+                        </button>
+
+                    </form>
 
                     <div
                       class="modal fade"
@@ -249,7 +257,9 @@
                           <div class="modal-body d-flex
                           justify-content-center">
 
-                          <img src="/assets/asset.png" name="payment" alt="No data" style="width:450px"/>
+                          <img src="{{ asset('storage/'.$group->imagepayment) }}" name="payment" alt="No data" style="width:450px"/>
+                          {{-- {{ asset('storage/'.$member[0]->CV) }} --}}
+                          {{-- {{ echo  $imagepayment }} --}}
                         </div>
                         <div class="modal-footer">
                           <button
@@ -268,6 +278,7 @@
               </div>
             </td>
           </tr>
+
           @endforeach
         </tbody>
       </table>
