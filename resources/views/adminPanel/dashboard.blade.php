@@ -52,7 +52,7 @@
         >
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{{url('/')}}">HOME</a>
+              <a class="nav-link" aria-current="page" href="{{url('/')}}">HOME</a>
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="{{route('getGroupsDashboard')}}"
@@ -183,6 +183,15 @@
                   >
                     Verify
                   </button>
+                  @elseif($group->verification===-1)
+                    <button
+                        type="button"
+                        class="btn"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal{{$group->id}}"
+                    >
+                        Verify
+                    </button>
                   @endif
 
                   <!-- Modal -->

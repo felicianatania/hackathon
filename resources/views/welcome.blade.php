@@ -269,7 +269,10 @@
                     <img src="assets/platform4.png" alt="platform" class="timelineImg">
                     <div class="text">
                         <h1>Competition Days</h1>
-                        <p>July 3 - 5, 2022</p>
+                        <p>July 3 - 5, 2022
+                            <br>
+                            09.20 - 11.00
+                        </p>
                     </div>
                 </div>
             </div>
@@ -391,7 +394,9 @@
     <section class="faq" id="faqSec">
         <h1>Frequently Asked Questions</h1>
         <div class="faqContainer">
-            <div class="faqImg"></div>
+            <div class="faqImg">
+                <img src="assets/faq.png" alt="">
+            </div>
                 <div class="accordion accordion-flush" id="accordionFlushExample">
                     <div class="accordion-item">
                       <h2 class="accordion-header" id="flush-headingOne">
@@ -607,22 +612,22 @@
                         <span class="far fa-envelope"></span>
                     </div>
                 </a>
-                <a href="https://www.facebook.com">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
                     <div class="facebook">
                         <span class="fab fa-facebook-f"></span>
                     </div>
                 </a>
-                <a href="https://www.twitter.com">
+                <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
                     <div class="twitter">
                         <span class="fab fa-twitter"></span>
                     </div>
                 </a>
-                <a href="https://www.linkedin.com">
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
                     <div class="linkedin">
                         <span class="fab fa-linkedin-in"></span>
                     </div>
                 </a>
-                <a href="https://www.instagram.com">
+                <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
                     <div class="instagram">
                         <span class="fab fa-instagram"></span>
                     </div>
