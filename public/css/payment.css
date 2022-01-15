@@ -149,12 +149,12 @@
 
   /* Payment Account */
   .paymentAcc {
-    min-height: 78vh;
+    min-height: 71vh;
   }
 
   /* Upload payment proof */
   .upload {
-    min-height: 88vh;
+    min-height: 80vh;
   }
   .upload .uploadContainer {
     background-color: white;
