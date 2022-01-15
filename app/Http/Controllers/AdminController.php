@@ -31,10 +31,11 @@ class AdminController extends Controller
 
     //get image Payment
     public function imagePayment($id){
+        $group = User::find($id);
         $imagepayment= DB::table('payments')->where('groupId',$id)->get()->toArray();
         //return Redirect::to('https://www.pakainfo.com');
         //return redirect()->away('');
-        return view('adminPanel.imagepayment', ['imagepayment' => $imagepayment ]);
+        return view('adminPanel.imagepayment', ['imagepayment' => $imagepayment, 'group' => $group]);
         //return redirect()->route('getMemberByIdEdit', ['id' => $groupId, 'memberNo'=>$memberNo]);
     }
 
