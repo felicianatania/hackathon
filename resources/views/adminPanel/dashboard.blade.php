@@ -163,29 +163,29 @@
             <td class="justify-content-center align-items-end">
               <div class="d-flex">
                 <div class="verify m-3">
-                    @if ($group->verification===0)
+                    {{-- @if ($group->verification===0)
                     <form action="{{route('verifyGroup', ['id'=>$group->id])}}" method="post">
                         @csrf
                         @method('PATCH')
                         <button type="submit" class="btn btn-primary">Verify</button>
                     </form>
-                    @endif
+                    @endif --}}
 
-                    {{-- @if ($group->verification===0)
+                    @if ($group->verification===0)
                     <button
                     type="button"
                     class="btn"
                     data-bs-toggle="modal"
-                    data-bs-target="#exampleModal"
+                    data-bs-target="#exampleModal{{$group->id}}"
                   >
                     Verify
                   </button>
-                  @endif--}}
+                  @endif
 
                   <!-- Modal -->
                   <div
                     class="modal fade"
-                    id="exampleModal"
+                    id="exampleModal{{$group->id}}"
                     tabindex="-1"
                     aria-labelledby="exampleModalLabel"
                     aria-hidden="true"
@@ -202,7 +202,7 @@
                                 @method('PATCH')
                                 <button type="submit" class="btn">Verify</button>
                             </form>
-                          <button type="button" class="btn">verify</button>
+                          {{-- <button type="button" class="btn">verify</button> --}}
                           <button
                             type="button"
                             class="btn"
