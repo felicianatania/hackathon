@@ -60,7 +60,7 @@
               >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">PARTICIPANT</a>
+              <a class="nav-link" href="{{route('getGroups')}}">PARTICIPANT</a>
             </li>
           </ul>
         </div>

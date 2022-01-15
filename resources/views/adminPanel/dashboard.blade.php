@@ -31,7 +31,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-md">
         <div>
-          <a class="navbar-brand" href="#"
+          <a class="navbar-brand" href=""
             ><span><i class="fab fa-hackerrank"></i></span
           ></a>
         </div>

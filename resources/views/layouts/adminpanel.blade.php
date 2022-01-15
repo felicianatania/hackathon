@@ -30,7 +30,7 @@
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container-md">
         <div>
-          <a class="navbar-brand" href="#"
+          <a class="navbar-brand" href="{{url('/home')}}"
             ><span><i class="fab fa-hackerrank"></i></span
           ></a>
         </div>
@@ -57,7 +57,7 @@
               <a class="nav-link" aria-current="page" href="{{route('getGroupsDashboard')}}">DASHBOARD</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="#">PARTICIPANT</a>
+              <a class="nav-link active" href="{{route('getGroups')}}">PARTICIPANT</a>
             </li>
           </ul>
         </div>
