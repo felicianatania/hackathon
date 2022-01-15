@@ -124,7 +124,7 @@
                 Sort
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="{{url('/order-participant')}}">by name</a></li>
+                <li><a class="dropdown-item" href="{{url('/order-participant')}}">By Name</a></li>
               </ul>
             </div>
           </div>
