@@ -38,13 +38,14 @@ Route::get('/get-group-payment', [PaymentController::class, 'getGroupByIdPayment
 
 //Route::get('/get-groups', [AdminController::class, 'getGroups'])->name('getGroups');
 //Route::get('/admin-dashboard', [AdminController::class,'dashboardPage'])->name('dashboardPage');
-Route::get('/view-group/{id}', [AdminController::class, 'getGroupByIdView'])->name('getGroupByIdView');
-Route::get('/view-member/{id}/{memberNo}', [AdminController::class, 'getMemberByIdView'])->name('getMemberByIdView');
+// Route::get('/view-group/{id}', [AdminController::class, 'getGroupByIdView'])->name('getGroupByIdView');
+// Route::get('/view-member/{id}/{memberNo}', [AdminController::class, 'getMemberByIdView'])->name('getMemberByIdView');
 // Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdEdit'])->name('getGroupByIdEdit');
-Route::patch('/update-group/{id}', [AdminController::class, 'updateGroup'])->name('updateGroup');
-Route::patch('/update-member/{id}/{memberNo}/{groupId}', [AdminController::class, 'updateMember'])->name('updateMember');
-Route::patch('/verify-group/{id}', [AdminController::class, 'verifyGroup'])->name('verifyGroup');
-Route::delete('/delete-group/{id}', [AdminController::class, 'deleteGroup'])->name('delete');
+// Route::patch('/update-group/{id}', [AdminController::class, 'updateGroup'])->name('updateGroup');
+// Route::patch('/update-member/{id}/{memberNo}/{groupId}', [AdminController::class, 'updateMember'])->name('updateMember');
+// Route::patch('/verify-group/{id}', [AdminController::class, 'verifyGroup'])->name('verifyGroup');
+// Route::patch('/reject-group/{id}', [AdminController::class, 'rejectGroup'])->name('rejectGroup');
+// Route::delete('/delete-group/{id}', [AdminController::class, 'deleteGroup'])->name('delete');
 
 // Route::get('/search-group', [AdminController::class, 'searchGroup'])->name('searchGroup');
 // Route::get('/order-group', [AdminController::class, 'orderGroup'])->name('orderGroup');
@@ -59,18 +60,27 @@ Route::post('/forgetpw', [App\Http\Controllers\auth\ForgotPasswordController::cl
 //////////////////////////MIDDLEWARE///////////////////////////////////////
 
 Route::group(['middleware' => IsAdminMiddleware::class], function(){
-	Route::get('/get-groups', [AdminController::class, 'getGroups'])->name('getGroups');
+    Route::get('/get-groups', [AdminController::class, 'getGroups'])->name('getGroups');
 	Route::get('/groups-dashboard', [AdminController::class, 'getGroupsDashboard'])->name('getGroupsDashboard');
+    Route::get('/view-group/{id}', [AdminController::class, 'getGroupByIdView'])->name('getGroupByIdView');
+    Route::get('/view-member/{id}/{memberNo}', [AdminController::class, 'getMemberByIdView'])->name('getMemberByIdView');
     Route::get('/update-group/{id}', [AdminController::class, 'getGroupByIdEdit'])->name('getGroupByIdEdit');
     Route::get('/update-member/{id}/{memberNo}', [AdminController::class, 'getMemberByIdEdit'])->name('getMemberByIdEdit');
     Route::get('/search-dashboard', [AdminController::class, 'searchDashboard'])->name('searchDashboard');
     Route::get('/order-dashboard', [AdminController::class, 'orderDashboard'])->name('orderDashboard');
     Route::get('/verified-dashboard', [AdminController::class, 'filterVerifiedDashboard'])->name('filterVerifiedDashboard');
     Route::get('/unverified-dashboard', [AdminController::class, 'filterUnverifiedDashboard'])->name('filterUnverifiedDashboard');
+    Route::get('/rejected-dashboard', [AdminController::class, 'filterRejectedDashboard'])->name('filterRejectedDashboard');
     Route::get('/search-participant', [AdminController::class, 'searchParticipant'])->name('searchParticipant');
     Route::get('/order-participant', [AdminController::class, 'orderParticipant'])->name('orderParticipant');
     Route::get('/verified-participant', [AdminController::class, 'filterVerifiedParticipant'])->name('filterVerifiedParticipant');
     Route::get('/unverified-participant', [AdminController::class, 'filterUnverifiedParticipant'])->name('filterUnverifiedParticipant');
+    Route::get('/rejected-participant', [AdminController::class, 'filterRejectedParticipant'])->name('filterRejectedParticipant');
+    Route::patch('/update-group/{id}', [AdminController::class, 'updateGroup'])->name('updateGroup');
+    Route::patch('/update-member/{id}/{memberNo}/{groupId}', [AdminController::class, 'updateMember'])->name('updateMember');
+    Route::patch('/verify-group/{id}', [AdminController::class, 'verifyGroup'])->name('verifyGroup');
+    Route::patch('/reject-group/{id}', [AdminController::class, 'rejectGroup'])->name('rejectGroup');
+    Route::delete('/delete-group/{id}', [AdminController::class, 'deleteGroup'])->name('delete');
 });
 
 //route image payment

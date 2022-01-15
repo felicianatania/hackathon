@@ -108,6 +108,7 @@
                 <li><a class="dropdown-item" href="{{url('/groups-dashboard')}}">All</a></li>
                 <li><a class="dropdown-item" href="{{url('/verified-dashboard')}}">Verified</a></li>
                 <li><a class="dropdown-item" href="{{url('/unverified-dashboard')}}">Unverified</a></li>
+                <li><a class="dropdown-item" href="{{url('/rejected-dashboard')}}">Rejected</a></li>
               </ul>
             </div>
           </div>
@@ -154,11 +155,13 @@
                 <p class="align-middle">{{ $group->groupName }}</p>
               </div>
             </td>
-                @if ($group->verification===0)
-                    <td class="d-flex justify-content-center mt-3" style="border: none;"><b class="unverified">Unverified</b></td>
-                @else
-                    <td class="d-flex justify-content-center mt-3" style="border: none;"><b class="verified">Verified</b></td>
-                @endif
+            @if($group->verification===-1)
+                <td class="d-flex justify-content-center mt-3" style="border: none;"><b class="rejected">Rejected</b></td>
+            @elseif($group->verification===1)
+                <td class="d-flex justify-content-center mt-3" style="border: none;"><b class="verified">Verified</b></td>
+            @else
+                <td class="d-flex justify-content-center mt-3" style="border: none;"><b class="unverified">Unverified</b></td>
+            @endif
             </td>
             <td class="justify-content-center align-items-end">
               <div class="d-flex">
@@ -193,7 +196,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-body text-center fs-5">
-                          verify this Group
+                          Verify or Rejct this Group
                         </div>
 
                         <div class="d-flex justify-content-around mb-3">
@@ -201,6 +204,11 @@
                                 @csrf
                                 @method('PATCH')
                                 <button type="submit" class="btn">Verify</button>
+                            </form>
+                            <form action="{{route('rejectGroup', ['id'=>$group->id])}}" method="post">
+                                @csrf
+                                @method('PATCH')
+                                <button type="submit" class="btn">Reject</button>
                             </form>
                           {{-- <button type="button" class="btn">verify</button> --}}
                           <button

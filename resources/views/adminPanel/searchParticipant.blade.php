@@ -108,6 +108,7 @@
                 <li><a class="dropdown-item" href="{{url('/get-groups')}}">All</a></li>
                 <li><a class="dropdown-item" href="{{url('/verified-participant')}}">Verified</a></li>
                 <li><a class="dropdown-item" href="{{url('/unverified-participant')}}">Unverified</a></li>
+                <li><a class="dropdown-item" href="{{url('/rejected-participant')}}">Rejected</a></li>
               </ul>
             </div>
           </div>

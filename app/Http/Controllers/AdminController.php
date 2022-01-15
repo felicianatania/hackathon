@@ -91,6 +91,11 @@ class AdminController extends Controller
         return view('adminPanel.searchDashboard', compact('groups'));
     }
 
+    public function filterRejectedDashboard(){
+        $groups = User::where('verification', -1)->get()->except(1);
+        return view('adminPanel.searchDashboard', compact('groups'));
+    }
+
     public function filterUnverifiedParticipant(){
         $groups = User::where('verification', 0)->get()->except(1);
         return view('adminPanel.searchParticipant', compact('groups'));
@@ -98,6 +103,11 @@ class AdminController extends Controller
 
     public function filterVerifiedParticipant(){
         $groups = User::where('verification', 1)->get()->except(1);
+        return view('adminPanel.searchParticipant', compact('groups'));
+    }
+
+    public function filterRejectedParticipant(){
+        $groups = User::where('verification', -1)->get()->except(1);
         return view('adminPanel.searchParticipant', compact('groups'));
     }
 
@@ -128,6 +138,16 @@ class AdminController extends Controller
 
         $group -> update([
             'verification' => 1,
+        ]);
+
+        return redirect(route('getGroupsDashboard'));
+    }
+
+    public function rejectGroup($id){
+        $group = User::find($id);
+
+        $group -> update([
+            'verification' => -1,
         ]);
 
         return redirect(route('getGroupsDashboard'));

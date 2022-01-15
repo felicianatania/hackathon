@@ -101,6 +101,8 @@
             @else
                 @if(Auth::user()->verification == '0')
                     <h1>Your Payment Proof is Being Checked</h1>
+                @elseif(Auth::user()->verification == '-1')
+                    <h1>Your Payment Proof is Rejected</h1>
                 @else
                     <h1>Congrats! Your Payment Proof is Accepted</h1>
                 @endif
