@@ -426,14 +426,14 @@
                         type="button"
                         class="btn"
                         data-bs-toggle="modal"
-                        data-bs-target="#view"
+                        data-bs-target="#viewCV1"
                       >
                         View CV
                       </button>
 
                       <div
                         class="modal fade"
-                        id="view"
+                        id="viewCV1"
                         tabindex="-1"
                         aria-labelledby="viewCV"
                         aria-hidden="true"
@@ -476,14 +476,14 @@
                       type="button"
                       class="btn"
                       data-bs-toggle="modal"
-                      data-bs-target="#viewidcard"
+                      data-bs-target="#viewidcard1"
                     >
                       View flazz / ID card
                     </button>
 
                     <div
                       class="modal fade"
-                      id="viewidcard"
+                      id="viewidcard1"
                       tabindex="-1"
                       aria-labelledby="viewflazz"
                       aria-hidden="true"
@@ -915,14 +915,14 @@
                         type="button"
                         class="btn"
                         data-bs-toggle="modal"
-                        data-bs-target="#view"
+                        data-bs-target="#view2CV"
                       >
                         View CV
                       </button>
 
                       <div
                         class="modal fade"
-                        id="view"
+                        id="view2CV"
                         tabindex="-1"
                         aria-labelledby="viewCV"
                         aria-hidden="true"
@@ -965,14 +965,14 @@
                       type="button"
                       class="btn"
                       data-bs-toggle="modal"
-                      data-bs-target="#viewidcard"
+                      data-bs-target="#viewidcard2"
                     >
                       View flazz / ID card
                     </button>
 
                     <div
                       class="modal fade"
-                      id="viewidcard"
+                      id="viewidcard2"
                       tabindex="-1"
                       aria-labelledby="viewflazz"
                       aria-hidden="true"
@@ -1275,14 +1275,14 @@
                         type="button"
                         class="btn"
                         data-bs-toggle="modal"
-                        data-bs-target="#view"
+                        data-bs-target="#viewCV3"
                       >
                         View CV
                       </button>
 
                       <div
                         class="modal fade"
-                        id="view"
+                        id="viewCV3"
                         tabindex="-1"
                         aria-labelledby="viewCV"
                         aria-hidden="true"
@@ -1325,14 +1325,14 @@
                       type="button"
                       class="btn"
                       data-bs-toggle="modal"
-                      data-bs-target="#viewidcard"
+                      data-bs-target="#viewidcard3"
                     >
                       View flazz / ID card
                     </button>
 
                     <div
                       class="modal fade"
-                      id="viewidcard"
+                      id="viewidcard3"
                       tabindex="-1"
                       aria-labelledby="viewflazz"
                       aria-hidden="true"
