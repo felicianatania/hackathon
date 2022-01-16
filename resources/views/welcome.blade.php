@@ -85,8 +85,8 @@
             <div class="recapContainer">
                 <div class="text">
                     <h1>Video Recap</h1>
-                    <p>Watch the biggest annual technology event held by RFJST4REAL,
-                        <span>TechnoRF
+                    <p>Watch the biggest annual technology event held by Bina Nusantara Computer Club (BNCC),
+                        <span>TechnoScape
                             2021</span>.
                     </p>
                 </div>
@@ -106,7 +106,7 @@
             <h1>About Hackthon 5.0</h1>
             <div class="container">
                 <div class="left">
-                    <p><span>Hackathon 5.0</span> is a 48-hour online coding competition where each team competes to create innovative applications or websites that could solve problems. This year is the 5th time RFJST4REAL held a Hackathon event. Throughout the years, Hackathon has produced many innovative ideas and become the main event of TechnoRF.</p>
+                    <p><span>Hackathon 5.0</span> is a 48-hour online coding competition where each team competes to create innovative applications or websites that could solve problems. This year is the 5th time Bina Nusantara Computer Club (BNCC) held a Hackathon event. Throughout the years, Hackathon has produced many innovative ideas and become the main event of TechnoScape.</p>
                     <div class="buttons">
                     <form method="get" action="\register">
                         <button>Register</button>
@@ -602,7 +602,7 @@
             <img src="assets/contactUs.png" alt="">
             <h2>Our Social Media</h2>
             <div class="socialContainer">
-                <a href="mailto:rifianfernando@gmail.com">
+                <a href="mailto:rnd@bncc.net">
                     <div class="email">
                         <span class="far fa-envelope"></span>
                     </div>
@@ -649,8 +649,8 @@
     <div class="containerBot">
         <div class="line"></div>
         <div class="text">
-            <span>Powered and Organized by Kelompok 5</span>
-            <span><a href="https://gitcoin.co/legal/terms">Privacy Policy & Terms of Service</a></span>
+            <span>Powered and Organized by Kelompok 5 Final Project TPM</span>
+            <span><a href="">Privacy Policy & Terms of Service</a></span>
         </div>
     </div>
 

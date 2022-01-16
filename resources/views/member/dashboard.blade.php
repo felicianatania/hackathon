@@ -1393,20 +1393,20 @@
         </div>
         <div class="linecp d-flex mb-3">
           <img src="/assets/Line.png" alt="line icon">
-          <h4 class="ms-4">Rifian Fernando</h4>
+          <h4 class="ms-4">davinakayla13</h4>
         </div>
         <div class="wacp d-flex">
           <img src="/assets/waa.jpg" style="height: 35px;" alt="wa icon">
-          <h4 class="ms-4">0897797774022331</h4>
+          <h4 class="ms-4">08977977740</h4>
         </div>
       </div>
       <div class="left col-4">
         <div class="namecp d-flex justify-content-center mb-3">
-          <h4>Vivian Fernanda</h4>
+          <h4>Carina Prasetia</h4>
         </div>
         <div class="linecp d-flex mb-3">
           <img src="/assets/Line.png" alt="line icon">
-          <h4 class="ms-4">Vivian Fernanda</h4>
+          <h4 class="ms-4">carinaprasetia</h4>
         </div>
         <div class="wacp d-flex">
           <img src="/assets/waa.jpg" style="height: 35px;" alt="wa icon">
