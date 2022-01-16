@@ -8,11 +8,7 @@
     font-family: "Poppins", sans-serif;
     color: #ffff;
     background-image: linear-gradient(to bottom right, #548ca8, #e4e4e4);
-    min-height: 100vh;
-    /* width: 100vw; */
-    align-items: center;
-    display: flex;
-    justify-content: center;
+    min-height: 80rem;
   }
 
   /* NavBar-start */
@@ -54,7 +50,6 @@
 
   .card {
     width: 70rem;
-    height: 200px;
     background-color: #ffffff;
     color: #548CA8;
     padding: 50px;

@@ -86,7 +86,7 @@
                     <p>June 29, 2022<br>09.20 - 11.00 </p>
                 </div>
                 <div class="timelineLink">
-                    <a href="https://meet.google.com/bpp-rbun-usk" target="_blank" rel="noopener noreferrer"><button class="link">Link</button></a>
+                    <a href="#"><button class="link">Link</button></a>
                 </div>
             </div>
             <div class="timelineItem">
@@ -98,7 +98,7 @@
                     <p>July 3 - 5, 2022<br>09.20 - 11.00</p>
                 </div>
                 <div class="timelineLink">
-                    <a href="https://meet.google.com/bpp-rbun-usk" target="_blank" rel="noopener noreferrer"><button class="link">Link</button></a>
+                    <a href="#"><button class="link">Link</button></a>
                 </div>
             </div>
 
